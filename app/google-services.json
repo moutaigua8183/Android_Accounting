@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "887920827085",
+    "firebase_url": "https://accounting-4b36d.firebaseio.com",
+    "project_id": "accounting-4b36d",
+    "storage_bucket": "accounting-4b36d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887920827085:android:142377132b64d58a",
+        "android_client_info": {
+          "package_name": "com.moutaigua.accounting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887920827085-hee3oir2k0lo9qvs9ce13uftu4vg20dg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmgwuGJtspqHxSkOVD5CgCWzf3r5FIOGc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

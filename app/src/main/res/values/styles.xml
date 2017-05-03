@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+
+    <style name="Seperator_Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <style name="EachLine" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">1dp</item>
+    </style>
+
+
+    <style name="EachLine_Title" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.3</item>
+        <item name="android:textSize">@dimen/app_text_size_default</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="EachLine_Content" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.7</item>
+        <item name="android:textSize">@dimen/app_text_size_default</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="Status_Title" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:textSize">@dimen/app_text_size_default</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="Status_Content" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:textSize">@dimen/app_text_size_default</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+
+</resources>

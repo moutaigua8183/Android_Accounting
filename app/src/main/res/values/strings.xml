@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Accounting</string>
+
+    <string name="dropbox_login">Login</string>
+    <string name="dropbox_logout">Logout</string>
+    <string name="transaction_listener_msg">A new transaction has been detected. Do you want to record it?</string>
+    <string name="notifi_title">Accounting</string>
+    <string name="notifi_small_content">A new transaction has been detected.</string>
+    <string name="notifi_large_content_prefix">The transaction worths $</string>
+    <string name="notifi_large_content_suffix">\nPress ADD to record it or swipe to cancel</string>
+    <string name="notifi_destroy_content">The app has stopped listening to transaction reports.</string>
+    <string name="status_complete">Complete</string>
+    <string name="status_updating">Updating</string>
+    <string name="status_initial">None</string>
+
+</resources>
