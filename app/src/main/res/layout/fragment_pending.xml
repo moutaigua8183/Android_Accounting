@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/accountingBackground"
+    tools:context="com.moutaigua.accounting.ActivityMain">
+
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <Spinner style="@style/Form_EachLine_Spinner"
+            android:id="@+id/fragment_pending_spinner_transaction_list"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:id="@+id/fragment_pending_layout_details"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="60dp">
+
+            <LinearLayout style="@style/Form_EachLine" >
+                <TextView style="@style/Form_EachLine_Title" android:text="Amount:" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"
+                    android:textSize="@dimen/app_text_size_default"
+                    android:textColor="@android:color/black"
+                    />
+                <EditText style="@style/Form_EachLine_EditText"
+                    android:id="@+id/fragment_pending_editxt_money"
+                    android:inputType="numberDecimal"
+                    />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Form_EachLine" >
+                <TextView style="@style/Form_EachLine_Title" android:text="Divided By:" />
+                <EditText style="@style/Form_EachLine_EditText"
+                    android:id="@+id/fragment_pending_editxt_seperate"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Form_EachLine" >
+                <TextView style="@style/Form_EachLine_Title" android:text="Provider:" />
+                <AutoCompleteTextView style="@style/Form_EachLine_EditText"
+                    android:id="@+id/fragment_pending_editxt_provider"
+                    android:hint="Service Provider"
+                    android:inputType="textAutoComplete|textAutoCorrect"
+                    android:imeOptions="actionSearch"
+                    android:completionThreshold="1"
+                    />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Form_EachLine" >
+                <TextView style="@style/Form_EachLine_Title" android:text="Category:" />
+                <Spinner style="@style/Form_EachLine_Spinner"
+                    android:id="@+id/fragment_pending_spinner_category"
+                    />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Form_EachLine" >
+                <TextView style="@style/Form_EachLine_Title" android:text="Type:" />
+                <Spinner style="@style/Form_EachLine_Spinner"
+                    android:id="@+id/fragment_pending_spinner_type"
+                    />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Form_EachLine" >
+                <TextView style="@style/Form_EachLine_Title" android:text="City:" />
+                <EditText style="@style/Form_EachLine_EditText"
+                    android:id="@+id/fragment_pending_editxt_city"
+                    android:hint="City"
+                    android:inputType="textPersonName"
+                    />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Form_EachLine" >
+                <TextView style="@style/Form_EachLine_Title" android:text="Note:" />
+                <EditText style="@style/Form_EachLine_EditText"
+                    android:id="@+id/fragment_pending_editxt_note"
+                    android:hint="Note"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/Form_EachLine" android:layout_marginTop="30dp" >
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:id="@+id/fragment_pending_btn_submit"
+                    android:text="Submit"
+                    android:textSize="@dimen/app_text_size_default" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:id="@+id/fragment_pending_btn_exit"
+                    android:text="Exit"
+                    android:textSize="@dimen/app_text_size_default" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05"/>
+            </LinearLayout>
+
+
+            <!--seperate-->
+            <View style="@style/Seperator_Line"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"/>
+            <!--seperate-->
+
+            <LinearLayout style="@style/Form_EachLine" >
+                <TextView style="@style/Status_Title"
+                    android:id="@+id/fragment_pending_txt_status"
+                    android:scrollbars="vertical"
+                    android:lines="6"
+                    tools:text="-- Update" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>

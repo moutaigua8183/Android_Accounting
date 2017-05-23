@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="transaction_type">
+        <item>@string/transaction_type_private</item>
+        <item>@string/transaction_type_shared</item>
+        <item>@string/transaction_type_unrelated</item>
+        </string-array>
+
     <string-array name="provider_array">
         <item>Cupbop Ramen</item>
         <item>Via Lima</item>
@@ -11,7 +17,7 @@
         <item>Costco</item>
         <item>Chick Fil A</item>
         <item>Popeyes</item>
-        <item>McDonald's</item>
+        <item>McDonald\'s</item>
         <item>Hibachi</item>
         <item>H-mart</item>
         <item>KFC</item>
@@ -88,7 +94,7 @@
         <item>Dak</item>
         <item>Amazon</item>
         <item>Walmart</item>
-        <item>McDonald's</item>
+        <item>McDonald\'s</item>
         <item>Jewel Osco</item>
         <item>Whole Foods</item>
         <item>Petco</item>
@@ -98,7 +104,7 @@
         <item>East Seoul Oriental</item>
         <item>Schnucks</item>
         <item>Charter</item>
-        <item>McDonald's</item>
+        <item>McDonald\'s</item>
         <item>Laclede</item>
         <item>Ameren Elec.</item>
         <item>Costco</item>
@@ -114,7 +120,7 @@
         <item>Schnucks</item>
         <item>Taike</item>
         <item>Olive Supermarker</item>
-        <item>McDonald's</item>
+        <item>McDonald\'s</item>
         <item>KFC</item>
         <item>Seoul Taco</item>
         </string-array>

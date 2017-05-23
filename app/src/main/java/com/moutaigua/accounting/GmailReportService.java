@@ -6,11 +6,18 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -30,26 +37,28 @@ import com.google.api.services.gmail.model.Message;
 import com.google.api.services.gmail.model.ModifyMessageRequest;
 
 import java.io.IOException;
-import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * Created by mou on 2/11/17.
+ * This is a service which can listen to the transaction reports in Gmail.
  */
 
 public class GmailReportService extends IntentService {
 
-    public static final String SHAREPREF_GMAIL_ACCOUNT_SELECTED = "gmail_account_selected";
-    public static final String SHAREPREF_NOTICED_EMAIL_ID = "noticed_email_id";
-    public static final String SHAREPREF_NOTIFICATION_ID = "notification_id";
+
     public static final String INTENT_KEY_EMAIL_TO_MARK_FROM = "email_from";
     public static final String INTENT_KEY_EMAIL_TO_MARK_ID = "email_id";
     public static final String INTENT_VALUE_EMAIL_TO_MARK_FROM_GMAIL = "gmail";
+    public static final String REPORT_SOURCE = "gmail";
     public static final String[] GMAIL_AUTH_SCOPES = {
 //            GmailScopes.GMAIL_LABELS,
             GmailScopes.MAIL_GOOGLE_COM,
@@ -59,8 +68,9 @@ public class GmailReportService extends IntentService {
     };
     private final String GMAIL_USER_ID = "me";
     private final String GMAIL_QUERY = "label:INBOX is:unread ";
-    private final int GMAIL_MESSAGE_HEADER_SENDER = 10;
-    private final int GMAIL_MESSAGE_HEADER_SUBJECT = 14;
+    private final int GMAIL_MESSAGE_HEADER_TIME = 10;
+    private final int GMAIL_MESSAGE_HEADER_SENDER = 13;
+    private final int GMAIL_MESSAGE_HEADER_SUBJECT = 17;
 
     private final String DISCOVER_REPORT_SENDER = "service.discover.com";
     private final String DISCOVER_REPORT_SUBJECT = "Your purchase exceeds the amount you set";
@@ -71,10 +81,12 @@ public class GmailReportService extends IntentService {
 
 
     private final String LOG_TAG = "GmailReportService";
+    private final int NOTIFICATION_ID = 7;
 
     private Gmail gmail;
-    private int notificationId;
-    private Set<String> noticedId;
+    private FirebaseHandler firebaseHandler;
+    private LocationManager mLocationManager;
+    private String cityName;
 
 
     public GmailReportService() {
@@ -85,49 +97,31 @@ public class GmailReportService extends IntentService {
     @Override
     public void onCreate() {
         super.onCreate();
-        // google account init
-        String accountName = getSharedPreferences(MainActivity.SHAREPREF_NAME, Context.MODE_PRIVATE)
-                .getString(SHAREPREF_GMAIL_ACCOUNT_SELECTED, null);
+        String accountName = getSharedPreferences(ActivityMain.SHAREPREF_NAME, Context.MODE_PRIVATE)
+                .getString(ActivityMain.SHAREPREF_GMAIL_ACCOUNT_SELECTED, null);
         if (accountName == null) {
             Log.i(LOG_TAG, "No gmail accouont has been chosen.");
             stopSelf();
         } else {
             initGmailService(accountName);
+            retrieveCurrentCity();
+            firebaseHandler = new FirebaseHandler();
         }
-        // old unread reports list
-        noticedId = getNoticedEmailId();
-        // notification id init
-        notificationId = getNotificationId();
     }
-
-
 
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Log.i(LOG_TAG, "Service starts");
-        Bundle bundle = intent.getExtras();
-        if( bundle!=null ){
-            String email_id = bundle.getString(INTENT_KEY_EMAIL_TO_MARK_ID);
-            markGmailEmailRead(email_id);
-            for(String eachId : noticedId){
-                if( eachId.equalsIgnoreCase(email_id) ){
-                    noticedId.remove(eachId);
-                    return;
-                }
-            }
+        if( cityName==null ){
+            // if location is not clear, this transaction will be short for information.
+            // so this detection will be ignored.
+            Log.i(LOG_TAG, "Since City is not detected, the service doesn\'t start.");
+            stopSelf();
         } else {
+            Log.i(LOG_TAG, "Service starts");
             Log.i(LOG_TAG, "Scanning...");
             ArrayList<Message> unreadEmails = getUnreadEmails();
-            updateNoticedId(unreadEmails);
-            ArrayList<Message> unnoticedEmails = getUnnoticedEmails(unreadEmails);
-            ArrayList<ReportSummary> summaries = getSummaryToNotify(unnoticedEmails);
-            for (ReportSummary eachSummary : summaries) {
-                sendConfirmNotification(eachSummary);
-                Log.i(LOG_TAG, eachSummary.getProvider() + " charges you $" + eachSummary.getMoney());
-                notificationId = (notificationId + 1) % 100;
-                noticedId.add(eachSummary.getEmailId());
-            }
+            analyseDiscoverReports(unreadEmails);
         }
     }
 
@@ -135,12 +129,8 @@ public class GmailReportService extends IntentService {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        saveNoticedEmailId();
-        saveNotificationId();
         Log.i(LOG_TAG, "Service ends");
     }
-
-
 
 
     private void initGmailService(String accountName) {
@@ -153,42 +143,130 @@ public class GmailReportService extends IntentService {
                 .build();
     }
 
-    private Set<String> getNoticedEmailId(){
-        String idsStr = getSharedPreferences(MainActivity.SHAREPREF_NAME, Context.MODE_PRIVATE)
-                .getString(SHAREPREF_NOTICED_EMAIL_ID, null);
-        if( idsStr!=null ) {
-            Log.i(LOG_TAG, "Get: "+idsStr);
-            String[] ids = idsStr.split(",");
-            return new HashSet<>(Arrays.asList(ids));
+    private void retrieveCurrentCity() {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Log.i(LOG_TAG, "Location Permission Not Granted.");
+            stopSelf();
+            return;
+        }
+        mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Location location = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        if (location != null && location.getTime() > Calendar.getInstance().getTimeInMillis() - 1 * 60 * 60 * 1000) { // every hour
+            cityName = getCityName(location);
         } else {
-            return new HashSet<>();
+            mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,
+                    new LocationListener() {
+                        @Override
+                        public void onLocationChanged(Location location) {
+                            if (location != null) {
+                                cityName = getCityName(location);
+                                mLocationManager.removeUpdates(this);
+                            }
+                        }
+
+                        @Override
+                        public void onStatusChanged(String s, int i, Bundle bundle) {
+
+                        }
+
+                        @Override
+                        public void onProviderEnabled(String s) {
+
+                        }
+
+                        @Override
+                        public void onProviderDisabled(String s) {
+
+                        }
+                    });
+        }
+        Log.i(LOG_TAG, "Transaction happens in " + cityName);
+    }
+
+    @Nullable
+    private String getCityName(Location location){
+        Geocoder gcd = new Geocoder(this, Locale.getDefault());
+        List<Address> addresses = null;
+        try {
+            addresses = gcd.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (addresses!=null && addresses.size() > 0) {
+            return addresses.get(0).getLocality();
+        } else {
+            return null;
         }
     }
 
-    private void saveNoticedEmailId() {
-        SharedPreferences.Editor editor = getSharedPreferences(MainActivity.SHAREPREF_NAME, Context.MODE_PRIVATE).edit();
-        String idsStr = "";
-        for(String each: noticedId){
-            idsStr += each + ",";
+
+    /**** Get Unread Discover Report ****/
+
+    private void analyseDiscoverReports(ArrayList<Message> unreadEmails) {
+        ArrayList<Transaction> transList = getDiscoverTransactions(unreadEmails);
+        for (Transaction eachTrans : transList) {
+            Log.i(LOG_TAG, eachTrans.getProvider() + " charges you $" + eachTrans.getMoney());
+            firebaseHandler.addTransaction(eachTrans);
+            markGmailEmailRead(eachTrans.getReportId());
         }
-        editor.putString(SHAREPREF_NOTICED_EMAIL_ID, idsStr);
-        editor.apply();
-        Log.i(LOG_TAG, "Save: "+idsStr);
+        if( transList.size()>0 ){
+            // if there are new transactions available, send notification
+            sendNotification();
+        }
     }
 
-    private int getNotificationId(){
-        return  getSharedPreferences(MainActivity.SHAREPREF_NAME, Context.MODE_PRIVATE)
-                .getInt(SHAREPREF_NOTIFICATION_ID, 0);
+    private ArrayList<Transaction> getDiscoverTransactions(ArrayList<Message> unreadEmails){
+        ArrayList<Transaction> transList = new ArrayList<>();
+        for(Message eachMail : unreadEmails){
+            Log.i(LOG_TAG, eachMail.getPayload().getHeaders().get(GMAIL_MESSAGE_HEADER_TIME).toString());
+            if( eachMail.getPayload().getHeaders().get(GMAIL_MESSAGE_HEADER_SENDER).getValue().equalsIgnoreCase(DISCOVER_REPORT_SENDER)
+                    && eachMail.getPayload().getHeaders().get(GMAIL_MESSAGE_HEADER_SUBJECT).getValue().equalsIgnoreCase(DISCOVER_REPORT_SUBJECT) ) {
+                String fullBody = StringUtils.newStringUtf8( Base64.decodeBase64(eachMail.getPayload().getParts().get(0).getBody().getData()) );
+                String provider = getDiscoverTransMerchant(fullBody);
+                String money = getDiscoverTransMoney(fullBody);
+                String id = eachMail.getId();
+                String rawDate = eachMail.getPayload().getHeaders().get(GMAIL_MESSAGE_HEADER_TIME).getValue(); // 2 May 2017 22:02:32 -0400
+                Date date = null;
+                String textDate = null;
+                try {
+                    date = new SimpleDateFormat("d MMM yyyy hh:mm:ss z", Locale.US).parse(rawDate);
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                    sdf.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+                    textDate = sdf.format(date);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Transaction transaction = new Transaction();
+                transaction.setTextTime(textDate);
+                transaction.setLongTime(date.getTime());
+                transaction.setProvider(provider);
+                transaction.setMoney(money);
+                transaction.setReportId(id);
+                transaction.setCity(cityName);
+                transaction.setReportSource(REPORT_SOURCE);
+                transList.add(transaction);
+            }
+        }
+        return transList;
     }
 
-    private void saveNotificationId(){
-        SharedPreferences.Editor editor = getSharedPreferences(MainActivity.SHAREPREF_NAME, Context.MODE_PRIVATE).edit();
-        editor.putInt(SHAREPREF_NOTIFICATION_ID, notificationId);
-        editor.apply();
+    private String getDiscoverTransMoney(String text) {
+        int startIndex = text.indexOf(DISCOVER_REPORT_MONEY_PREFIX_TAG) + DISCOVER_REPORT_MONEY_PREFIX_TAG.length();
+        int endIndex = text.indexOf(DISCOVER_REPORT_MONEY_SUFFIX_TAG, startIndex);
+        String money = text.substring(startIndex, endIndex).trim();
+        return money;
+    }
+
+    private String getDiscoverTransMerchant(String text) {
+        int startIndex = text.indexOf(DISCOVER_REPORT_MERCHANT_PREFIX_TAG) + DISCOVER_REPORT_MERCHANT_PREFIX_TAG.length();
+        int endIndex = text.indexOf(DISCOVER_REPORT_MERCHANT_SUFFIX_TAG, startIndex);
+        String merchant = text.substring(startIndex, endIndex).trim();
+        return merchant;
     }
 
 
-    /**** Get Unread ****/
+
+    /**** Mark Read or Noticed ****/
 
     private ArrayList<Message> getUnreadEmails() {
         ArrayList<Message> messages = new ArrayList<>();
@@ -215,110 +293,6 @@ public class GmailReportService extends IntentService {
         return messages;
     }
 
-    private void updateNoticedId(ArrayList<Message> unreadEmails) {
-        Iterator<String> iter = noticedId.iterator();
-        while(iter.hasNext()){
-            String eachNoticedId = iter.next();
-            Boolean hasRead = true;
-            for(Message eachUnread : unreadEmails){
-                if( eachUnread.getId().equalsIgnoreCase(eachNoticedId) ){
-                    hasRead = false;
-                    break;
-                }
-            }
-            if( hasRead ){
-                iter.remove();
-            }
-        }
-    }
-
-    private ArrayList<Message> getUnnoticedEmails(ArrayList<Message> unreadEmails) {
-        ArrayList<Message> list = new ArrayList<>();
-        for(int i=0; i < unreadEmails.size(); ++i) {
-            Boolean isUnnoticed = true;
-            for(String id : noticedId){
-                if( unreadEmails.get(i).getId().equalsIgnoreCase(id) ){
-                    isUnnoticed = false;
-                    break;
-                }
-            }
-            if( isUnnoticed ){
-                list.add(unreadEmails.get(i));
-            }
-        }
-        return list;
-    }
-
-    private ArrayList<ReportSummary> getSummaryToNotify(ArrayList<Message> undetectedUnreadEmail){
-        ArrayList<ReportSummary> summaries = new ArrayList<>();
-        for(Message eachSummary : undetectedUnreadEmail){
-            if( eachSummary.getPayload().getHeaders().get(GMAIL_MESSAGE_HEADER_SENDER).getValue().equalsIgnoreCase(DISCOVER_REPORT_SENDER)
-                    && eachSummary.getPayload().getHeaders().get(GMAIL_MESSAGE_HEADER_SUBJECT).getValue().equalsIgnoreCase(DISCOVER_REPORT_SUBJECT) ) {
-                String fullBody = StringUtils.newStringUtf8( Base64.decodeBase64(eachSummary.getPayload().getParts().get(0).getBody().getData()) );
-                String provider = getDiscoverTransMerchant(fullBody);
-                String money = getDiscoverTransMoney(fullBody);
-                String id = eachSummary.getId();
-                ReportSummary summary = new ReportSummary();
-                summary.setProvider(provider);
-                summary.setMoney(money);
-                summary.setEmailId(id);
-                summary.setEmailPlatform(INTENT_VALUE_EMAIL_TO_MARK_FROM_GMAIL);
-                summaries.add(summary);
-                sendConfirmNotification(summary);
-            }
-        }
-        return summaries;
-    }
-
-    private String getDiscoverTransMoney(String text) {
-        int startIndex = text.indexOf(DISCOVER_REPORT_MONEY_PREFIX_TAG) + DISCOVER_REPORT_MONEY_PREFIX_TAG.length();
-        int endIndex = text.indexOf(DISCOVER_REPORT_MONEY_SUFFIX_TAG, startIndex);
-        String money = text.substring(startIndex, endIndex).trim();
-        return money;
-    }
-
-    private String getDiscoverTransMerchant(String text) {
-        int startIndex = text.indexOf(DISCOVER_REPORT_MERCHANT_PREFIX_TAG) + DISCOVER_REPORT_MERCHANT_PREFIX_TAG.length();
-        int endIndex = text.indexOf(DISCOVER_REPORT_MERCHANT_SUFFIX_TAG, startIndex);
-        String merchant = text.substring(startIndex, endIndex).trim();
-        return merchant;
-    }
-
-    private void sendConfirmNotification(ReportSummary summary) {
-        Intent recordIntent = new Intent(GmailReportService.this, MainActivity.class);
-        recordIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        recordIntent.putExtra(MainActivity.INTENT_MERCHANT_TAG, summary.getProvider());
-        recordIntent.putExtra(MainActivity.INTENT_MONEY_TAG, summary.getMoney());
-        recordIntent.putExtra(MainActivity.INTENT_EMAIL_ID_TAG, summary.getEmailId());
-        recordIntent.putExtra(MainActivity.INTENT_EMAIL_FROM_TAG, summary.getEmailPlatform());
-        recordIntent.putExtra(MainActivity.INTENT_NOTIFI_ID_TAG, notificationId);
-        PendingIntent recordPendingIntent = PendingIntent.getActivity(GmailReportService.this, 0, recordIntent, PendingIntent.FLAG_ONE_SHOT);
-
-        // building notification
-        Drawable drawable = getDrawable(R.drawable.icon);
-        Bitmap largeIcon = ((BitmapDrawable)drawable).getBitmap();
-        String contentText = summary.getProvider() + " has charged you $" + summary.getMoney() + "\n"
-                + getResources().getString(R.string.notifi_large_content_suffix);
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(GmailReportService.this)
-                        .setSmallIcon(R.drawable.icon)
-                        .setContentTitle(getResources().getString(R.string.notifi_title))
-                        .setContentText(getResources().getString(R.string.notifi_small_content))
-                        .setStyle( new NotificationCompat.BigTextStyle().bigText(contentText) )
-                        .setLargeIcon(largeIcon)
-                        .addAction(R.drawable.btn_add, "add", recordPendingIntent)
-                        .setAutoCancel(true)
-                        .setWhen(System.currentTimeMillis())
-                        .setDefaults(Notification.DEFAULT_VIBRATE)
-                        .setPriority(Notification.PRIORITY_DEFAULT);
-        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        manager.notify(notificationId, mBuilder.build());
-    }
-
-
-
-    /**** Mark Read or Noticed ****/
-
     private void markGmailEmailRead(String email_id){
         try {
             List<String> labelsToRemove = new ArrayList<>();
@@ -331,61 +305,29 @@ public class GmailReportService extends IntentService {
     }
 
 
+    /**** Notification ****/
 
-//    private void sendCreateNotification() {
-//        NotificationCompat.Builder mBuilder =
-//                new NotificationCompat.Builder(this)
-//                        .setSmallIcon(R.drawable.icon)
-//                        .setContentTitle(getResources().getString(R.string.notifi_title))
-//                        .setContentText("The app has started listening to transactions.")
-//                        .setAutoCancel(true)
-//                        .setWhen(System.currentTimeMillis())
-//                        .setPriority(Notification.PRIORITY_DEFAULT);
-//        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-//        manager.notify(0, mBuilder.build());
-//    }
-
-
-    private class ReportSummary implements Serializable {
-        private String provider;
-        private String money;
-        private String emailPlatform;
-        private String emailId;
-
-
-        public String getProvider() {
-            return provider;
-        }
-
-        public void setProvider(String provider) {
-            this.provider = provider;
-        }
-
-        public String getMoney() {
-            return money;
-        }
-
-        public void setMoney(String money) {
-            this.money = money;
-        }
-
-        public String getEmailPlatform() {
-            return emailPlatform;
-        }
-
-        public void setEmailPlatform(String emailPlatform) {
-            this.emailPlatform = emailPlatform;
-        }
-
-        public String getEmailId() {
-            return emailId;
-        }
-
-        public void setEmailId(String emailId) {
-            this.emailId = emailId;
-        }
+    private void sendNotification() {
+        Intent recordIntent = new Intent(this, ActivityMain.class);
+        recordIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent recordPendingIntent = PendingIntent.getActivity(GmailReportService.this, 0, recordIntent, PendingIntent.FLAG_ONE_SHOT);
+        // building notification
+        Drawable drawable = getDrawable(R.drawable.icon);
+        Bitmap largeIcon = ((BitmapDrawable)drawable).getBitmap();
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(GmailReportService.this)
+                        .setSmallIcon(R.drawable.icon)
+                        .setContentTitle(getResources().getString(R.string.notifi_title))
+                        .setContentText(getResources().getString(R.string.notifi_small_content))
+                        .setContentIntent(recordPendingIntent)
+                        .setLargeIcon(largeIcon)
+                        .setAutoCancel(true)
+                        .setWhen(System.currentTimeMillis())
+                        .setDefaults(Notification.DEFAULT_VIBRATE)
+                        .setPriority(Notification.PRIORITY_DEFAULT);
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(NOTIFICATION_ID, mBuilder.build());
     }
-
 
 
 }

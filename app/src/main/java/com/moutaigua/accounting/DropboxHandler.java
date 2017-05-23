@@ -41,7 +41,7 @@ public class DropboxHandler {
         AppKeyPair appKeys = new AppKeyPair(APP_KEY, APP_SECRET);
         AndroidAuthSession session = new AndroidAuthSession(appKeys);
         mDBApi = new DropboxAPI<AndroidAuthSession>(session);
-        SharedPreferences pref = ctxt.getSharedPreferences(MainActivity.SHAREPREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences pref = ctxt.getSharedPreferences(MainActivity1.SHAREPREF_NAME, Context.MODE_PRIVATE);
         String accessToken = pref.getString(SHAREPREF_DROPBOX_ACCESSTOKEN, null);
         if( accessToken!=null ){
             mDBApi.getSession().setOAuth2AccessToken(accessToken);
@@ -64,7 +64,7 @@ public class DropboxHandler {
     }
 
     private void dropboxLogIn(){
-        SharedPreferences pref = ctxt.getSharedPreferences(MainActivity.SHAREPREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences pref = ctxt.getSharedPreferences(MainActivity1.SHAREPREF_NAME, Context.MODE_PRIVATE);
         String accessToken = pref.getString(SHAREPREF_DROPBOX_ACCESSTOKEN, null);
         if( accessToken==null ) {
             mDBApi.getSession().startOAuth2Authentication(ctxt);
@@ -87,7 +87,7 @@ public class DropboxHandler {
                 // Required to complete auth, sets the access token on the session
                 mDBApi.getSession().finishAuthentication();
                 String accessToken = mDBApi.getSession().getOAuth2AccessToken();
-                SharedPreferences pref = ctxt.getSharedPreferences(MainActivity.SHAREPREF_NAME, Context.MODE_PRIVATE);
+                SharedPreferences pref = ctxt.getSharedPreferences(MainActivity1.SHAREPREF_NAME, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putString(SHAREPREF_DROPBOX_ACCESSTOKEN, accessToken);
                 editor.commit();

@@ -36,6 +36,8 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.+'
+    compile 'com.android.support:design:25.+'
+    compile 'com.jpardogo.materialtabstrip:library:1.1.1'
     compile files('libs/dropbox-android-sdk-1.6.3.jar')
     compile files('libs/json_simple-1.1.jar')
     compile files('libs/poi-3.12-android-a.jar')
@@ -52,6 +54,8 @@ dependencies {
     compile('com.google.apis:google-api-services-gmail:v1-rev59-1.22.0') {
         exclude group: 'org.apache.httpcomponents'
     }
+    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.jaredrummler:material-spinner:1.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

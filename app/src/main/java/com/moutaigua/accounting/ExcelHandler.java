@@ -136,9 +136,9 @@ public class ExcelHandler {
             String location = sheet.getRow(rowIndex).getCell(1).toString();
             if( location.equalsIgnoreCase("Chicago") ){
                 FirebaseHandler.ServiceProvider provider = new FirebaseHandler.ServiceProvider();
-                provider.name = sheet.getRow(rowIndex).getCell(2).toString();
-                provider.location = "Chicago";
-                firebaseHandler.addServiceProvider(provider);
+//                provider.name = sheet.getRow(rowIndex).getCell(2).toString();
+//                provider.location = "Chicago";
+//                firebaseHandler.addServiceProvider(provider);
             }
             ++rowIndex;
         }

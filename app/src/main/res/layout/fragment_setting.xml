@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="35dp"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            style="@style/Setting_EachLine_EditText"
+            android:id="@+id/fragment_setting_editxt_category"
+            android:hint="Category name"/>
+        <Button
+            style="@style/Setting_EachLine_Button"
+            android:id="@+id/fragment_setting_btn_add_category"
+            android:text="Add Category" />
+        </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            style="@style/Setting_EachLine_EditText"
+            android:id="@+id/fragment_setting_editxt_provider_file"
+            android:hint="Choose a file"/>
+        <Button
+            style="@style/Setting_EachLine_Button"
+            android:id="@+id/fragment_setting_btn_upload_provider"
+            android:text="Upload Providers" />
+        </RelativeLayout>
+
+
+
+
+</LinearLayout>

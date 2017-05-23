@@ -31,7 +31,6 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
 import org.apache.commons.lang3.text.WordUtils;
-import org.apache.xmlbeans.impl.soap.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -41,7 +40,7 @@ import java.util.Set;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
-public class MainActivity extends Activity{
+public class MainActivity1 extends Activity{
 
     final static public String WORKBOOK_DICTIONARY_DROPBOX = "/喵喵喵/美国分账本.xlsx";
     final static public String WORKBOOK_DICTIONARY_LOCAL = "/temp.xlsx";
@@ -65,7 +64,7 @@ public class MainActivity extends Activity{
     private Toast toast;
     private DropboxHandler dropboxHandler;
     private FirebaseHandler firebaseHandler;
-    private GmailHandler gmailHandler;
+//    private GmailHandler gmailHandler;
     private Calendar calendar;
     private Button submit_btn;
     private EditText dateText;
@@ -87,7 +86,7 @@ public class MainActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main1);
 
         initNotificationListenerService();
         localPermissionRequest();
@@ -95,7 +94,7 @@ public class MainActivity extends Activity{
 
         isFromNotification = false;
         firebaseHandler = new FirebaseHandler();
-        firebaseHandler.syncServiceProviders();
+//        firebaseHandler.syncServiceProviders();
 
         dropboxHandler = new DropboxHandler(this);
         Button dropbox_logio_btn = (Button) findViewById(R.id.btn_dropbox);
@@ -107,10 +106,10 @@ public class MainActivity extends Activity{
                 dropboxHandler.loginButtonClick();
             }
         });
-
-        gmailHandler = new GmailHandler(this);
-        gmailHandler.initGmailAccount();
-        gmailHandler.startListeningToReports();
+//
+//        gmailHandler = new GmailHandler(this);
+//        gmailHandler.initGmailAccount();
+//        gmailHandler.startListeningToReports();
 
         submit_btn = (Button) findViewById(R.id.btn_submit);
         submit_btn.setOnClickListener(new View.OnClickListener() {
@@ -147,44 +146,44 @@ public class MainActivity extends Activity{
                 }
                 // Firebase Update
                 FirebaseHandler.ServiceProvider provider = new FirebaseHandler.ServiceProvider();
-                provider.location = whereText.getText().toString();
-                provider.name = providerText.getText().toString();
-                FirebaseHandler firebaseHandler = new FirebaseHandler();
-                firebaseHandler.addServiceProvider(provider);
-                // WaCai Update
-                WaCaiHandler waCaiHandler = new WaCaiHandler(MainActivity.this);
-                WaCaiHandler.Item newItem = new WaCaiHandler.Item();
-                newItem.serviceProvider = providerText.getText().toString();
-                newItem.datetime = waCaiHandler.getFormattedDate(dateText.getText().toString())
-                        + " "
-                        + waCaiHandler.getFormattedTime(timeText.getText().toString());
-                newItem.note = noteText.getText().toString();
-                wacaiStatusText.setText(getString(R.string.status_updating));
-                WaCaiHandler.AsyncCallBack asyncCallBack = new WaCaiHandler.AsyncCallBack() {
-                    @Override
-                    public void callback() {
-                        Log.i("Wacai", "Wacai is updated!");
-                        wacaiStatusText.setText(getString(R.string.status_complete));
-                        if( isFromNotification ) {
-                            toast = Toast.makeText(
-                                        MainActivity.this,
-                                        "The app will be closed after " + String.valueOf(DELAY_TIME_IN_SECOND) + " seconds",
-                                        Toast.LENGTH_SHORT
-                            );
-                            toast.show();
-                            delayedFinish();
-                        } else {
-                            delayedClear();
-                        }
-                    }
-                };
-                if( buyerSpinner.getSelectedItem().toString().equalsIgnoreCase("M")) {
-                    newItem.money = Float.valueOf(moneyText.getText().toString());
-                    waCaiHandler.addItem(newItem, asyncCallBack);
-                } else if (buyerSpinner.getSelectedItem().toString().equalsIgnoreCase("WM")) {
-                    newItem.money = Float.valueOf(moneyText.getText().toString()) / 2;
-                    waCaiHandler.addItem(newItem, asyncCallBack);
-                }
+//                provider.location = whereText.getText().toString();
+//                provider.name = providerText.getText().toString();
+//                FirebaseHandler firebaseHandler = new FirebaseHandler();
+//                firebaseHandler.addServiceProvider(provider);
+//              //  WaCai Update
+//                WaCaiHandler waCaiHandler = new WaCaiHandler(MainActivity1.this);
+//                WaCaiHandler.Item newItem = new WaCaiHandler.Item();
+//                newItem.serviceProvider = providerText.getText().toString();
+//                newItem.datetime = waCaiHandler.getFormattedDate(dateText.getText().toString())
+//                        + " "
+//                        + waCaiHandler.getFormattedTime(timeText.getText().toString());
+//                newItem.note = noteText.getText().toString();
+//                wacaiStatusText.setText(getString(R.string.status_updating));
+//                WaCaiHandler.AsyncCallBack asyncCallBack = new WaCaiHandler.AsyncCallBack() {
+//                    @Override
+//                    public void callback() {
+//                        Log.i("Wacai", "Wacai is updated!");
+//                        wacaiStatusText.setText(getString(R.string.status_complete));
+//                        if( isFromNotification ) {
+//                            toast = Toast.makeText(
+//                                        MainActivity1.this,
+//                                        "The app will be closed after " + String.valueOf(DELAY_TIME_IN_SECOND) + " seconds",
+//                                        Toast.LENGTH_SHORT
+//                            );
+//                            toast.show();
+//                            delayedFinish();
+//                        } else {
+//                            delayedClear();
+//                        }
+//                    }
+//                };
+//                if( buyerSpinner.getSelectedItem().toString().equalsIgnoreCase("M")) {
+//                    newItem.money = Float.valueOf(moneyText.getText().toString());
+//                    waCaiHandler.addItem(newItem, asyncCallBack);
+//                } else if (buyerSpinner.getSelectedItem().toString().equalsIgnoreCase("WM")) {
+//                    newItem.money = Float.valueOf(moneyText.getText().toString()) / 2;
+//                    waCaiHandler.addItem(newItem, asyncCallBack);
+//                }
             }
         });
 
@@ -202,13 +201,13 @@ public class MainActivity extends Activity{
         whereText = (EditText) findViewById(R.id.editxt_location);
         whereText.setText("Chicago");
 
-        providerText = (AutoCompleteTextView) findViewById(R.id.textview_provider);
-        ArrayAdapter<String> providerAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,
-                firebaseHandler.getProviderNameArrayList());
-        providerText.setThreshold(1);
-        providerText.setAdapter(providerAdapter);
-        providerAdapter.notifyDataSetChanged();
+//        providerText = (AutoCompleteTextView) findViewById(R.id.textview_provider);
+//        ArrayAdapter<String> providerAdapter = new ArrayAdapter<>(this,
+//                android.R.layout.simple_list_item_1,
+//                firebaseHandler.getProviderNameList());
+//        providerText.setThreshold(1);
+//        providerText.setAdapter(providerAdapter);
+//        providerAdapter.notifyDataSetChanged();
 
         buyerSpinner = (Spinner) findViewById(R.id.spinner_buyer);
         buyer = "WM";
@@ -314,21 +313,21 @@ public class MainActivity extends Activity{
                             "This app requires Google Play Services. Please install Google Play Services on your device and relaunch this app.",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    gmailHandler.startListeningToReports();
+//                    gmailHandler.startListeningToReports();
                 }
                 break;
             case REQUEST_ACCOUNT_PICKER:
                 if (resultCode == RESULT_OK && data != null && data.getExtras() != null) {
                     String accountName = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
                     if (accountName != null) {
-                        gmailHandler.saveSelectedAccount(accountName);
-                        gmailHandler.startListeningToReports();
+//                        gmailHandler.saveSelectedAccount(accountName);
+//                        gmailHandler.startListeningToReports();
                     }
                 }
                 break;
             case REQUEST_AUTHORIZATION:
                 if (resultCode == RESULT_OK) {
-                    gmailHandler.startListeningToReports();
+//                    gmailHandler.startListeningToReports();
                 }
                 break;
         }
@@ -353,15 +352,15 @@ public class MainActivity extends Activity{
 
 
     private void localPermissionRequest(){
-        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) +
-                ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) +
-                ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE) +
-                ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.GET_ACCOUNTS)
+        if (ContextCompat.checkSelfPermission(MainActivity1.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) +
+                ContextCompat.checkSelfPermission(MainActivity1.this, Manifest.permission.READ_EXTERNAL_STORAGE) +
+                ContextCompat.checkSelfPermission(MainActivity1.this, Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE) +
+                ContextCompat.checkSelfPermission(MainActivity1.this, Manifest.permission.GET_ACCOUNTS)
                 != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) ||
-                    ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) ||
-                    ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE) ||
-                    ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.GET_ACCOUNTS)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity1.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) ||
+                    ActivityCompat.shouldShowRequestPermissionRationale(MainActivity1.this, Manifest.permission.READ_EXTERNAL_STORAGE) ||
+                    ActivityCompat.shouldShowRequestPermissionRationale(MainActivity1.this, Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE) ||
+                    ActivityCompat.shouldShowRequestPermissionRationale(MainActivity1.this, Manifest.permission.GET_ACCOUNTS)) {
             } else {
                 String[] PERMISSION_LIST = new String[] {
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -370,7 +369,7 @@ public class MainActivity extends Activity{
                         Manifest.permission.GET_ACCOUNTS
                 };
 
-                ActivityCompat.requestPermissions(MainActivity.this,
+                ActivityCompat.requestPermissions(MainActivity1.this,
                         PERMISSION_LIST,
                         REQUEST_PERMISSIONS_EXTERNAL_STORAGE);
             }

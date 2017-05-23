@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.moutaigua.accounting.MainActivity1">
+
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Form_EachLine_Title" android:text="Date:" />
+        <EditText style="@style/Form_EachLine_EditText"
+            android:id="@+id/editxt_date"
+            android:hint="Date"
+            android:inputType="date"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Form_EachLine_Title" android:text="Time:" />
+        <EditText style="@style/Form_EachLine_EditText"
+            android:id="@+id/editxt_time"
+            android:hint="Time"
+            android:inputType="time"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Form_EachLine_Title" android:text="City:" />
+        <EditText style="@style/Form_EachLine_EditText"
+            android:id="@+id/editxt_location"
+            android:hint="City"
+            android:inputType="textPersonName"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Form_EachLine_Title" android:text="Provider:" />
+        <AutoCompleteTextView style="@style/Form_EachLine_EditText"
+            android:id="@+id/textview_provider"
+            android:hint="Service Provider"
+            android:inputType="textAutoComplete|textAutoCorrect"
+            android:imeOptions="actionSearch"
+            android:completionThreshold="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Form_EachLine_Title" android:text="Buyer:" />
+        <Spinner style="@style/Form_EachLine_EditText"
+            android:id="@+id/spinner_buyer"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Form_EachLine_Title" android:text="Payer:" />
+        <FrameLayout style="@style/Form_EachLine_EditText">
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toggle_whopay"
+                android:text="Mou pay?"
+                android:textSize="@dimen/app_text_size_default"
+                android:textOff="Mou pay?"
+                android:textOn="Mou pay?"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Form_EachLine_Title" android:text="Amount:" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="@dimen/app_text_size_default"
+            android:textColor="@android:color/black"
+            />
+        <EditText style="@style/Form_EachLine_EditText"
+            android:id="@+id/editxt_money"
+            android:inputType="numberDecimal"
+            />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Form_EachLine_Title" android:text="Note:" />
+        <EditText style="@style/Form_EachLine_EditText"
+            android:id="@+id/editxt_note"
+            android:hint="Note"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            />
+    </LinearLayout>
+
+
+    <!--seperate-->
+    <View style="@style/Seperator_Line" />
+    <!--seperate-->
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Status_Title" android:text="Dropbox Linked:" />
+        <FrameLayout style="@style/Form_EachLine_EditText">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_dropbox"
+                android:layout_gravity="end"
+                android:text="@string/dropbox_login"
+                android:textSize="@dimen/app_text_size_small"
+                />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Status_Title" android:text="Dropbox Update Status:" />
+        <TextView style="@style/Status_Content" android:id="@+id/txt_status_dropbox" android:text="@string/status_initial" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Form_EachLine" >
+        <TextView style="@style/Status_Title" android:text="WaCai Update Status:" />
+        <TextView style="@style/Status_Content" android:id="@+id/txt_status_wacai" android:text="@string/status_initial" />
+
+    </LinearLayout>
+
+
+    <!--seperate-->
+    <View style="@style/Seperator_Line" />
+    <!--seperate-->
+
+    <LinearLayout style="@style/Form_EachLine" android:layout_marginTop="5dp" >
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:id="@+id/btn_submit"
+            android:text="Submit"
+            android:textSize="@dimen/app_text_size_default" />
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:id="@+id/btn_exit"
+            android:text="Exit"
+            android:textSize="@dimen/app_text_size_default" />
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05"/>
+    </LinearLayout>
+
+
+</LinearLayout>
