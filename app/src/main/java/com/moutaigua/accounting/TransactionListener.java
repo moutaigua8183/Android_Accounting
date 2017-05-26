@@ -101,10 +101,8 @@ public class TransactionListener extends NotificationListenerService {
     }
 
     private void sendNotification(String[] info) {
-        Intent recordIntent = new Intent(this, MainActivity1.class);
+        Intent recordIntent = new Intent(this, ActivityMain.class);
         recordIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        recordIntent.putExtra(MainActivity1.INTENT_MERCHANT_TAG, info[0]);
-        recordIntent.putExtra(MainActivity1.INTENT_MONEY_TAG, info[1]);
         PendingIntent recordPendingIntent = PendingIntent.getActivity(this, 0, recordIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // building notification

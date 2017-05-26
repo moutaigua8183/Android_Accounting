@@ -209,7 +209,7 @@ public class FragmentSetting extends Fragment {
         for(String each : providerSet){
             FirebaseHandler.ServiceProvider provider = new FirebaseHandler.ServiceProvider();
             provider.setName(each);
-            handler.addServiceProvider(provider, null);
+            handler.addServiceProvider(provider, false, null);
         }
     }
 

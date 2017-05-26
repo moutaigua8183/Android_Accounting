@@ -87,6 +87,8 @@ public class GmailReportService extends IntentService {
     private FirebaseHandler firebaseHandler;
     private LocationManager mLocationManager;
     private String cityName;
+    private double gps_longtitude;
+    private double gps_latitude;
 
 
     public GmailReportService() {
@@ -153,6 +155,8 @@ public class GmailReportService extends IntentService {
         Location location = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (location != null && location.getTime() > Calendar.getInstance().getTimeInMillis() - 1 * 60 * 60 * 1000) { // every hour
             cityName = getCityName(location);
+            gps_longtitude = location.getLongitude();
+            gps_latitude = location.getLatitude();
         } else {
             mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,
                     new LocationListener() {
@@ -160,6 +164,8 @@ public class GmailReportService extends IntentService {
                         public void onLocationChanged(Location location) {
                             if (location != null) {
                                 cityName = getCityName(location);
+                                gps_longtitude = location.getLongitude();
+                                gps_latitude = location.getLatitude();
                                 mLocationManager.removeUpdates(this);
                             }
                         }
@@ -205,7 +211,7 @@ public class GmailReportService extends IntentService {
     private void analyseDiscoverReports(ArrayList<Message> unreadEmails) {
         ArrayList<Transaction> transList = getDiscoverTransactions(unreadEmails);
         for (Transaction eachTrans : transList) {
-            Log.i(LOG_TAG, eachTrans.getProvider() + " charges you $" + eachTrans.getMoney());
+            Log.i(LOG_TAG, eachTrans.getProviderName() + " charges you $" + eachTrans.getMoney());
             firebaseHandler.addTransaction(eachTrans);
             markGmailEmailRead(eachTrans.getReportId());
         }
@@ -239,10 +245,12 @@ public class GmailReportService extends IntentService {
                 Transaction transaction = new Transaction();
                 transaction.setTextTime(textDate);
                 transaction.setLongTime(date.getTime());
-                transaction.setProvider(provider);
+                transaction.setProviderName(provider);
                 transaction.setMoney(money);
                 transaction.setReportId(id);
                 transaction.setCity(cityName);
+                transaction.setGpsLongitude(gps_longtitude);
+                transaction.setGpsLatitude(gps_latitude);
                 transaction.setReportSource(REPORT_SOURCE);
                 transList.add(transaction);
             }
@@ -309,6 +317,7 @@ public class GmailReportService extends IntentService {
 
     private void sendNotification() {
         Intent recordIntent = new Intent(this, ActivityMain.class);
+        recordIntent.putExtra(ActivityMain.INTENT_KEY_OPEN_METHOD, ActivityMain.INTENT_VALUE_OPEN_METHOD_NOTIFI);
         recordIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent recordPendingIntent = PendingIntent.getActivity(GmailReportService.this, 0, recordIntent, PendingIntent.FLAG_ONE_SHOT);
         // building notification

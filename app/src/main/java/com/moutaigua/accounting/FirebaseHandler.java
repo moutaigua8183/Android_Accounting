@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.Pair;
-import android.widget.ArrayAdapter;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +37,8 @@ public class FirebaseHandler {
     public static final String TRANSACTION_CHILD_MONEY = "money";
     public static final String TRANSACTION_CHILD_PROVIDER = "provider";
     public static final String TRANSACTION_CHILD_CITY = "city";
+    public static final String TRANSACTION_CHILD_GPS_LONGITUDE = "gps_longitude";
+    public static final String TRANSACTION_CHILD_GPS_LATITUDE = "gps_latitude";
     public static final String TRANSACTION_CHILD_NOTE = "note";
     public static final String TRANSACTION_CHILD_TYPE = "type";
     public static final String TRANSACTION_CHILD_SEPERATE = "seperate";
@@ -52,8 +53,6 @@ public class FirebaseHandler {
     private ArrayList<ServiceProvider> providerList;
     private ArrayList<Transaction.TransactionCategory> categoryList; // complete list
     private ArrayList<String> categoryNameList;                      // used for spinner
-    private ChildEventListener locationListener;
-    private ArrayList<String> locationNameList;
     private ChildEventListener transactionListener;
 
     public FirebaseHandler() {
@@ -61,7 +60,6 @@ public class FirebaseHandler {
         providerList = new ArrayList<>();
         categoryList = new ArrayList<>();
         categoryNameList = new ArrayList<>();
-        locationNameList = new ArrayList<>();
     }
 
 
@@ -87,6 +85,28 @@ public class FirebaseHandler {
 
 
     /**** Service Provider ****/
+
+    public static class ServiceProvider {
+        private String name;
+        private ArrayList<Pair<Double, Double>> locationList;
+
+        public ServiceProvider() {
+            name = null;
+            locationList = new ArrayList<>();
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public ArrayList<Pair<Double, Double>> getLocationList() {
+            return locationList;
+        }
+    }
 
     public void syncServiceProviders(){
         serviceProviderListener = new ChildEventListener() {
@@ -132,30 +152,50 @@ public class FirebaseHandler {
         databaseRef.removeEventListener(serviceProviderListener);
     }
 
-    public void addServiceProvider(final ServiceProvider provider, @Nullable final ResultCallback callback ) {
+    public void addServiceProvider(final ServiceProvider provider, final boolean isAddLastLocation, @Nullable final ResultCallback callback ) {
         Query query = databaseRef.child(SERVICE_PROVIDER_TABLE).child(provider.getName());
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if( dataSnapshot.getValue()==null ) {
-                    HashMap<String, Object> newGPS = new HashMap<>();
-                    String prefix = "/"+SERVICE_PROVIDER_TABLE+"/"+provider.getName()+"/"+SERVICE_PROVIDER_CHILD_LOCATION+"/";
-                    String gpsPair = "0;0";
-                    newGPS.put(prefix + "0", gpsPair);
+                HashMap<String, Object> newGPS = new HashMap<>();
+                String prefix = "/"+SERVICE_PROVIDER_TABLE+"/"+provider.getName()+"/"+SERVICE_PROVIDER_CHILD_LOCATION+"/";
+                String gpsPair;
+                if( dataSnapshot.getValue()==null ) { // new provider
+                    if( !isAddLastLocation ) {
+                        gpsPair = "0;0";
+                        newGPS.put(prefix + "0", gpsPair);
+                        Log.i(LOG_TAG, "A new service provider has been added without its gps location.");
+                    } else {
+                        int lastLocIndex = provider.getLocationList().size() - 1;
+                        gpsPair = String.valueOf(provider.getLocationList().get(lastLocIndex).first)
+                                    + ";"
+                                    + String.valueOf(provider.getLocationList().get(lastLocIndex).second);
+                        newGPS.put(prefix + lastLocIndex, gpsPair);
+                        Log.i(LOG_TAG, "A new service provider has been added with its gps location.");
+                    }
                     databaseRef.updateChildren(newGPS);
-                    Log.i(LOG_TAG, "A new service provider has been added.");
                     if( callback!=null ){
                         callback.onSuccess();
                     }
-                } else {
+                } else { // service provider exists
                     // add a new GPS location to an existing provider
-                    // if ( a new location for this provide ) {
-                    //   add();
-                    // }
-                    if( callback!=null ){
-                        callback.onFail();
+                    if(!isAddLastLocation){
+                        Log.i(LOG_TAG, "No need to update the service provider");
+                        if(callback!=null) {
+                            callback.onFail();
+                        }
+                    } else {
+                        Log.i(LOG_TAG, "A new location is added to the service provider");
+                        int lastLocIndex = provider.getLocationList().size() - 1;
+                        gpsPair = String.valueOf(provider.getLocationList().get(lastLocIndex).first)
+                                + ";"
+                                + String.valueOf(provider.getLocationList().get(lastLocIndex).second);
+                        newGPS.put(prefix + lastLocIndex, gpsPair);
+                        databaseRef.updateChildren(newGPS);
+                        if( callback!=null){
+                            callback.onSuccess();
+                        }
                     }
-                    Log.i(LOG_TAG, "The service provider has been updated");
                 }
             }
 
@@ -169,33 +209,6 @@ public class FirebaseHandler {
     public ArrayList<ServiceProvider> getProviderList(){
         return providerList;
     }
-
-    public static class ServiceProvider {
-        private String name;
-        private ArrayList<Pair<Double, Double>> locationList;
-
-        public ServiceProvider() {
-            name = null;
-            locationList = new ArrayList<>();
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public ArrayList<Pair<Double, Double>> getLocationList() {
-            return locationList;
-        }
-
-        public void setLocationList(ArrayList<Pair<Double, Double>> locationList) {
-            this.locationList = locationList;
-        }
-    }
-
 
 
 
@@ -265,66 +278,7 @@ public class FirebaseHandler {
 
     }
 
-    /**** Location ****/
 
-    public void syncLocations(){
-        locationListener = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String location = dataSnapshot.getKey().toString();
-                locationNameList.add(location);
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-        databaseRef.child(SERVICE_LOCATION_TABLE).addChildEventListener(locationListener);
-    }
-
-    public void stopSyncLocations(){
-        databaseRef.removeEventListener(locationListener);
-    }
-
-    public void addLocation(final String location) {
-        Query query = databaseRef.child(SERVICE_LOCATION_TABLE).child(location);
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if( dataSnapshot.getValue()==null ) {
-                    HashMap<String, Object> newLocation = new HashMap<>();
-//                    String prefix = "/"+SERVICE_LOCATION_TABLE+"/"+location.name;
-//                    newLocation.put(prefix+SERVICE_PROVIDER_CHILD_LOCATION, provider.location);
-//                    newLocation.put(prefix+SERVICE_PROVIDER_FREQUENCY, 1);
-//                    databaseRef.updateChildren(newLocation);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    public ArrayList<String> getLocationNameList() {
-        return locationNameList;
-    }
 
 
     /**** Transaction ****/
@@ -336,8 +290,10 @@ public class FirebaseHandler {
         newProvider.put(prefix+TRANSACTION_CHILD_TIME_IN_MS, trans.getLongTime());
         newProvider.put(prefix+TRANSACTION_CHILD_TIME_IN_TEXT, trans.getTextTime());
         newProvider.put(prefix+TRANSACTION_CHILD_MONEY, trans.getMoney());
-        newProvider.put(prefix+TRANSACTION_CHILD_PROVIDER, trans.getProvider());
+        newProvider.put(prefix+TRANSACTION_CHILD_PROVIDER, trans.getProviderName());
         newProvider.put(prefix+TRANSACTION_CHILD_CITY, trans.getCity());
+        newProvider.put(prefix+TRANSACTION_CHILD_GPS_LONGITUDE, trans.getGpsLongitude());
+        newProvider.put(prefix+TRANSACTION_CHILD_GPS_LATITUDE, trans.getGpsLatitude());
 //        newProvider.put(prefix+TRANSACTION_CHILD_CATEGORY, trans.getCategory());
 //        newProvider.put(prefix+TRANSACTION_CHILD_NOTE, trans.getNote());
 //        newProvider.put(prefix+TRANSACTION_CHILD_TYPE, trans.getType());
@@ -359,10 +315,12 @@ public class FirebaseHandler {
                         Transaction trans = new Transaction();
                         trans.setTextTime(eachTranNode.child(TRANSACTION_CHILD_TIME_IN_TEXT).getValue().toString());
                         trans.setLongTime(Long.parseLong(eachTranNode.child(TRANSACTION_CHILD_TIME_IN_MS).getValue().toString()));
-                        trans.setProvider(eachTranNode.child(TRANSACTION_CHILD_PROVIDER).getValue().toString());
+                        trans.setProviderName(eachTranNode.child(TRANSACTION_CHILD_PROVIDER).getValue().toString());
                         trans.setMoney(eachTranNode.child(TRANSACTION_CHILD_MONEY).getValue().toString());
                         trans.setReportId(eachTranNode.getKey().toString());
                         trans.setCity(eachTranNode.child(TRANSACTION_CHILD_CITY).getValue().toString());
+                        trans.setGpsLongitude( Double.valueOf(eachTranNode.child(TRANSACTION_CHILD_GPS_LONGITUDE).getValue().toString()) );
+                        trans.setGpsLatitude( Double.valueOf(eachTranNode.child(TRANSACTION_CHILD_GPS_LATITUDE).getValue().toString()) );
                         trans.setReportSource(eachTranNode.child(TRANSACTION_CHILD_REPORT_SOURCE).getValue().toString());
                         transList.add(trans);
                     }
@@ -388,10 +346,12 @@ public class FirebaseHandler {
                 Transaction trans = new Transaction();
                 trans.setTextTime(dataSnapshot.child(TRANSACTION_CHILD_TIME_IN_TEXT).getValue().toString());
                 trans.setLongTime(Long.parseLong(dataSnapshot.child(TRANSACTION_CHILD_TIME_IN_MS).getValue().toString()));
-                trans.setProvider(dataSnapshot.child(TRANSACTION_CHILD_PROVIDER).getValue().toString());
+                trans.setProviderName(dataSnapshot.child(TRANSACTION_CHILD_PROVIDER).getValue().toString());
                 trans.setMoney(dataSnapshot.child(TRANSACTION_CHILD_MONEY).getValue().toString());
                 trans.setReportId(dataSnapshot.getKey().toString());
                 trans.setCity(dataSnapshot.child(TRANSACTION_CHILD_CITY).getValue().toString());
+                trans.setGpsLongitude( Double.valueOf(dataSnapshot.child(TRANSACTION_CHILD_GPS_LONGITUDE).getValue().toString()) );
+                trans.setGpsLatitude( Double.valueOf(dataSnapshot.child(TRANSACTION_CHILD_GPS_LATITUDE).getValue().toString()) );
                 trans.setReportSource(dataSnapshot.child(TRANSACTION_CHILD_REPORT_SOURCE).getValue().toString());
                 listener.onTransactionAdded(trans);
             }
@@ -406,10 +366,12 @@ public class FirebaseHandler {
                 Transaction trans = new Transaction();
                 trans.setTextTime(dataSnapshot.child(TRANSACTION_CHILD_TIME_IN_TEXT).getValue().toString());
                 trans.setLongTime(Long.parseLong(dataSnapshot.child(TRANSACTION_CHILD_TIME_IN_MS).getValue().toString()));
-                trans.setProvider(dataSnapshot.child(TRANSACTION_CHILD_PROVIDER).getValue().toString());
+                trans.setProviderName(dataSnapshot.child(TRANSACTION_CHILD_PROVIDER).getValue().toString());
                 trans.setMoney(dataSnapshot.child(TRANSACTION_CHILD_MONEY).getValue().toString());
                 trans.setReportId(dataSnapshot.getKey().toString());
                 trans.setCity(dataSnapshot.child(TRANSACTION_CHILD_CITY).getValue().toString());
+                trans.setGpsLongitude( Double.valueOf(dataSnapshot.child(TRANSACTION_CHILD_GPS_LONGITUDE).getValue().toString()) );
+                trans.setGpsLatitude( Double.valueOf(dataSnapshot.child(TRANSACTION_CHILD_GPS_LATITUDE).getValue().toString()) );
                 trans.setReportSource(dataSnapshot.child(TRANSACTION_CHILD_REPORT_SOURCE).getValue().toString());
                 listener.onTransactionRemoved(trans);
             }

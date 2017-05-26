@@ -41,12 +41,12 @@
 02-03 14:36:32.606   895   934 I chatty  : uid=1000(system) android.display expire 7 lines
 02-03 14:36:32.971   895   932 I chatty  : uid=1000(system) android.fg expire 6 lines
 02-03 14:36:33.146   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 9 lines
-02-03 14:36:46.090  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 14:36:46.450  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 14:36:46.090  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 14:36:46.450  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 14:36:48.493   895   895 I chatty  : uid=1000 system_server expire 17 lines
 02-03 14:45:58.002   895   930 I chatty  : uid=1000(system) batterystats-sy expire 5 lines
-02-03 14:52:46.699  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 14:52:47.082  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 14:52:46.699  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 14:52:47.082  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 14:54:45.666   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 1 line
 02-03 14:57:32.570   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 3 lines
 02-03 14:57:32.582 11015 11015 W ViewRootImpl[LauncherUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=6950439, downTime=6950428, deviceId=-1, source=0x101 }
@@ -83,7 +83,7 @@
 02-03 15:00:43.435   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 8 lines
 02-03 15:00:43.482   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 11 lines
 02-03 15:00:43.602   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 7 lines
-02-03 15:00:43.768  2080  2080 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-03 15:00:43.768  2080  2080 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-03 15:00:44.090   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 8 lines
 02-03 15:00:44.155   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 10 lines
 02-03 15:00:47.330   895   929 I chatty  : uid=1000(system) ActivityManager expire 3 lines
@@ -103,8 +103,8 @@
 02-03 15:02:43.713   895   926 I chatty  : uid=1000(system) android.bg expire 4 lines
 02-03 15:05:38.756   895  3184 I chatty  : uid=1000(system) InputReader expire 2 lines
 02-03 15:05:43.290   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 1 line
-02-03 15:05:43.813  3221  3287 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-03 15:05:43.815  3221  3288 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-03 15:05:43.813  3221  3287 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-03 15:05:43.815  3221  3288 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-03 15:05:45.332   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 15:08:21.372   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 1 line
 02-03 15:19:26.372   895  4516 I chatty  : uid=1000(system) backup expire 132 lines
@@ -130,7 +130,7 @@
 02-03 15:19:33.584   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 6 lines
 02-03 15:19:34.725   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 8 lines
 02-03 15:19:35.034   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 5 lines
-02-03 15:19:35.217  4736  4788 D ActivityThread: Loading provider com.google.android.gmail.provider;com.android.mail.notifier;com.google.android.gm.email.provider;com.google.android.gm.email.notifier: com.android.email.provider.EmailProvider
+02-03 15:19:35.217  4736  4788 D ActivityThread: Loading providerName com.google.android.gmail.providerName;com.android.mail.notifier;com.google.android.gm.email.providerName;com.google.android.gm.email.notifier: com.android.email.providerName.EmailProvider
 02-03 15:19:38.746   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 15:19:38.905   895  4516 I chatty  : uid=1000(system) backup expire 20 lines
 02-03 15:19:47.948   895   927 I chatty  : uid=1000(system) ActivityManager expire 2 lines
@@ -158,7 +158,7 @@
 02-03 15:32:00.623   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 8 lines
 02-03 15:32:29.913   895   895 I chatty  : uid=1000 system_server expire 12 lines
 02-03 15:35:27.635   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 2 lines
-02-03 15:35:35.356  6757  6757 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-03 15:35:35.356  6757  6757 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-03 15:35:35.753   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 8 lines
 02-03 15:36:39.835   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 14 lines
 02-03 15:36:39.868   895   895 I chatty  : uid=1000 system_server expire 11 lines
@@ -167,7 +167,7 @@
 02-03 15:42:08.975   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 15:42:08.977   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 1 line
 02-03 15:48:30.421   895   895 I chatty  : uid=1000 system_server expire 10 lines
-02-03 15:48:31.005  7631  7631 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-03 15:48:31.005  7631  7631 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-03 15:48:31.574   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 2 lines
 02-03 15:48:31.584   895   927 I chatty  : uid=1000(system) ActivityManager expire 8 lines
 02-03 15:48:58.146   895   939 I chatty  : uid=1000(system) PackageManager expire 5 lines
@@ -199,20 +199,20 @@
 02-03 16:02:22.651   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 7 lines
 02-03 16:03:37.663   895   935 I chatty  : uid=1000(system) CpuTracker expire 4 lines
 02-03 16:07:21.591   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 10 lines
-02-03 16:15:54.401  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 16:15:54.401  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 16:16:22.385   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 3 lines
 02-03 16:18:30.867   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 1 line
 02-03 16:19:13.779   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 2 lines
 02-03 16:20:02.633   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 16:20:02.634   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 2 lines
-02-03 16:20:54.396  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 16:20:54.396  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 16:21:24.768   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 16:21:24.832   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 1 line
 02-03 16:22:00.003   895   895 I chatty  : uid=1000 system_server expire 3 lines
 02-03 16:25:22.863   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 6 lines
-02-03 16:25:54.395  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 16:25:54.395  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 16:29:53.777   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 7 lines
-02-03 16:30:54.385  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 16:30:54.385  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 16:33:54.201   895   895 I chatty  : uid=1000 system_server expire 17 lines
 02-03 16:34:24.421   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 7 lines
 02-03 16:34:24.423   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 3 lines
@@ -250,8 +250,8 @@
 02-03 16:40:01.398   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 5 lines
 02-03 16:40:03.243   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 8 lines
 02-03 16:41:46.602 18429 18469 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
-02-03 16:48:41.374  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 16:48:41.937  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 16:48:41.374  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 16:48:41.937  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 16:49:27.675   895   933 I chatty  : uid=1000(system) android.io expire 58 lines
 02-03 16:49:30.838 19152 19152 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.settings.bluetooth.DockEventReceiver.beginStartingService:134 com.android.settings.bluetooth.DockEventReceiver.onReceive:115 
 02-03 16:49:35.105   895   895 I chatty  : uid=1000 system_server expire 11 lines
@@ -275,7 +275,7 @@
 02-03 16:57:05.975   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 11 lines
 02-03 16:57:06.785   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 2 lines
 02-03 16:57:08.393   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 6 lines
-02-03 16:57:12.246  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 16:57:12.246  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 16:57:19.451   895   926 I chatty  : uid=1000(system) android.bg expire 1 line
 02-03 16:58:22.410   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 25 lines
 02-03 16:58:22.776   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 8 lines
@@ -283,7 +283,7 @@
 02-03 16:59:46.005   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 16:59:46.010   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 1 line
 02-03 16:59:46.825   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 7 lines
-02-03 17:00:52.115  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:00:52.115  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:01:33.911   895   933 I chatty  : uid=1000(system) android.io expire 6 lines
 02-03 17:01:40.146   895   927 I chatty  : uid=1000(system) ActivityManager expire 9 lines
 02-03 17:01:42.742   895   929 I chatty  : uid=1000(system) ActivityManager expire 1 line
@@ -294,7 +294,7 @@
 02-03 17:04:06.522 21816 21876 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-03 17:04:12.073   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 2 lines
 02-03 17:04:12.854   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 2 lines
-02-03 17:04:13.092  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:04:13.092  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:04:14.300   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 9 lines
 02-03 17:04:18.003   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 16 lines
 02-03 17:04:18.157   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 21 lines
@@ -309,23 +309,23 @@
 02-03 17:04:23.051   895   927 I chatty  : uid=1000(system) ActivityManager expire 7 lines
 02-03 17:04:23.101   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 15 lines
 02-03 17:04:23.114   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 17 lines
-02-03 17:04:24.481 22334 22334 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-03 17:04:24.481 22334 22334 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-03 17:04:27.217 19152 19152 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.settings.bluetooth.DockEventReceiver.beginStartingService:134 com.android.settings.bluetooth.DockEventReceiver.onReceive:115 
 02-03 17:04:27.269   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 12 lines
-02-03 17:04:35.358 22334 22334 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 17:04:35.406 22334 22334 E ActivityThread: Failed to find provider info for com.android.badge
+02-03 17:04:35.358 22334 22334 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 17:04:35.406 22334 22334 E ActivityThread: Failed to find providerName info for com.android.badge
 02-03 17:04:36.715 22197 22241 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-03 17:04:46.242   895   895 I chatty  : uid=1000 system_server expire 4 lines
 02-03 17:04:46.254   895  3612 I chatty  : uid=1000(system) uteStateMachine expire 5 lines
 02-03 17:04:46.305   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 8 lines
 02-03 17:05:16.885   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 7 lines
-02-03 17:05:24.326 21534 21575 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-03 17:05:24.326 21534 21575 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-03 17:05:25.046   895   928 I chatty  : uid=1000(system) android.ui expire 7 lines
 02-03 17:05:25.273   895   934 I chatty  : uid=1000(system) android.display expire 6 lines
 02-03 17:05:34.454   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 10 lines
 02-03 17:08:47.614   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 7 lines
 02-03 17:09:07.255   895   927 I chatty  : uid=1000(system) ActivityManager expire 9 lines
-02-03 17:09:12.522  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:09:12.522  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:12:18.236   895   926 I chatty  : uid=1000(system) android.bg expire 7 lines
 02-03 17:12:35.861   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 9 lines
 02-03 17:13:04.414   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 10 lines
@@ -337,11 +337,11 @@
 02-03 17:13:12.583   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 17:13:12.589   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 4 lines
 02-03 17:13:12.866   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 8 lines
-02-03 17:14:12.448  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:14:12.448  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:15:05.797   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 8 lines
 02-03 17:17:35.959   895   928 I chatty  : uid=1000(system) android.ui expire 8 lines
 02-03 17:17:37.298   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 6 lines
-02-03 17:19:13.566  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:19:13.566  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:19:51.578   895   933 I chatty  : uid=1000(system) android.io expire 2 lines
 02-03 17:20:29.868   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 17:21:23.264   895 23723 I chatty  : uid=1000(system) Binder:895_F expire 8 lines
@@ -359,7 +359,7 @@
 02-03 17:24:22.427   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 6 lines
 02-03 17:24:22.831   895 25693 I chatty  : uid=1000(system) Binder:895_16 expire 3 lines
 02-03 17:24:24.632   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 3 lines
-02-03 17:24:25.772 26125 26125 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-03 17:24:25.772 26125 26125 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-03 17:24:28.107   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 3 lines
 02-03 17:24:28.243   895   929 I chatty  : uid=1000(system) ActivityManager expire 4 lines
 02-03 17:24:28.399   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 5 lines
@@ -367,22 +367,22 @@
 02-03 17:24:30.643   895 25692 I chatty  : uid=1000(system) Binder:895_15 expire 1 line
 02-03 17:24:32.301   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 2 lines
 02-03 17:24:32.877   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 1 line
-02-03 17:24:33.243 27663 26372 E ActivityThread: Failed to find provider info for downloads.com.ximalaya.ting.android
+02-03 17:24:33.243 27663 26372 E ActivityThread: Failed to find providerName info for downloads.com.ximalaya.ting.android
 02-03 17:24:34.587   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 17:24:41.406   895   934 I chatty  : uid=1000(system) android.display expire 10 lines
 02-03 17:24:41.724   895   932 I chatty  : uid=1000(system) android.fg expire 2 lines
 02-03 17:25:44.598   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 3 lines
 02-03 17:25:46.047   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 7 lines
-02-03 17:25:54.117  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:25:54.117  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:29:52.582   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 3 lines
 02-03 17:29:52.583   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 17:29:52.586   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 2 lines
 02-03 17:29:54.466   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 8 lines
-02-03 17:30:54.226  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:30:54.226  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:33:18.171   895 23723 I chatty  : uid=1000(system) Binder:895_F expire 7 lines
 02-03 17:33:18.173   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 5 lines
 02-03 17:33:42.151   895   926 I chatty  : uid=1000(system) android.bg expire 3 lines
-02-03 17:35:54.290  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:35:54.290  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:36:14.706   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 10 lines
 02-03 17:36:18.417   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 8 lines
 02-03 17:36:19.628   895   927 I chatty  : uid=1000(system) ActivityManager expire 11 lines
@@ -406,12 +406,12 @@
 02-03 17:37:18.144   895   934 I chatty  : uid=1000(system) android.display expire 18 lines
 02-03 17:37:19.316   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 4 lines
 02-03 17:37:20.322   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 3 lines
-02-03 17:37:31.617 28554 28554 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-03 17:37:31.617 28554 28554 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-03 17:37:39.026   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 1 line
 02-03 17:37:45.521 28367 28444 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-03 17:37:47.043   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 3 lines
 02-03 17:37:47.151   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 3 lines
-02-03 17:38:18.824 28843 28861 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-03 17:38:18.824 28843 28861 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-03 17:38:44.331 22334 22334 W ViewRootImpl[SnsTimeLineUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15797636, downTime=15797538, deviceId=-1, source=0x101 }
 02-03 17:38:44.331 22334 22334 W ViewRootImpl[SnsTimeLineUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15797636, downTime=15797538, deviceId=-1, source=0x101 }
 02-03 17:38:44.331 22334 22334 W ViewRootImpl[SnsTimeLineUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15797636, downTime=15797538, deviceId=-1, source=0x101 }
@@ -421,7 +421,7 @@
 02-03 17:38:44.333 22334 22334 W ViewRootImpl[SnsTimeLineUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15797636, downTime=15797538, deviceId=-1, source=0x101 }
 02-03 17:38:44.333 22334 22334 W ViewRootImpl[SnsTimeLineUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15797636, downTime=15797538, deviceId=-1, source=0x101 }
 02-03 17:38:44.333 22334 22334 W ViewRootImpl[SnsTimeLineUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15797636, downTime=15797538, deviceId=-1, source=0x101 }
-02-03 17:38:49.644 28104 28149 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-03 17:38:49.644 28104 28149 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-03 17:39:03.632  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15816771, downTime=15816672, deviceId=-1, source=0x101 }
 02-03 17:39:03.632  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15816771, downTime=15816672, deviceId=-1, source=0x101 }
 02-03 17:39:03.632  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15816771, downTime=15816672, deviceId=-1, source=0x101 }
@@ -432,22 +432,22 @@
 02-03 17:39:03.632  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15816771, downTime=15816672, deviceId=-1, source=0x101 }
 02-03 17:39:03.632  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=15816771, downTime=15816672, deviceId=-1, source=0x101 }
 02-03 17:39:08.777   895   927 I chatty  : uid=1000(system) ActivityManager expire 4 lines
-02-03 17:39:09.259 29197 29197 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
-02-03 17:39:10.886 29249 29249 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
-02-03 17:39:16.387 29249 29249 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 17:39:16.393 29249 29249 E ActivityThread: Failed to find provider info for com.android.badge
-02-03 17:40:54.419  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:39:09.259 29197 29197 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
+02-03 17:39:10.886 29249 29249 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
+02-03 17:39:16.387 29249 29249 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 17:39:16.393 29249 29249 E ActivityThread: Failed to find providerName info for com.android.badge
+02-03 17:40:54.419  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:44:29.960   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 1 line
 02-03 17:44:37.648   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 2 lines
-02-03 17:45:54.372  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:45:54.372  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:49:04.773   377   384 D VoldCryptCmdListener: cryptfs getpwtype
-02-03 17:50:54.030  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:50:54.030  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:51:02.284   895   928 I chatty  : uid=1000(system) android.ui expire 4 lines
 02-03 17:53:18.920   895  3184 I chatty  : uid=1000(system) InputReader expire 2 lines
 02-03 17:53:18.950   895   895 I chatty  : uid=1000 system_server expire 7 lines
 02-03 17:53:19.854   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 7 lines
 02-03 17:53:19.860   895   932 I chatty  : uid=1000(system) android.fg expire 2 lines
-02-03 17:55:14.447  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:55:14.447  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 17:56:15.883   895   934 I chatty  : uid=1000(system) android.display expire 4 lines
 02-03 17:57:56.416   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 1 line
 02-03 17:58:02.550   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 2 lines
@@ -458,8 +458,8 @@
 02-03 17:59:48.154   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 4 lines
 02-03 17:59:49.587   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 5 lines
 02-03 17:59:49.824   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 10 lines
-02-03 17:59:49.920 31664 31664 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
-02-03 18:00:14.127  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 17:59:49.920 31664 31664 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
+02-03 18:00:14.127  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 18:00:17.856   895   926 I chatty  : uid=1000(system) android.bg expire 5 lines
 02-03 18:00:18.412   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 4 lines
 02-03 18:00:18.488   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 6 lines
@@ -487,7 +487,7 @@
 02-03 18:09:33.114   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 3 lines
 02-03 18:09:35.605   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 5 lines
 02-03 18:09:39.114   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 4 lines
-02-03 18:09:41.777  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 18:09:41.777  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 18:11:04.086   895   933 I chatty  : uid=1000(system) android.io expire 35 lines
 02-03 18:11:04.292   895  3612 I chatty  : uid=1000(system) uteStateMachine expire 6 lines
 02-03 18:11:04.637  1369  1369 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.settings.bluetooth.DockEventReceiver.beginStartingService:134 com.android.settings.bluetooth.DockEventReceiver.onReceive:115 
@@ -541,7 +541,7 @@
 02-03 19:58:51.630   895   932 I chatty  : uid=1000(system) android.fg expire 3 lines
 02-03 19:58:53.136   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 3 lines
 02-03 19:58:54.286   895   929 I chatty  : uid=1000(system) ActivityManager expire 3 lines
-02-03 19:59:12.364  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 19:59:12.364  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 19:59:21.848  4956  5567 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-03 19:59:41.195   895   933 I chatty  : uid=1000(system) android.io expire 2 lines
 02-03 19:59:58.658  4733  4733 W ViewRootImpl[GEL]: Dropping event due to no window focus: KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x48, repeatCount=0, eventTime=21358276, downTime=21358276, deviceId=-1, source=0x101 }
@@ -554,8 +554,8 @@
 02-03 19:59:58.660  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=21358520, downTime=21358276, deviceId=-1, source=0x101 }
 02-03 19:59:58.660  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=21358520, downTime=21358276, deviceId=-1, source=0x101 }
 02-03 19:59:58.660  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=21358520, downTime=21358276, deviceId=-1, source=0x101 }
-02-03 19:59:58.897  6229  6246 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-03 19:59:58.901  6229  6247 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-03 19:59:58.897  6229  6246 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-03 19:59:58.901  6229  6247 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-03 20:00:08.111   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 8 lines
 02-03 20:00:21.832   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 8 lines
 02-03 20:00:48.270   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 10 lines
@@ -568,7 +568,7 @@
 02-03 20:00:59.299   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 6 lines
 02-03 20:02:19.218   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 2 lines
 02-03 20:04:00.310   895   930 I chatty  : uid=1000(system) batterystats-sy expire 5 lines
-02-03 20:04:14.816  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 20:04:14.816  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 20:04:52.332   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 6 lines
 02-03 20:04:52.334   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 6 lines
 02-03 20:05:00.988   895   926 I chatty  : uid=1000(system) android.bg expire 6 lines
@@ -588,7 +588,7 @@
 02-03 20:21:25.951   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 5 lines
 02-03 20:22:03.735   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 4 lines
 02-03 20:24:11.142   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 5 lines
-02-03 20:24:14.774  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 20:24:14.774  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 20:25:09.740   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 3 lines
 02-03 20:27:25.188   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 3 lines
 02-03 20:27:54.345   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 7 lines
@@ -596,19 +596,19 @@
 02-03 20:34:09.721   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 1 line
 02-03 20:40:38.901   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 4 lines
 02-03 20:51:15.284   895  3184 I chatty  : uid=1000(system) InputReader expire 1 line
-02-03 20:51:27.861  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 20:51:28.352  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 20:51:27.861  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 20:51:28.352  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 20:51:37.637  7966  8027 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
-02-03 20:54:14.991  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 20:54:14.991  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 20:58:41.572   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 9 lines
-02-03 20:58:50.235  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 20:58:50.781  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 20:58:53.736  8686  8745 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-03 20:58:53.742  8686  8744 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-03 20:59:14.259  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 20:58:50.235  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 20:58:50.781  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 20:58:53.736  8686  8745 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-03 20:58:53.742  8686  8744 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-03 20:59:14.259  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 20:59:51.915   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 7 lines
 02-03 20:59:52.265   895   927 I chatty  : uid=1000(system) ActivityManager expire 12 lines
-02-03 20:59:52.501  9403  9403 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-03 20:59:52.501  9403  9403 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-03 20:59:54.484   895 25693 I chatty  : uid=1000(system) Binder:895_16 expire 8 lines
 02-03 20:59:56.127   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 6 lines
 02-03 21:00:00.337   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 3 lines
@@ -635,15 +635,15 @@
 02-03 21:01:57.934   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 5 lines
 02-03 21:02:05.604   895  3166 I chatty  : uid=1000(system) AlarmManager expire 1 line
 02-03 21:03:29.524   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 4 lines
-02-03 21:03:46.197 10129 10159 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-03 21:03:46.197 10129 10159 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-03 21:04:00.339   895   930 I chatty  : uid=1000(system) batterystats-sy expire 5 lines
-02-03 21:04:14.308  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 21:04:14.308  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 21:04:41.380   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 4 lines
 02-03 21:05:05.806   895   927 I chatty  : uid=1000(system) ActivityManager expire 8 lines
 02-03 21:06:46.973   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 2 lines
-02-03 21:06:47.687 11637 11637 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-03 21:06:47.687 11637 11637 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-03 21:07:17.372 11783 11823 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
-02-03 21:09:14.624  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 21:09:14.624  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 21:11:30.895 29249 29249 W ViewRootImpl[LauncherUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=25650702, downTime=25650679, deviceId=-1, source=0x101 }
 02-03 21:11:30.895 29249 29249 W ViewRootImpl[LauncherUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=25650702, downTime=25650679, deviceId=-1, source=0x101 }
 02-03 21:11:30.895 29249 29249 W ViewRootImpl[LauncherUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=25650702, downTime=25650679, deviceId=-1, source=0x101 }
@@ -667,7 +667,7 @@
 02-03 21:12:36.842   895   895 I chatty  : uid=1000 system_server expire 7 lines
 02-03 21:12:37.448   895   934 I chatty  : uid=1000(system) android.display expire 2 lines
 02-03 21:12:37.806   895   932 I chatty  : uid=1000(system) android.fg expire 1 line
-02-03 21:14:15.444  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 21:14:15.444  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 21:17:37.693   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 1 line
 02-03 21:21:38.193   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 21:21:38.199   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 1 line
@@ -693,8 +693,8 @@
 02-03 21:55:22.778   895   930 I chatty  : uid=1000(system) batterystats-sy expire 7 lines
 02-03 21:55:22.817   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 6 lines
 02-03 21:55:23.136   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 1 line
-02-03 21:55:27.242  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-03 21:55:27.801  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 21:55:27.242  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-03 21:55:27.801  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 21:55:43.160   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 4 lines
 02-03 21:55:59.996   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 7 lines
 02-03 21:56:04.202   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 6 lines
@@ -713,11 +713,11 @@
 02-03 21:57:15.028   895   934 I chatty  : uid=1000(system) android.display expire 2 lines
 02-03 21:57:15.366   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 5 lines
 02-03 21:57:40.487   895   939 I chatty  : uid=1000(system) PackageManager expire 1 line
-02-03 21:57:41.498 15204 15204 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-03 21:57:41.498 15204 15204 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-03 21:57:56.282   895   927 I chatty  : uid=1000(system) ActivityManager expire 7 lines
 02-03 21:58:23.442   895   926 I chatty  : uid=1000(system) android.bg expire 6 lines
 02-03 21:59:03.432   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 1 line
-02-03 21:59:14.381  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 21:59:14.381  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 22:06:24.001   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 6 lines
 02-03 22:08:00.599   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 4 lines
 02-03 22:12:15.792   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 3 lines
@@ -727,13 +727,13 @@
 02-03 22:25:35.458   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 2 lines
 02-03 22:27:59.383   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 4 lines
 02-03 22:37:55.643   895   895 I chatty  : uid=1000 system_server expire 3 lines
-02-03 22:38:29.718 16655 16655 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
-02-03 22:38:43.790 16770 16770 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-03 22:38:29.718 16655 16655 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
+02-03 22:38:43.790 16770 16770 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-03 22:38:44.163   895   933 I chatty  : uid=1000(system) android.io expire 2 lines
-02-03 22:39:14.269  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 22:39:14.269  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 22:43:13.865 29249 29249 W ViewRootImpl[BizConversationUI]: Dropping event due to root view being removed: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=1017.0, y[0]=894.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=31153735, downTime=31153726, deviceId=7, source=0x1002 }
 02-03 22:43:17.403   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 9 lines
-02-03 22:44:14.295  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 22:44:14.295  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 22:46:47.378   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 12 lines
 02-03 22:46:47.410   895   895 I chatty  : uid=1000 system_server expire 13 lines
 02-03 22:46:48.005   895   934 I chatty  : uid=1000(system) android.display expire 8 lines
@@ -747,7 +747,7 @@
 02-03 22:48:14.734   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 5 lines
 02-03 22:48:14.761   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 7 lines
 02-03 22:48:14.926   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 3 lines
-02-03 22:48:21.871  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 22:48:21.871  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 22:48:39.138   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 6 lines
 02-03 22:49:13.044   895   930 I chatty  : uid=1000(system) batterystats-sy expire 6 lines
 02-03 22:49:33.660 29249 29249 W ViewRootImpl[BizConversationUI]: Dropping event due to root view being removed: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=1063.0, y[0]=731.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=31533529, downTime=31533522, deviceId=7, source=0x1002 }
@@ -768,8 +768,8 @@
 02-03 23:01:22.691   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 5 lines
 02-03 23:04:03.411   895 25693 I chatty  : uid=1000(system) Binder:895_16 expire 3 lines
 02-03 23:04:03.414   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 5 lines
-02-03 23:14:16.330  4921 19835 E ActivityThread: Failed to find provider info for com.google.android.wearable.settings
-02-03 23:14:20.374  4921 19835 E ActivityThread: Failed to find provider info for com.google.android.wearable.settings
+02-03 23:14:16.330  4921 19835 E ActivityThread: Failed to find providerName info for com.google.android.wearable.settings
+02-03 23:14:20.374  4921 19835 E ActivityThread: Failed to find providerName info for com.google.android.wearable.settings
 02-03 23:18:15.821   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 14 lines
 02-03 23:20:33.296   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-03 23:20:33.299   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 2 lines
@@ -777,8 +777,8 @@
 02-03 23:22:44.376   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 3 lines
 02-03 23:30:00.186   895   895 I chatty  : uid=1000 system_server expire 10 lines
 02-03 23:32:26.526   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 3 lines
-02-03 23:32:57.952 20887 20887 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
-02-03 23:33:02.903  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-03 23:32:57.952 20887 20887 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
+02-03 23:33:02.903  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-03 23:33:15.948 20727 20831 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-03 23:33:32.539   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 10 lines
 02-03 23:41:48.349   895   895 I chatty  : uid=1000 system_server expire 13 lines
@@ -810,11 +810,11 @@
 02-04 00:00:00.228   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 00:00:00.232   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 2 lines
 02-04 00:00:00.276   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 3 lines
-02-04 00:00:03.903 22333 22333 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 00:00:03.903 22333 22333 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 00:00:34.752   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 6 lines
 02-04 00:00:37.236   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 11 lines
 02-04 00:01:01.361   895   930 I chatty  : uid=1000(system) batterystats-sy expire 6 lines
-02-04 00:02:26.143 22546 22567 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 00:02:26.143 22546 22567 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 00:02:29.598   895   929 I chatty  : uid=1000(system) ActivityManager expire 1 line
 02-04 00:14:17.245   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 5 lines
 02-04 00:23:07.635   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 2 lines
@@ -858,9 +858,9 @@
 02-04 01:47:44.799   895  3184 I chatty  : uid=1000(system) InputReader expire 1 line
 02-04 01:47:44.823   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 10 lines
 02-04 01:47:44.837   895   934 I chatty  : uid=1000(system) android.display expire 4 lines
-02-04 01:47:59.274  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 01:47:59.274  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 01:48:02.458   377   384 D VoldCryptCmdListener: cryptfs getpwtype
-02-04 01:48:05.466 26682 26682 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 01:48:05.466 26682 26682 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 01:48:07.814 26013 26079 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 01:48:09.507   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 1 line
 02-04 01:48:09.874   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 3 lines
@@ -886,12 +886,12 @@
 02-04 01:49:42.999   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 3 lines
 02-04 01:49:43.485   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 1 line
 02-04 01:49:43.695   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 8 lines
-02-04 01:49:44.072 27304 27334 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 01:49:44.075 27304 27339 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 01:49:44.076 27304 27335 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 01:49:44.072 27304 27334 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 01:49:44.075 27304 27339 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 01:49:44.076 27304 27335 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 01:49:44.169   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 7 lines
 02-04 01:49:44.170   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 5 lines
-02-04 01:49:48.641  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 01:49:48.641  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 01:50:02.530   895   926 I chatty  : uid=1000(system) android.bg expire 9 lines
 02-04 01:50:02.918   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 10 lines
 02-04 01:50:02.992   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 6 lines
@@ -906,10 +906,10 @@
 02-04 01:51:42.534   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 01:51:42.537   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 2 lines
 02-04 01:52:18.472   895 25692 I chatty  : uid=1000(system) Binder:895_15 expire 7 lines
-02-04 01:54:48.534  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 01:54:48.534  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 01:56:12.628   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 5 lines
 02-04 01:56:17.292   895 23723 I chatty  : uid=1000(system) Binder:895_F expire 7 lines
-02-04 01:56:38.577 29656 29656 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 01:56:38.577 29656 29656 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 01:56:45.534   895   927 I chatty  : uid=1000(system) ActivityManager expire 6 lines
 02-04 01:56:53.281   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 1 line
 02-04 01:57:00.107   895  3166 I chatty  : uid=1000(system) AlarmManager expire 1 line
@@ -934,9 +934,9 @@
 02-04 01:58:34.238   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 2 lines
 02-04 01:58:34.310   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 6 lines
 02-04 01:59:18.103   895   933 I chatty  : uid=1000(system) android.io expire 2 lines
-02-04 01:59:48.778  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 01:59:48.778  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 02:00:22.622   895   895 I chatty  : uid=1000 system_server expire 14 lines
-02-04 02:00:23.209 31306 31326 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 02:00:23.209 31306 31326 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 02:00:23.403   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 6 lines
 02-04 02:01:35.889   895  3184 I chatty  : uid=1000(system) InputReader expire 1 line
 02-04 02:01:36.558   895   934 I chatty  : uid=1000(system) android.display expire 1 line
@@ -958,9 +958,9 @@
 02-04 03:38:22.767   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 4 lines
 02-04 03:57:32.426   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 1 line
 02-04 03:57:33.524   377   384 D VoldCryptCmdListener: cryptfs getpwtype
-02-04 03:57:35.606 10190 10416 E ActivityThread: Failed to find provider info for com.facebook.appmanager.attribution
+02-04 03:57:35.606 10190 10416 E ActivityThread: Failed to find providerName info for com.facebook.appmanager.attribution
 02-04 05:31:07.568   895  3193 I chatty  : uid=1000(system) WifiStateMachin expire 1 line
-02-04 05:31:11.573  2583  2583 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 05:31:11.573  2583  2583 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 05:31:11.601   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 2 lines
 02-04 05:31:12.853   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 2 lines
 02-04 05:31:12.916   895   929 I chatty  : uid=1000(system) ActivityManager expire 8 lines
@@ -1047,7 +1047,7 @@
 02-04 07:44:25.725   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 8 lines
 02-04 07:44:27.916   895  7043 I chatty  : uid=1000(system) Binder:895_1F expire 7 lines
 02-04 07:44:28.447   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 7 lines
-02-04 07:44:28.648  9222  9222 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 07:44:28.648  9222  9222 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 07:44:28.681   895  7040 I chatty  : uid=1000(system) Binder:895_1D expire 5 lines
 02-04 07:44:28.722   895 25693 I chatty  : uid=1000(system) Binder:895_16 expire 10 lines
 02-04 07:44:28.779   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 4 lines
@@ -1084,9 +1084,9 @@
 02-04 08:32:11.447   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 5 lines
 02-04 08:32:14.494   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 3 lines
 02-04 08:32:15.450   553 10522 W SocketClient: write error (Broken pipe)
-02-04 08:32:23.855 10914 10914 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 08:32:23.855 10914 10914 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 08:32:29.652   377   384 D VoldCryptCmdListener: cryptfs getpwtype
-02-04 08:32:35.301  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 08:32:35.301  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 08:32:41.360   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 08:32:44.446   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 8 lines
 02-04 08:32:45.258   553   919 E FrameworkListener: read() failed (Connection reset by peer)
@@ -1123,7 +1123,7 @@
 02-04 08:33:20.122   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 4 lines
 02-04 08:33:22.211   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 5 lines
 02-04 08:33:28.085   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 4 lines
-02-04 08:35:01.940 11375 11484 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 08:35:01.940 11375 11484 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 08:38:09.091   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 6 lines
 02-04 08:38:09.136   895   895 I chatty  : uid=1000 system_server expire 9 lines
 02-04 08:38:09.708   895   934 I chatty  : uid=1000(system) android.display expire 2 lines
@@ -1134,13 +1134,13 @@
 02-04 08:42:08.168   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 3 lines
 02-04 08:42:08.492   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 3 lines
 02-04 08:46:09.659   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 1 line
-02-04 08:46:15.552 15273 15273 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 08:46:15.552 15273 15273 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 08:46:41.779 15403 15441 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 08:46:42.141   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 08:48:57.781   895   927 I chatty  : uid=1000(system) ActivityManager expire 1 line
-02-04 08:48:57.921 16408 16408 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
-02-04 08:50:01.652 16646 16673 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 08:50:01.658 16646 16674 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 08:48:57.921 16408 16408 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
+02-04 08:50:01.652 16646 16673 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 08:50:01.658 16646 16674 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 08:50:01.754   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 2 lines
 02-04 08:50:06.377   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 7 lines
 02-04 08:50:13.725 29249 29249 W ViewRootImpl[SnsTimeLineUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=45619979, downTime=45619910, deviceId=-1, source=0x101 }
@@ -1215,18 +1215,18 @@
 02-04 09:05:06.142   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 1 line
 02-04 09:07:42.198   895   926 I chatty  : uid=1000(system) android.bg expire 13 lines
 02-04 09:08:11.698   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 2 lines
-02-04 09:08:12.007 20659 20659 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
-02-04 09:08:13.327 20693 20693 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 09:08:12.007 20659 20659 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
+02-04 09:08:13.327 20693 20693 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 09:08:14.530   895 25696 I chatty  : uid=1000(system) Binder:895_19 expire 2 lines
 02-04 09:08:20.160   895   934 I chatty  : uid=1000(system) android.display expire 2 lines
 02-04 09:08:20.216   895  7040 I chatty  : uid=1000(system) Binder:895_1D expire 4 lines
 02-04 09:08:24.417   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 1 line
 02-04 09:09:36.462   895 25692 I chatty  : uid=1000(system) Binder:895_15 expire 3 lines
-02-04 09:25:00.949  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 09:25:00.949  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 09:26:58.944   895   930 I chatty  : uid=1000(system) batterystats-sy expire 4 lines
-02-04 09:30:01.365  9905  9905 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 09:30:01.365  9905  9905 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 09:33:08.434   895   895 I chatty  : uid=1000 system_server expire 10 lines
-02-04 09:33:11.457 24163 24163 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 09:33:11.457 24163 24163 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 09:33:17.350   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 6 lines
 02-04 09:33:17.351   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 5 lines
 02-04 09:33:17.475   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 4 lines
@@ -1292,14 +1292,14 @@
 02-04 09:56:24.188   895  7043 I chatty  : uid=1000(system) Binder:895_1F expire 1 line
 02-04 09:56:24.547   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 2 lines
 02-04 09:56:25.190   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 7 lines
-02-04 09:56:25.244 27154 27154 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 09:56:25.244 27154 27154 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 09:56:25.475   895   926 I chatty  : uid=1000(system) android.bg expire 7 lines
 02-04 09:56:25.652   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 3 lines
 02-04 09:56:26.282   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 1 line
 02-04 09:56:27.329   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 5 lines
-02-04 09:56:34.546 27106 27106 E ActivityThread: Failed to find provider info for com.tencent.qqlive.provider.config
+02-04 09:56:34.546 27106 27106 E ActivityThread: Failed to find providerName info for com.tencent.qqlive.providerName.config
 02-04 09:56:34.566   895  7044 I chatty  : uid=1000(system) Binder:895_20 expire 1 line
-02-04 09:56:35.437 27416 27416 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 09:56:35.437 27416 27416 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 09:56:38.522   895   930 I chatty  : uid=1000(system) batterystats-sy expire 33 lines
 02-04 09:56:38.601   895   932 I chatty  : uid=1000(system) android.fg expire 35 lines
 02-04 09:56:39.973   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 2 lines
@@ -1342,20 +1342,20 @@
 02-04 09:57:19.355   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 4 lines
 02-04 09:57:23.715   895  7044 I chatty  : uid=1000(system) Binder:895_20 expire 2 lines
 02-04 09:57:24.251   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 2 lines
-02-04 09:57:25.570 28756 28756 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 09:57:25.570 28756 28756 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 09:57:26.422   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 1 line
 02-04 09:57:29.136   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 4 lines
 02-04 09:57:29.376   895   929 I chatty  : uid=1000(system) ActivityManager expire 1 line
 02-04 09:57:42.759   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 3 lines
 02-04 09:57:43.207   895  7043 I chatty  : uid=1000(system) Binder:895_1F expire 5 lines
 02-04 09:57:43.294   895 25696 I chatty  : uid=1000(system) Binder:895_19 expire 2 lines
-02-04 10:01:08.691 29604 29619 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 10:01:08.691 29604 29619 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 10:06:12.994   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 7 lines
 02-04 10:06:13.716   895   934 I chatty  : uid=1000(system) android.display expire 2 lines
 02-04 10:07:22.267 30320 30367 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 10:09:49.736   895   895 I chatty  : uid=1000 system_server expire 5 lines
 02-04 10:09:50.763   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 1 line
-02-04 10:09:50.984 30671 30671 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 10:09:50.984 30671 30671 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 10:09:51.528   895   930 I chatty  : uid=1000(system) batterystats-sy expire 6 lines
 02-04 10:09:51.540   895   932 I chatty  : uid=1000(system) android.fg expire 50 lines
 02-04 10:09:55.309   895   895 I chatty  : uid=1000 system_server expire 17 lines
@@ -1377,7 +1377,7 @@
 02-04 10:10:44.004   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 4 lines
 02-04 10:10:44.034   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 2 lines
 02-04 10:10:58.681   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 2 lines
-02-04 10:11:41.645 31742 31757 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 10:11:41.645 31742 31757 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 10:11:42.012   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 4 lines
 02-04 10:13:23.644   895 29227 I chatty  : uid=1000(system) Binder:895_1C expire 1 line
 02-04 10:13:44.979   895  3184 I chatty  : uid=1000(system) InputReader expire 1 line
@@ -1396,7 +1396,7 @@
 02-04 10:14:34.212   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 2 lines
 02-04 10:14:34.213   895   929 I chatty  : uid=1000(system) ActivityManager expire 4 lines
 02-04 10:14:36.256   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 2 lines
-02-04 10:14:37.368 32447 32447 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 10:14:37.368 32447 32447 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 10:14:40.211   895   933 I chatty  : uid=1000(system) android.io expire 2 lines
 02-04 10:15:05.784   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 2 lines
 02-04 10:15:46.584   895   930 I chatty  : uid=1000(system) batterystats-sy expire 3 lines
@@ -1456,7 +1456,7 @@
 02-04 10:25:48.781   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 4 lines
 02-04 10:25:52.985   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 3 lines
 02-04 10:25:52.986   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 6 lines
-02-04 10:27:50.940  4133  4169 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 10:27:50.940  4133  4169 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 10:28:33.694   895  3184 I chatty  : uid=1000(system) InputReader expire 4 lines
 02-04 10:28:34.726   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 20 lines
 02-04 10:28:34.728   895   932 I chatty  : uid=1000(system) android.fg expire 6 lines
@@ -1469,7 +1469,7 @@
 02-04 10:42:47.122   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 7 lines
 02-04 10:42:47.134   895 25693 I chatty  : uid=1000(system) Binder:895_16 expire 7 lines
 02-04 10:42:48.143   895   927 I chatty  : uid=1000(system) ActivityManager expire 12 lines
-02-04 10:43:26.826  7774  7789 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 10:43:26.826  7774  7789 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 10:43:27.236   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 10 lines
 02-04 10:43:27.243   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 5 lines
 02-04 10:43:40.465   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 8 lines
@@ -1491,13 +1491,13 @@
 02-04 10:44:37.531   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 5 lines
 02-04 10:44:57.194  8488  8526 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 10:45:03.518   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 8 lines
-02-04 10:45:04.173  8708  8708 D ActivityThread: Loading provider com.sina.weibo.spProvider: com.sina.weibo.provider.SinaWeiboSPProvider
+02-04 10:45:04.173  8708  8708 D ActivityThread: Loading providerName com.sina.weibo.spProvider: com.sina.weibo.providerName.SinaWeiboSPProvider
 02-04 10:45:08.020   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 3 lines
 02-04 10:45:12.678   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 2 lines
 02-04 10:45:32.354   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 2 lines
 02-04 10:45:32.440   895 29227 I chatty  : uid=1000(system) Binder:895_1C expire 3 lines
 02-04 10:46:57.672   895   927 I chatty  : uid=1000(system) ActivityManager expire 5 lines
-02-04 10:46:58.017  9349  9380 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 10:46:58.017  9349  9380 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 10:49:31.252   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 3 lines
 02-04 10:49:31.256   895  7044 I chatty  : uid=1000(system) Binder:895_20 expire 2 lines
 02-04 10:50:35.075   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 3 lines
@@ -1534,11 +1534,11 @@
 02-04 11:08:18.132   895 29227 I chatty  : uid=1000(system) Binder:895_1C expire 3 lines
 02-04 11:08:26.978   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 3 lines
 02-04 11:08:26.980   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 4 lines
-02-04 11:08:28.042  4921 14652 E ActivityThread: Failed to find provider info for com.google.android.wearable.settings
+02-04 11:08:28.042  4921 14652 E ActivityThread: Failed to find providerName info for com.google.android.wearable.settings
 02-04 11:08:28.863   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 2 lines
 02-04 11:08:31.012   895   927 I chatty  : uid=1000(system) ActivityManager expire 5 lines
 02-04 11:08:31.492   895 25691 I chatty  : uid=1000(system) Binder:895_14 expire 2 lines
-02-04 11:08:32.129  4921 14652 E ActivityThread: Failed to find provider info for com.google.android.wearable.settings
+02-04 11:08:32.129  4921 14652 E ActivityThread: Failed to find providerName info for com.google.android.wearable.settings
 02-04 11:08:35.477   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 6 lines
 02-04 11:08:35.847   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 2 lines
 02-04 11:08:39.001   895   926 I chatty  : uid=1000(system) android.bg expire 1 line
@@ -1560,12 +1560,12 @@
 02-04 11:10:14.652   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 1 line
 02-04 11:10:52.112   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 1 line
 02-04 11:10:54.337 15685 15745 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
-02-04 11:11:21.472 14887 14922 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 11:11:21.472 14887 14922 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 11:11:28.118   895 23723 I chatty  : uid=1000(system) Binder:895_F expire 1 line
 02-04 11:11:35.436   895   934 I chatty  : uid=1000(system) android.display expire 4 lines
 02-04 11:11:35.761   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 5 lines
 02-04 11:11:35.762   895   932 I chatty  : uid=1000(system) android.fg expire 1 line
-02-04 11:11:46.378 16258 16273 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 11:11:46.378 16258 16273 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 11:12:36.286 16169 16213 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 11:15:22.759   895  3184 I chatty  : uid=1000(system) InputReader expire 2 lines
 02-04 11:15:23.138   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 19 lines
@@ -1591,7 +1591,7 @@
 02-04 11:18:00.214   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 6 lines
 02-04 11:18:39.237   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 3 lines
 02-04 11:18:53.817   895   927 I chatty  : uid=1000(system) ActivityManager expire 6 lines
-02-04 11:18:54.130 17776 17791 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 11:18:54.130 17776 17791 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 11:19:01.301   895   934 I chatty  : uid=1000(system) android.display expire 12 lines
 02-04 11:19:19.116   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 6 lines
 02-04 11:19:19.343   895   933 I chatty  : uid=1000(system) android.io expire 2 lines
@@ -1689,7 +1689,7 @@
 02-04 11:44:50.522   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 2 lines
 02-04 11:45:07.652 27323 27376 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 11:45:46.845   895 25691 I chatty  : uid=1000(system) Binder:895_14 expire 4 lines
-02-04 11:50:21.662  8708  8708 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 11:50:21.662  8708  8708 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 11:50:32.676   895 29227 I chatty  : uid=1000(system) Binder:895_1C expire 3 lines
 02-04 11:50:32.687   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 3 lines
 02-04 11:50:32.785   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 7 lines
@@ -1709,11 +1709,11 @@
 02-04 12:07:02.255   895  7044 I chatty  : uid=1000(system) Binder:895_20 expire 4 lines
 02-04 12:08:40.019   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 2 lines
 02-04 12:17:01.897   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 3 lines
-02-04 12:18:55.634 29535 29554 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 12:18:55.634 29535 29554 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 12:22:09.565   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 12:22:09.571   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 1 line
 02-04 12:23:09.751   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 7 lines
-02-04 12:23:30.033 30078 30078 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 12:23:30.033 30078 30078 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 12:23:36.897   895 25692 I chatty  : uid=1000(system) Binder:895_15 expire 7 lines
 02-04 12:23:36.897   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 12 lines
 02-04 12:23:37.050   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 3 lines
@@ -1736,7 +1736,7 @@
 02-04 12:28:04.349   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 4 lines
 02-04 12:28:49.967   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 9 lines
 02-04 12:30:07.046   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 3 lines
-02-04 12:31:10.266 30283 30365 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 12:31:10.266 30283 30365 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 12:31:36.472   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 2 lines
 02-04 12:32:20.886   895   926 I chatty  : uid=1000(system) android.bg expire 5 lines
 02-04 12:32:21.200   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 7 lines
@@ -1750,10 +1750,10 @@
 02-04 12:32:55.920   895   895 I chatty  : uid=1000 system_server expire 6 lines
 02-04 12:32:55.924   895   930 I chatty  : uid=1000(system) batterystats-sy expire 7 lines
 02-04 12:32:56.045   895 23723 I chatty  : uid=1000(system) Binder:895_F expire 4 lines
-02-04 12:32:58.321 31660 31660 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 12:32:58.321 31660 31660 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 12:33:00.003   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 3 lines
 02-04 12:33:01.976   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 6 lines
-02-04 12:33:03.611 31847 31847 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 12:33:03.611 31847 31847 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 12:33:04.872   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 2 lines
 02-04 12:33:04.872   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 12:33:08.709   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 4 lines
@@ -1818,9 +1818,9 @@
 02-04 12:43:33.354   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 1 line
 02-04 12:43:33.576   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 1 line
 02-04 12:43:33.857   895  7044 I chatty  : uid=1000(system) Binder:895_20 expire 3 lines
-02-04 12:43:34.253  2520  2553 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 12:43:34.254  2520  2554 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 12:43:34.258  2520  2556 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 12:43:34.253  2520  2553 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 12:43:34.254  2520  2554 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 12:43:34.258  2520  2556 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 12:43:34.337   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 4 lines
 02-04 12:43:39.447   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 3 lines
 02-04 12:43:39.915   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 3 lines
@@ -1866,7 +1866,7 @@
 02-04 12:44:29.089   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 3 lines
 02-04 12:45:41.046   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 5 lines
 02-04 12:46:51.695   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 1 line
-02-04 12:47:06.001  5330  5346 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 12:47:06.001  5330  5346 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 12:48:08.865   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 12 lines
 02-04 12:48:08.911   895   895 I chatty  : uid=1000 system_server expire 10 lines
 02-04 12:48:09.549   895   934 I chatty  : uid=1000(system) android.display expire 5 lines
@@ -1883,7 +1883,7 @@
 02-04 12:50:16.067  3347  3347 W ViewRootImpl[StatusBar]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=55903816, downTime=55903502, deviceId=-1, source=0x101 }
 02-04 12:50:16.067  3347  3347 W ViewRootImpl[StatusBar]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=55903816, downTime=55903502, deviceId=-1, source=0x101 }
 02-04 12:50:38.699   895   927 I chatty  : uid=1000(system) ActivityManager expire 1 line
-02-04 12:50:38.995  6099  6115 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 12:50:38.995  6099  6115 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 12:50:40.768  5848  5990 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 12:51:49.212   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 3 lines
 02-04 12:51:49.212   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 1 line
@@ -1901,9 +1901,9 @@
 02-04 12:52:56.473   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 6 lines
 02-04 12:52:56.473   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 9 lines
 02-04 12:52:56.476   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 5 lines
-02-04 12:52:56.732  6681  6716 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 12:52:56.734  6681  6717 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 12:52:56.737  6681  6719 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 12:52:56.732  6681  6716 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 12:52:56.734  6681  6717 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 12:52:56.737  6681  6719 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 12:52:56.793   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 3 lines
 02-04 12:52:56.798   895 25696 I chatty  : uid=1000(system) Binder:895_19 expire 5 lines
 02-04 12:52:56.801   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 6 lines
@@ -1920,7 +1920,7 @@
 02-04 12:54:00.227   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 1 line
 02-04 12:54:06.760   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 1 line
 02-04 12:54:15.562   895   927 I chatty  : uid=1000(system) ActivityManager expire 8 lines
-02-04 12:54:15.923  7418  7433 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 12:54:15.923  7418  7433 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 12:54:27.886 22901 22901 W ViewRootImpl[ChromeTabbedActivity]: Dropping event due to root view being removed: MotionEvent { action=ACTION_MOVE, actionButton=0, id[0]=0, x[0]=902.0, y[0]=1442.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=56073910, downTime=56073901, deviceId=7, source=0x1002 }
 02-04 12:55:18.484   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 3 lines
 02-04 12:56:37.954   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 12 lines
@@ -1942,7 +1942,7 @@
 02-04 13:08:20.426   895   895 I chatty  : uid=1000 system_server expire 12 lines
 02-04 13:08:22.334   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 13:08:22.354   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 1 line
-02-04 13:08:36.910  8919  8919 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 13:08:36.910  8919  8919 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 13:08:38.166   895   926 I chatty  : uid=1000(system) android.bg expire 5 lines
 02-04 13:08:40.071  8514  8577 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 13:10:01.559  9292  9340 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
@@ -1972,7 +1972,7 @@
 02-04 13:31:23.384   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 2 lines
 02-04 13:46:16.390   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 5 lines
 02-04 13:46:17.889   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 6 lines
-02-04 14:01:27.081 10674 10693 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 14:01:27.081 10674 10693 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 14:01:27.350   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 6 lines
 02-04 14:03:10.996   895 25696 I chatty  : uid=1000(system) Binder:895_19 expire 3 lines
 02-04 14:03:11.023   895 29227 I chatty  : uid=1000(system) Binder:895_1C expire 5 lines
@@ -1986,14 +1986,14 @@
 02-04 15:01:09.854   895 25691 I chatty  : uid=1000(system) Binder:895_14 expire 4 lines
 02-04 15:01:12.612   895 23723 I chatty  : uid=1000(system) Binder:895_F expire 7 lines
 02-04 15:01:24.663   895   930 I chatty  : uid=1000(system) batterystats-sy expire 2 lines
-02-04 15:01:26.536 11741 11741 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 15:01:26.536 11741 11741 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 15:01:27.487   895   929 I chatty  : uid=1000(system) ActivityManager expire 7 lines
-02-04 15:01:29.773 11927 12017 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 15:01:29.773 11927 12017 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 15:01:31.241   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 4 lines
 02-04 15:01:33.964   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 15:01:34.508   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 7 lines
 02-04 15:01:42.828  3347  3347 V DeadZone: consuming errant click: (764.0,1.0)
-02-04 15:01:50.487 12462 12462 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 15:01:50.487 12462 12462 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 15:01:56.721 29249 29249 W ViewRootImpl[LauncherUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=57349258, downTime=57349240, deviceId=-1, source=0x101 }
 02-04 15:01:56.721 29249 29249 W ViewRootImpl[LauncherUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=57349258, downTime=57349240, deviceId=-1, source=0x101 }
 02-04 15:01:56.721 29249 29249 W ViewRootImpl[LauncherUI]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=57349258, downTime=57349240, deviceId=-1, source=0x101 }
@@ -2036,8 +2036,8 @@
 02-04 15:02:05.107   895  7040 I chatty  : uid=1000(system) Binder:895_1D expire 4 lines
 02-04 15:02:05.462   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 1 line
 02-04 15:02:05.650   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 4 lines
-02-04 15:02:05.887 13017 13034 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 15:02:05.887 13017 13035 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 15:02:05.887 13017 13034 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 15:02:05.887 13017 13035 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 15:02:05.970   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 6 lines
 02-04 15:02:05.971   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 3 lines
 02-04 15:02:05.979   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 6 lines
@@ -2066,7 +2066,7 @@
 02-04 15:04:06.191   895 25693 I chatty  : uid=1000(system) Binder:895_16 expire 1 line
 02-04 15:04:13.897   895 25696 I chatty  : uid=1000(system) Binder:895_19 expire 2 lines
 02-04 15:04:14.525   377   384 D VoldCryptCmdListener: cryptfs getpwtype
-02-04 15:05:25.197 14607 14622 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 15:05:25.197 14607 14622 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 15:05:25.606   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 1 line
 02-04 15:05:35.244   895  3612 I chatty  : uid=1000(system) uteStateMachine expire 9 lines
 02-04 15:05:35.246   895  3616 I chatty  : uid=1000(system) CallAudioModeSt expire 11 lines
@@ -2099,7 +2099,7 @@
 02-04 15:06:05.243   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 4 lines
 02-04 15:06:06.163   895   930 I chatty  : uid=1000(system) batterystats-sy expire 3 lines
 02-04 15:06:07.037   895 25696 I chatty  : uid=1000(system) Binder:895_19 expire 1 line
-02-04 15:06:07.232 15481 15481 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 15:06:07.232 15481 15481 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 15:06:08.930 15032 15067 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 15:06:09.581   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 5 lines
 02-04 15:06:10.597   895   927 I chatty  : uid=1000(system) ActivityManager expire 2 lines
@@ -2131,7 +2131,7 @@
 02-04 15:07:42.156   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 4 lines
 02-04 15:07:45.698   895   934 I chatty  : uid=1000(system) android.display expire 3 lines
 02-04 15:07:53.772   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 16 lines
-02-04 15:09:06.152 16921 16937 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 15:09:06.152 16921 16937 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 15:09:06.398   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 1 line
 02-04 15:09:06.419   895 25691 I chatty  : uid=1000(system) Binder:895_14 expire 1 line
 02-04 15:09:11.302   895   895 I chatty  : uid=1000 system_server expire 5 lines
@@ -2201,9 +2201,9 @@
 02-04 15:37:15.182   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 3 lines
 02-04 15:37:30.787   895  7044 I chatty  : uid=1000(system) Binder:895_20 expire 2 lines
 02-04 15:38:01.183 19394 19448 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
-02-04 15:38:16.996 18775 18803 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 15:38:16.996 18775 18803 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 15:39:23.922   895   930 I chatty  : uid=1000(system) batterystats-sy expire 16 lines
-02-04 15:40:48.263 20050 20066 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 15:40:48.263 20050 20066 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 15:51:26.052   895   926 I chatty  : uid=1000(system) android.bg expire 8 lines
 02-04 15:55:56.947   895 25691 I chatty  : uid=1000(system) Binder:895_14 expire 2 lines
 02-04 15:56:09.557   895 23723 I chatty  : uid=1000(system) Binder:895_F expire 1 line
@@ -2237,7 +2237,7 @@
 02-04 16:10:48.877   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 6 lines
 02-04 16:10:49.078   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 3 lines
 02-04 16:10:50.190   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 5 lines
-02-04 16:11:14.521 21581 21581 D ActivityThread: Loading provider com.sina.weibo.spProvider: com.sina.weibo.provider.SinaWeiboSPProvider
+02-04 16:11:14.521 21581 21581 D ActivityThread: Loading providerName com.sina.weibo.spProvider: com.sina.weibo.providerName.SinaWeiboSPProvider
 02-04 16:11:24.526   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 7 lines
 02-04 16:11:29.883   895 25692 I chatty  : uid=1000(system) Binder:895_15 expire 3 lines
 02-04 16:11:44.263   895   933 I chatty  : uid=1000(system) android.io expire 6 lines
@@ -2248,15 +2248,15 @@
 02-04 16:11:59.638 21882 22001 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 16:12:15.095   895  3166 I chatty  : uid=1000(system) AlarmManager expire 1 line
 02-04 16:12:15.183   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 1 line
-02-04 16:12:26.937 22437 22470 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 16:12:26.937 22437 22470 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 16:12:28.736   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 1 line
 02-04 16:13:19.222 22736 22756 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
-02-04 16:13:29.293 22847 22864 E ActivityThread: Failed to find provider info for downloads.com.ximalaya.ting.android
+02-04 16:13:29.293 22847 22864 E ActivityThread: Failed to find providerName info for downloads.com.ximalaya.ting.android
 02-04 16:13:31.677   895  3184 I chatty  : uid=1000(system) InputReader expire 2 lines
 02-04 16:13:31.693   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 5 lines
 02-04 16:13:31.702   895   934 I chatty  : uid=1000(system) android.display expire 2 lines
 02-04 16:13:32.073   895   932 I chatty  : uid=1000(system) android.fg expire 2 lines
-02-04 16:13:59.314 22237 22268 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 16:13:59.314 22237 22268 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 16:15:33.481   895   930 I chatty  : uid=1000(system) batterystats-sy expire 7 lines
 02-04 16:18:31.507   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 2 lines
 02-04 16:18:31.509   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 3 lines
@@ -2335,15 +2335,15 @@
 02-04 16:39:10.396   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 4 lines
 02-04 16:39:13.898   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 1 line
 02-04 16:39:14.169   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 2 lines
-02-04 16:39:15.157 25877 25925 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 16:39:15.160 25877 25926 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 16:39:15.162 25877 25928 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 16:39:15.157 25877 25925 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 16:39:15.160 25877 25926 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 16:39:15.162 25877 25928 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 16:39:20.403   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 8 lines
 02-04 16:39:21.025   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 9 lines
 02-04 16:39:21.424   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 7 lines
 02-04 16:39:21.437   895  7040 I chatty  : uid=1000(system) Binder:895_1D expire 4 lines
 02-04 16:39:21.643   895   929 I chatty  : uid=1000(system) ActivityManager expire 3 lines
-02-04 16:39:24.939 26262 26262 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 16:39:24.939 26262 26262 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 16:39:28.994   895   933 I chatty  : uid=1000(system) android.io expire 11 lines
 02-04 16:39:29.076   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 1 line
 02-04 16:39:38.313   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 1 line
@@ -2433,11 +2433,11 @@
 02-04 16:52:12.880   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 5 lines
 02-04 16:52:12.890   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 1 line
 02-04 16:52:12.892   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 3 lines
-02-04 16:54:05.290 30325 30354 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 16:54:05.290 30325 30354 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 16:54:08.301   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 1 line
 02-04 16:54:13.030   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 2 lines
 02-04 16:54:35.004   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 1 line
-02-04 16:54:56.961 31288 31303 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 16:54:56.961 31288 31303 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 16:55:42.262   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 3 lines
 02-04 16:56:13.613   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 1 line
 02-04 16:56:13.899   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 7 lines
@@ -2465,7 +2465,7 @@
 02-04 17:04:03.651   895   934 I chatty  : uid=1000(system) android.display expire 14 lines
 02-04 17:04:03.964   895   932 I chatty  : uid=1000(system) android.fg expire 11 lines
 02-04 17:04:04.038   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 5 lines
-02-04 17:04:04.202  1498  1498 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 17:04:04.202  1498  1498 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 17:04:04.249   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 7 lines
 02-04 17:04:04.250   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 4 lines
 02-04 17:04:05.056   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 8 lines
@@ -2546,8 +2546,8 @@
 02-04 17:41:24.736   895  3184 I chatty  : uid=1000(system) InputReader expire 1 line
 02-04 17:41:25.644   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 3 lines
 02-04 17:41:25.668   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 9 lines
-02-04 17:41:34.371 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-04 17:41:34.624 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 17:41:34.371 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-04 17:41:34.624 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 17:45:19.739   895  7040 I chatty  : uid=1000(system) Binder:895_1D expire 4 lines
 02-04 17:45:38.105   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 4 lines
 02-04 17:46:43.942   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 3 lines
@@ -2555,9 +2555,9 @@
 02-04 17:48:46.171   895 29227 I chatty  : uid=1000(system) Binder:895_1C expire 4 lines
 02-04 17:50:25.581   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 2 lines
 02-04 17:50:28.366   895   933 I chatty  : uid=1000(system) android.io expire 45 lines
-02-04 17:50:29.919 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 17:50:29.919 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 17:50:30.105   895   895 I chatty  : uid=1000 system_server expire 8 lines
-02-04 17:50:30.212 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 17:50:30.212 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 17:50:30.436  5298  5298 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.settings.bluetooth.DockEventReceiver.beginStartingService:134 com.android.settings.bluetooth.DockEventReceiver.onReceive:115 
 02-04 17:50:32.169   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 2 lines
 02-04 17:50:32.311   895  3612 I chatty  : uid=1000(system) uteStateMachine expire 5 lines
@@ -2571,7 +2571,7 @@
 02-04 17:50:34.166  5417  5417 W ViewRootImpl[MapsActivity]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_MEDIA_PLAY, scanCode=200, metaState=0, flags=0x28, repeatCount=0, eventTime=65161481, downTime=65161450, deviceId=11, source=0x101 }
 02-04 17:50:34.166  5417  5417 W ViewRootImpl[MapsActivity]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_MEDIA_PLAY, scanCode=200, metaState=0, flags=0x28, repeatCount=0, eventTime=65161481, downTime=65161450, deviceId=11, source=0x101 }
 02-04 17:50:34.166  5417  5417 W ViewRootImpl[MapsActivity]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_MEDIA_PLAY, scanCode=200, metaState=0, flags=0x28, repeatCount=0, eventTime=65161481, downTime=65161450, deviceId=11, source=0x101 }
-02-04 17:50:36.341  5612  5612 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 17:50:36.341  5612  5612 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 17:50:37.705   895   929 I chatty  : uid=1000(system) ActivityManager expire 8 lines
 02-04 17:50:39.330   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 6 lines
 02-04 17:50:39.515   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 7 lines
@@ -2623,11 +2623,11 @@
 02-04 17:51:32.507 18247 18247 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:776)
 02-04 17:51:36.129   895   895 I chatty  : uid=1000 system_server expire 8 lines
 02-04 17:51:36.333   895   934 I chatty  : uid=1000(system) android.display expire 3 lines
-02-04 17:52:43.450  6994  6994 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
-02-04 17:52:48.377  6994  6994 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-04 17:52:48.380  6994  6994 E ActivityThread: Failed to find provider info for com.android.badge
+02-04 17:52:43.450  6994  6994 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
+02-04 17:52:48.377  6994  6994 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-04 17:52:48.380  6994  6994 E ActivityThread: Failed to find providerName info for com.android.badge
 02-04 17:53:03.151   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 3 lines
-02-04 17:53:15.416  7162  7162 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 17:53:15.416  7162  7162 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 17:53:40.521   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 1 line
 02-04 17:55:37.096   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 6 lines
 02-04 17:55:38.074   895   932 I chatty  : uid=1000(system) android.fg expire 2 lines
@@ -2655,7 +2655,7 @@
 02-04 18:01:28.371   895 25692 I chatty  : uid=1000(system) Binder:895_15 expire 4 lines
 02-04 18:02:28.477   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 6 lines
 02-04 18:02:30.223   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 4 lines
-02-04 18:02:34.035  9141  9141 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 18:02:34.035  9141  9141 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 18:02:44.402   895  3572 I chatty  : uid=1000(system) Binder:895_5 expire 7 lines
 02-04 18:03:02.084  9304  9349 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 18:04:29.479   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 3 lines
@@ -2671,7 +2671,7 @@
 02-04 18:09:24.048   895   932 I chatty  : uid=1000(system) android.fg expire 1 line
 02-04 18:09:24.395   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 2 lines
 02-04 18:09:24.497   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 1 line
-02-04 18:09:33.811 10069 10099 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 18:09:33.811 10069 10099 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 18:09:45.678 10655 10717 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 18:09:53.402   895  3612 I chatty  : uid=1000(system) uteStateMachine expire 6 lines
 02-04 18:09:57.990   895  3191 I chatty  : uid=1000(system) WifiP2pService expire 1 line
@@ -2791,7 +2791,7 @@
 02-04 19:34:25.183   895   932 I chatty  : uid=1000(system) android.fg expire 3 lines
 02-04 19:34:29.730 27601 27601 W ViewRootImpl[MainActivity]: Dropping event due to no window focus: KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x48, repeatCount=0, eventTime=70731350, downTime=70731350, deviceId=-1, source=0x101 }
 02-04 19:34:32.443   895 25691 I chatty  : uid=1000(system) Binder:895_14 expire 3 lines
-02-04 19:34:34.439 27601 27601 E ActivityThread: Failed to find provider info for com.ximalaya.device.deviceContentProvider
+02-04 19:34:34.439 27601 27601 E ActivityThread: Failed to find providerName info for com.ximalaya.device.deviceContentProvider
 02-04 19:34:34.581 27601 27601 E ActivityThread: Activity com.ximalaya.ting.android.activity.MainActivity has leaked ServiceConnection com.ximalaya.android.xchat.ar$1@7cea98d that was originally bound here
 02-04 19:34:34.581 27601 27601 E ActivityThread: android.app.ServiceConnectionLeaked: Activity com.ximalaya.ting.android.activity.MainActivity has leaked ServiceConnection com.ximalaya.android.xchat.ar$1@7cea98d that was originally bound here
 02-04 19:34:34.581 27601 27601 E ActivityThread: 	at android.app.LoadedApk$ServiceDispatcher.<init>(LoadedApk.java:1336)
@@ -2812,7 +2812,7 @@
 02-04 19:34:34.581 27601 27601 E ActivityThread: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:886)
 02-04 19:34:34.581 27601 27601 E ActivityThread: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:776)
 02-04 19:34:38.248   895   927 I chatty  : uid=1000(system) ActivityManager expire 3 lines
-02-04 19:34:38.487 14574 14574 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 19:34:38.487 14574 14574 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 19:34:48.672 14342 14455 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 19:36:24.392  3347  3347 V DeadZone: consuming errant click: (765.0,0.0)
 02-04 19:36:41.554   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 2 lines
@@ -2844,7 +2844,7 @@
 02-04 19:39:31.335   895   929 I chatty  : uid=1000(system) ActivityManager expire 8 lines
 02-04 19:39:36.846   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 4 lines
 02-04 19:39:37.005   895 25688 I chatty  : uid=1000(system) Binder:895_11 expire 4 lines
-02-04 19:42:28.409 15742 15774 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 19:42:28.409 15742 15774 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 19:42:29.337   895   927 I chatty  : uid=1000(system) ActivityManager expire 4 lines
 02-04 19:42:53.880 16307 16342 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 19:43:38.490   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 1 line
@@ -2889,7 +2889,7 @@
 02-04 19:50:02.003   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 5 lines
 02-04 19:53:58.171   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 8 lines
 02-04 19:54:15.950   895   927 I chatty  : uid=1000(system) ActivityManager expire 3 lines
-02-04 19:54:57.659 19297 19318 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 19:54:57.659 19297 19318 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 19:54:57.915   895 25692 I chatty  : uid=1000(system) Binder:895_15 expire 1 line
 02-04 19:56:32.502   895   926 I chatty  : uid=1000(system) android.bg expire 4 lines
 02-04 19:56:32.896   895 23723 I chatty  : uid=1000(system) Binder:895_F expire 10 lines
@@ -2971,7 +2971,7 @@
 02-04 20:06:52.612   895  3612 I chatty  : uid=1000(system) uteStateMachine expire 6 lines
 02-04 20:06:55.204   895   933 I chatty  : uid=1000(system) android.io expire 35 lines
 02-04 20:06:55.539 22466 22466 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.settings.bluetooth.DockEventReceiver.beginStartingService:134 com.android.settings.bluetooth.DockEventReceiver.onReceive:115 
-02-04 20:06:56.354 22482 22482 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 20:06:56.354 22482 22482 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 20:06:56.953   895 25727 I chatty  : uid=1000(system) Binder:895_1A expire 1 line
 02-04 20:06:57.384 22466 22466 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.settings.bluetooth.DockEventReceiver.beginStartingService:134 com.android.settings.bluetooth.DockEventReceiver.onReceive:115 
 02-04 20:06:58.383   895  3184 I chatty  : uid=1000(system) InputReader expire 2 lines
@@ -2979,14 +2979,14 @@
 02-04 20:06:59.343   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 12 lines
 02-04 20:06:59.344   895   932 I chatty  : uid=1000(system) android.fg expire 5 lines
 02-04 20:06:59.936   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 2 lines
-02-04 20:07:03.644 22482 22482 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-04 20:07:03.655 22482 22482 E ActivityThread: Failed to find provider info for com.android.badge
+02-04 20:07:03.644 22482 22482 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-04 20:07:03.655 22482 22482 E ActivityThread: Failed to find providerName info for com.android.badge
 02-04 20:07:29.898   895  4639 I chatty  : uid=1000(system) Binder:895_8 expire 1 line
 02-04 20:07:57.915 22643 22711 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 20:09:56.136   895   926 I chatty  : uid=1000(system) android.bg expire 2 lines
 02-04 20:09:57.404   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 3 lines
 02-04 20:09:57.427   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 4 lines
-02-04 20:09:57.475 23355 23355 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 20:09:57.475 23355 23355 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 20:09:58.087   895 29227 I chatty  : uid=1000(system) Binder:895_1C expire 3 lines
 02-04 20:09:58.534   895   930 I chatty  : uid=1000(system) batterystats-sy expire 12 lines
 02-04 20:09:58.534   895   895 I chatty  : uid=1000 system_server expire 11 lines
@@ -3035,14 +3035,14 @@
 02-04 20:33:30.008   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 3 lines
 02-04 20:33:30.724   895 25690 I chatty  : uid=1000(system) Binder:895_13 expire 1 line
 02-04 20:33:32.579   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 3 lines
-02-04 20:33:32.879 25148 25148 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 20:33:32.879 25148 25148 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 20:33:35.600   895   929 I chatty  : uid=1000(system) ActivityManager expire 1 line
 02-04 20:33:55.940   895   930 I chatty  : uid=1000(system) batterystats-sy expire 4 lines
 02-04 20:37:00.096   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 2 lines
 02-04 20:39:06.862   895   913 I chatty  : uid=1000(system) Binder:895_1 expire 8 lines
 02-04 20:39:07.893   895   927 I chatty  : uid=1000(system) ActivityManager expire 9 lines
 02-04 20:39:12.329   895  7040 I chatty  : uid=1000(system) Binder:895_1D expire 3 lines
-02-04 20:39:15.487 26354 26354 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 20:39:15.487 26354 26354 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 20:39:15.857   895 29227 I chatty  : uid=1000(system) Binder:895_1C expire 6 lines
 02-04 20:39:15.902   895  7079 I chatty  : uid=1000(system) Binder:895_E expire 4 lines
 02-04 20:39:29.923   895 27717 I chatty  : uid=1000(system) Binder:895_1B expire 3 lines
@@ -3093,7 +3093,7 @@
 02-04 20:54:15.170   895  3293 I chatty  : uid=1000(system) Binder:895_3 expire 8 lines
 02-04 20:54:16.194   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 5 lines
 02-04 20:54:16.703   895  4722 I chatty  : uid=1000(system) Binder:895_D expire 1 line
-02-04 20:54:16.849  2219  2219 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 20:54:16.849  2219  2219 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 20:54:17.320   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 9 lines
 02-04 20:54:18.162   895 25692 I chatty  : uid=1000(system) Binder:895_15 expire 3 lines
 02-04 20:54:18.207   895  3553 I chatty  : uid=1000(system) Binder:895_4 expire 6 lines
@@ -3128,7 +3128,7 @@
 02-04 20:56:29.318   895 25691 I chatty  : uid=1000(system) Binder:895_14 expire 2 lines
 02-04 20:57:01.582  5112  5112 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1357 android.content.ContextWrapper.startService:613 android.content.ContextWrapper.startService:613 com.android.keychain.KeyChainBroadcastReceiver.onReceive:12 android.app.ActivityThread.handleReceiver:3040 
 02-04 20:57:03.910   895 25689 I chatty  : uid=1000(system) Binder:895_12 expire 5 lines
-02-04 20:57:04.080  5240  5240 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 20:57:04.080  5240  5240 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 20:57:06.004   895  3197 I chatty  : uid=1000(system) ConnectivitySer expire 1 line
 02-04 20:57:06.611   895  3186 I chatty  : uid=1000(system) VoldConnector expire 1 line
 02-04 20:58:04.604   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 3 lines
@@ -3238,7 +3238,7 @@
 02-04 21:06:52.446   895  4641 I chatty  : uid=1000(system) Binder:895_9 expire 4 lines
 02-04 21:07:11.631   895   927 I chatty  : uid=1000(system) ActivityManager expire 11 lines
 02-04 21:07:35.478   895  4634 I chatty  : uid=1000(system) Binder:895_6 expire 5 lines
-02-04 21:07:47.632  8705  8789 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 21:07:47.632  8705  8789 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 21:09:46.368   895  7040 I chatty  : uid=1000(system) Binder:895_1D expire 6 lines
 02-04 21:10:50.424   895 25696 I chatty  : uid=1000(system) Binder:895_19 expire 5 lines
 02-04 21:10:50.425   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 3 lines
@@ -3269,7 +3269,7 @@
 02-04 21:33:30.784   895   895 I chatty  : uid=1000 system_server expire 7 lines
 02-04 21:33:31.393   895   934 I chatty  : uid=1000(system) android.display expire 5 lines
 02-04 21:33:31.723   895   932 I chatty  : uid=1000(system) android.fg expire 3 lines
-02-04 21:33:48.197 16268 16283 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 21:33:48.197 16268 16283 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 21:34:40.069 16105 16174 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
 02-04 21:35:38.314   895  3612 I chatty  : uid=1000(system) uteStateMachine expire 6 lines
 02-04 21:35:42.847   895  3191 I chatty  : uid=1000(system) WifiP2pService expire 1 line
@@ -3327,12 +3327,12 @@
 02-04 21:43:16.866  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=77579575, downTime=77579418, deviceId=-1, source=0x101 }
 02-04 21:43:16.866  4733  4733 W ViewRootImpl[GEL]: Cancelling event due to no window focus: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=77579575, downTime=77579418, deviceId=-1, source=0x101 }
 02-04 21:43:16.866  4733  4733 W ViewRootImpl[GEL]: Dropping event due to no window focus: KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x48, repeatCount=0, eventTime=77579576, downTime=77579576, deviceId=-1, source=0x101 }
-02-04 21:43:16.884 18507 18522 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 21:43:16.894 18507 18523 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 21:43:16.884 18507 18522 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 21:43:16.894 18507 18523 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 21:43:19.131   895  7044 I chatty  : uid=1000(system) Binder:895_20 expire 1 line
-02-04 21:43:24.916 18777 18777 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 21:43:24.916 18777 18777 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 21:43:30.938   895  4700 I chatty  : uid=1000(system) Binder:895_A expire 4 lines
-02-04 21:43:33.504 17673 17713 E ActivityThread: Failed to find provider info for com.motorola.ccc.cce.datausage
+02-04 21:43:33.504 17673 17713 E ActivityThread: Failed to find providerName info for com.motorola.ccc.cce.datausage
 02-04 21:43:35.521   895  7041 I chatty  : uid=1000(system) Binder:895_1E expire 5 lines
 02-04 21:43:35.562   895   934 I chatty  : uid=1000(system) android.display expire 16 lines
 02-04 21:43:35.567   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 12 lines
@@ -3369,7 +3369,7 @@
 02-04 21:56:28.882   895  4701 I chatty  : uid=1000(system) Binder:895_B expire 7 lines
 02-04 21:56:32.065   895 25687 I chatty  : uid=1000(system) Binder:895_10 expire 3 lines
 02-04 21:56:34.696   895   929 I chatty  : uid=1000(system) ActivityManager expire 1 line
-02-04 21:56:41.912 20737 20737 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 21:56:41.912 20737 20737 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 21:56:43.401   895  4637 I chatty  : uid=1000(system) Binder:895_7 expire 1 line
 02-04 21:56:47.105   895  4717 I chatty  : uid=1000(system) Binder:895_C expire 3 lines
 02-04 21:58:40.493   895   936 I chatty  : uid=1000(system) PowerManagerSer expire 17 lines
@@ -3381,9 +3381,9 @@
 02-04 22:09:33.317   895 25693 I chatty  : uid=1000(system) Binder:895_16 expire 2 lines
 02-04 22:09:34.225   895  3183 I chatty  : uid=1000(system) InputDispatcher expire 1 line
 02-04 22:09:34.352   895 25695 I chatty  : uid=1000(system) Binder:895_18 expire 1 line
-02-04 22:09:34.772 22126 22156 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 22:09:34.782 22126 22157 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
-02-04 22:09:34.785 22126 22160 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-04 22:09:34.772 22126 22156 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 22:09:34.782 22126 22157 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
+02-04 22:09:34.785 22126 22160 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-04 22:09:34.857   895   914 I chatty  : uid=1000(system) Binder:895_2 expire 4 lines
 02-04 22:09:34.858   895 25694 I chatty  : uid=1000(system) Binder:895_17 expire 2 lines
 02-04 22:09:34.864   895  7044 I chatty  : uid=1000(system) Binder:895_20 expire 5 lines
@@ -3433,14 +3433,14 @@
 02-04 22:10:09.064   895  3187 I chatty  : uid=1000(system) CryptdConnector expire 3 lines
 02-04 22:10:09.521   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 22:10:09.956 22328 22583 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
-02-04 22:10:30.772 23122 23122 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
-02-04 22:10:37.940 23122 23122 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-04 22:10:37.954 23122 23122 E ActivityThread: Failed to find provider info for com.android.badge
-02-04 22:11:55.811 23343 23343 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
-02-04 22:12:30.212 23442 23442 E ActivityThread: Failed to find provider info for com.tencent.mm.coolassist.debugprovider
+02-04 22:10:30.772 23122 23122 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
+02-04 22:10:37.940 23122 23122 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-04 22:10:37.954 23122 23122 E ActivityThread: Failed to find providerName info for com.android.badge
+02-04 22:11:55.811 23343 23343 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
+02-04 22:12:30.212 23442 23442 E ActivityThread: Failed to find providerName info for com.tencent.mm.coolassist.debugprovider
 02-04 22:12:31.373 23223 23267 W FileUtils: Failed to chmod(/storage/emulated/0/netease/utils/wu.dat): android.system.ErrnoException: chmod failed: EPERM (Operation not permitted)
-02-04 22:12:34.683 23442 23442 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-04 22:12:34.921 23442 23442 E ActivityThread: Failed to find provider info for com.android.badge
+02-04 22:12:34.683 23442 23442 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-04 22:12:34.921 23442 23442 E ActivityThread: Failed to find providerName info for com.android.badge
 02-04 22:13:13.886   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-04 22:13:40.198   895   927 I chatty  : uid=1000(system) ActivityManager expire 2 lines
 02-04 22:19:07.923   895   930 I chatty  : uid=1000(system) batterystats-sy expire 1 line
@@ -3474,14 +3474,14 @@
 02-04 22:59:07.882   895  4700 I ActivityManager: Killing 22786:com.google.android.partnersetup/u0a18 (adj 906): empty #17
 02-04 22:59:07.916   895  4722 D ActivityManager: cleanUpApplicationRecord -- 22786
 02-04 23:02:41.013   895   926 I ActivityManager: Start proc 25146:com.netease.newsreader.activity:sync/u0a98 for service com.netease.newsreader.activity/com.netease.nr.biz.account.SyncService
-02-04 23:02:41.025  4921 25141 E ActivityThread: Failed to find provider info for com.google.android.wearable.settings
+02-04 23:02:41.025  4921 25141 E ActivityThread: Failed to find providerName info for com.google.android.wearable.settings
 02-04 23:02:41.175   895 25692 D ConnectivityService: Returning unblocked NetworkInfo to uid=10096
 02-04 23:02:41.852   895  7079 I ActivityManager: Start proc 25189:com.google.android.gms.unstable/u0a12 for service com.google.android.gms/.droidguard.DroidGuardService
 02-04 23:02:42.006   895  4639 D ConnectivityService: Returning unblocked NetworkInfo to uid=10106
 02-04 23:02:43.652   895  7041 D ConnectivityService: Returning unblocked NetworkInfo to uid=10098
-02-04 23:02:44.535  4921 25141 E ActivityThread: Failed to find provider info for com.google.android.wearable.settings
+02-04 23:02:44.535  4921 25141 E ActivityThread: Failed to find providerName info for com.google.android.wearable.settings
 02-04 23:02:45.985   895  7079 D ConnectivityService: Returning blocked NetworkInfo to uid=10106
-02-04 23:02:46.353 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 23:02:46.353 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 23:02:50.955   895  3293 D ConnectivityService: Returning blocked NetworkInfo to uid=10098
 02-04 23:03:40.869   895 25691 I ActivityManager: Killing 18437:com.netease.cloudmusic/u0a110 (adj 906): empty #17
 02-04 23:03:40.899   895  7044 D ActivityManager: cleanUpApplicationRecord -- 18437
@@ -3514,14 +3514,14 @@
 02-04 23:13:21.234   895  4639 I ActivityManager: Start proc 25656:com.tinder/u0a129 for broadcast com.tinder/.receivers.BroadcastReceiverConnectionChange
 02-04 23:13:42.538   895   928 E NetdConnector: NDC Command {3187 firewall set_uid_rule standby 10129 deny} took too long (21219ms)
 02-04 23:13:42.568   895 25696 I ActivityManager: Killing 23037:com.google.android.gms.feedback/u0a12 (adj 906): empty #17
-02-04 23:13:42.610   895 25693 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6cc8a27 25565:com.google.android.apps.plus/u0a77} (pid=25565, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-04 23:13:42.610   895 25693 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6cc8a27 25565:com.google.android.apps.plus/u0a77} (pid=25565, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
 02-04 23:13:42.691   895  7044 D ActivityManager: cleanUpApplicationRecord -- 23037
 02-04 23:13:42.691   895  7044 W ActivityManager: Scheduling restart of crashed service com.google.android.gms/.feedback.FeedbackService in 1000ms
 02-04 23:13:46.084   895 25689 I ActivityManager: Start proc 25705:com.tencent.qqlive:services/u0a113 for service com.tencent.qqlive/.services.config.ConfigService
-02-04 23:13:46.131   895 25695 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6cc8a27 25565:com.google.android.apps.plus/u0a77} (pid=25565, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
-02-04 23:13:46.135   895 25688 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6cc8a27 25565:com.google.android.apps.plus/u0a77} (pid=25565, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-04 23:13:46.131   895 25695 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6cc8a27 25565:com.google.android.apps.plus/u0a77} (pid=25565, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-04 23:13:46.135   895 25688 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6cc8a27 25565:com.google.android.apps.plus/u0a77} (pid=25565, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
 02-04 23:13:47.496   895   927 I ActivityManager: Start proc 25736:com.google.android.gms.feedback/u0a12 for service com.google.android.gms/.feedback.FeedbackService
-02-04 23:13:47.520 25705 25705 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 23:13:47.520 25705 25705 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 23:14:49.519   895   913 I ActivityManager: Killing 22984:com.google.android.apps.maps/u0a58 (adj 906): empty #17
 02-04 23:15:22.485   895   929 E libprocessgroup: failed to kill 1 processes for processgroup 22984
 02-04 23:15:22.526   895 29227 D ActivityManager: cleanUpApplicationRecord -- 22984
@@ -3592,8 +3592,8 @@
 02-04 23:17:33.517   895   936 I PowerManagerService: Dozing...
 02-04 23:17:33.517   895   932 I DreamController: Starting dream: name=ComponentInfo{com.android.systemui/com.android.systemui.doze.DozeService}, isTest=false, canDoze=true, userId=0
 02-04 23:17:33.569   895   914 I ActivityManager: Setting hasTopUi=true for pid=3347
-02-04 23:17:33.768 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-04 23:17:34.180 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 23:17:33.768 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-04 23:17:34.180 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 23:17:38.682   895 25688 I ActivityManager: Killing 23727:com.zhihu.za/u0a138 (adj 906): empty #17
 02-04 23:17:38.750   895  4639 D ActivityManager: cleanUpApplicationRecord -- 23727
 02-04 23:17:39.103   895  4717 I ActivityManager: Killing 25146:com.netease.newsreader.activity:sync/u0a98 (adj 906): empty #17
@@ -3617,7 +3617,7 @@
 02-04 23:19:42.321   895   933 D BluetoothManagerService: Added callback: android.bluetooth.IBluetoothManagerCallback$Stub$Proxy@e62ba47:true
 02-04 23:19:42.515   895  7044 I ActivityManager: Killing 25607:com.tencent.qqlive/u0a113 (adj 906): empty #17
 02-04 23:19:42.576   895  4717 D ActivityManager: cleanUpApplicationRecord -- 25607
-02-04 23:21:30.312   895  4700 I ActivityManager: Start proc 26555:com.android.providers.calendar/u0a1 for content provider com.android.providers.calendar/.CalendarProvider2
+02-04 23:21:30.312   895  4700 I ActivityManager: Start proc 26555:com.android.providers.calendar/u0a1 for content providerName com.android.providers.calendar/.CalendarProvider2
 02-04 23:21:31.571   895   927 I ActivityManager: Start proc 26569:com.google.android.calendar/u0a36 for broadcast com.google.android.calendar/com.android.calendar.alerts.AlertReceiver
 02-04 23:21:31.873   895 25687 D CryptdConnector: SND -> {100 cryptfs getpwtype}
 02-04 23:21:31.874   377   384 D VoldCryptCmdListener: cryptfs getpwtype
@@ -3628,7 +3628,7 @@
 02-04 23:21:40.942   895  4637 W SettingsProvider: You shouldn't keep your settings in the secure settings. This will soon become an error.
 02-04 23:22:44.842   895  3166 I ActivityManager: Killing 25705:com.tencent.qqlive:services/u0a113 (adj 906): empty #17
 02-04 23:22:44.864   895   927 W ProcessCpuTracker: Skipping unknown process pid 26626
-02-04 23:22:44.881   895  3572 I ActivityManager: Start proc 26633:android.process.media/u0a8 for content provider com.android.providers.downloads/.DownloadProvider
+02-04 23:22:44.881   895  3572 I ActivityManager: Start proc 26633:android.process.media/u0a8 for content providerName com.android.providers.downloads/.DownloadProvider
 02-04 23:22:44.994   895  4701 D ConnectivityService: Returning blocked NetworkInfo to uid=10106
 02-04 23:22:45.004   895  4717 D ConnectivityService: Returning blocked NetworkInfo to uid=10098
 02-04 23:22:45.036   895   913 D ConnectivityService: Returning blocked NetworkInfo to uid=10144
@@ -3683,7 +3683,7 @@
 02-04 23:46:01.466   895   936 I DisplayPowerController: Blocking screen on until initial contents have been drawn.
 02-04 23:46:01.481   895   934 I DisplayManagerService: Display device changed state: "Built-in Screen", ON
 02-04 23:46:01.656   895 23723 D ConnectivityService: Returning unblocked NetworkInfo to uid=10096
-02-04 23:46:01.713   895 25695 I ActivityManager: Start proc 27435:com.netease.cloudmusic/u0a110 for content provider com.netease.cloudmusic/org.xjy.android.treasure.provider.TreasureProvider
+02-04 23:46:01.713   895 25695 I ActivityManager: Start proc 27435:com.netease.cloudmusic/u0a110 for content providerName com.netease.cloudmusic/org.xjy.android.treasure.providerName.TreasureProvider
 02-04 23:46:01.829   895   936 I DisplayPowerController: Unblocked screen on after 362 ms
 02-04 23:46:01.830   895   936 I DreamManagerService: Gently waking up from dream.
 02-04 23:46:01.832   895  4634 I DreamManagerService: Leaving dreamland.
@@ -3698,8 +3698,8 @@
 02-04 23:46:04.390   895  7040 D ConnectivityService: Returning unblocked NetworkInfo to uid=10103
 02-04 23:46:04.864   895 25694 D ConnectivityService: Returning unblocked NetworkInfo to uid=10099
 02-04 23:46:05.250   895  7041 D ConnectivityService: Returning unblocked NetworkInfo to uid=10106
-02-04 23:46:08.127 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
-02-04 23:46:08.569 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-04 23:46:08.127 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
+02-04 23:46:08.569 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-04 23:46:34.058   895   936 I DisplayPowerController: Blocking screen on until initial contents have been drawn.
 02-04 23:46:34.060   895   934 I DisplayManagerService: Display device changed state: "Built-in Screen", DOZE
 02-04 23:46:34.435   895   936 I DisplayPowerController: Unblocked screen on after 376 ms
@@ -3801,9 +3801,9 @@
 02-04 23:48:01.805   895 25691 D ConnectivityService: Returning unblocked NetworkInfo to uid=10058
 02-04 23:48:01.806   895  3187 D CryptdConnector: RCV <- {213 103 default}
 02-04 23:48:01.904   895 25694 I ActivityManager: Start proc 28220:com.google.android.gms.feedback/u0a12 for service com.google.android.gms/.feedback.FeedbackService
-02-04 23:48:03.145   895 25687 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{7008569 28124:com.google.android.apps.plus/u0a77} (pid=28124, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
-02-04 23:48:03.375   895   913 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{7008569 28124:com.google.android.apps.plus/u0a77} (pid=28124, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
-02-04 23:48:03.385   895  4637 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{7008569 28124:com.google.android.apps.plus/u0a77} (pid=28124, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-04 23:48:03.145   895 25687 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{7008569 28124:com.google.android.apps.plus/u0a77} (pid=28124, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-04 23:48:03.375   895   913 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{7008569 28124:com.google.android.apps.plus/u0a77} (pid=28124, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-04 23:48:03.385   895  4637 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{7008569 28124:com.google.android.apps.plus/u0a77} (pid=28124, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
 02-04 23:48:07.281   895  4722 I PowerManagerService: Going to sleep due to screen timeout (uid 1000)...
 02-04 23:48:07.830   895   934 I DisplayManagerService: Display device changed state: "Built-in Screen", OFF
 02-04 23:48:08.147   895   936 I DreamManagerService: Entering dreamland.
@@ -3874,7 +3874,7 @@
 02-04 23:54:29.163   895 25693 I ActivityManager: Start proc 29829:com.tencent.qqlive/u0a113 for service com.tencent.qqlive/com.xiaomi.mipush.sdk.PushMessageHandler
 02-04 23:54:29.294   895  3293 I ActivityManager: Start proc 29846:com.netease.cloudmusic:pushservice/u0a110 for broadcast com.netease.cloudmusic/com.huawei.android.pushagent.PushBootReceiver
 02-04 23:54:29.892   895   913 I ActivityManager: Start proc 29873:com.tencent.qqlive:services/u0a113 for service com.tencent.qqlive/.services.config.ConfigService
-02-04 23:54:30.262 29873 29873 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-04 23:54:30.262 29873 29873 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-04 23:54:30.941   895  7043 D ConnectivityService: Returning blocked NetworkInfo to uid=10113
 02-04 23:54:31.312   895   933 D BluetoothManagerService: Message: 20
 02-04 23:54:31.312   895   933 D BluetoothManagerService: Added callback: android.bluetooth.IBluetoothManagerCallback$Stub$Proxy@e839b6b:true
@@ -3891,7 +3891,7 @@
 02-04 23:54:34.546   895  3572 D ActivityManager: cleanUpApplicationRecord -- 28138
 02-04 23:54:41.666   895 25688 W ActivityManager: Permission Denial: Accessing service ComponentInfo{com.google.android.music/com.google.android.music.dial.DialMediaRouteProviderService} from pid=28151, uid=10058 that is not exported from uid 10059
 02-04 23:54:42.722   895   926 I ActivityManager: Start proc 30108:com.android.printspooler/u0a69 for service com.android.printspooler/.model.PrintSpoolerService
-02-04 23:54:44.888   895  4639 I ActivityManager: Start proc 30127:android.process.acore/u0a2 for content provider com.android.providers.contacts/.ContactsProvider2
+02-04 23:54:44.888   895  4639 I ActivityManager: Start proc 30127:android.process.acore/u0a2 for content providerName com.android.providers.contacts/.ContactsProvider2
 02-04 23:54:44.945   895 27717 I ActivityManager: Killing 26633:android.process.media/u0a8 (adj 906): empty #17
 02-04 23:54:44.966   895  7041 D ActivityManager: cleanUpApplicationRecord -- 26633
 02-04 23:54:45.786  7069  7069 E AndroidRuntime: FATAL EXCEPTION: main
@@ -3928,7 +3928,7 @@
 02-04 23:58:26.192   895   930 E BatteryStatsService: no controller energy info supplied
 02-04 23:59:48.041   895   930 E BatteryStatsService: no controller energy info supplied
 02-05 00:00:00.050   895   895 I ActivityManager: Start proc 31296:com.google.android.calendar/u0a36 for broadcast com.google.android.calendar/com.android.calendar.widget.CalendarAppWidgetProvider
-02-05 00:00:00.467   895  7041 I ActivityManager: Start proc 31313:com.android.providers.calendar/u0a1 for content provider com.android.providers.calendar/.CalendarProvider2
+02-05 00:00:00.467   895  7041 I ActivityManager: Start proc 31313:com.android.providers.calendar/u0a1 for content providerName com.android.providers.calendar/.CalendarProvider2
 02-05 00:00:00.563   895 25688 D CryptdConnector: SND -> {104 cryptfs getpwtype}
 02-05 00:00:00.564   377   384 D VoldCryptCmdListener: cryptfs getpwtype
 02-05 00:00:00.571   895  3187 D CryptdConnector: RCV <- {213 104 default}
@@ -3984,18 +3984,18 @@
 02-05 00:08:33.794   895  4722 D ActivityManager: cleanUpApplicationRecord -- 29982
 02-05 00:08:38.746   895  4637 I ActivityManager: Killing 30127:android.process.acore/u0a2 (adj 906): empty #17
 02-05 00:08:38.767   895 29227 D ActivityManager: cleanUpApplicationRecord -- 30127
-02-05 00:08:42.727 21581 21581 E ActivityThread: Failed to find provider info for com.huawei.android.launcher.settings
+02-05 00:08:42.727 21581 21581 E ActivityThread: Failed to find providerName info for com.huawei.android.launcher.settings
 02-05 00:10:07.147   895   930 E BatteryStatsService: no controller energy info supplied
 02-05 00:12:35.166   895 25695 W SettingsProvider: You shouldn't keep your settings in the secure settings. This will soon become an error.
 02-05 00:12:35.167   895   913 W SettingsProvider: You shouldn't keep your settings in the secure settings. This will soon become an error.
 02-05 00:13:17.147   895   926 I ActivityManager: Start proc 1598:com.google.android.apps.plus/u0a77 for service com.google.android.apps.plus/.service.EsSyncAdapterService
-02-05 00:13:17.601   895 23723 I ActivityManager: Start proc 1631:android.process.media/u0a8 for content provider com.android.providers.media/.MediaProvider
-02-05 00:13:17.939   895 27717 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6fb3799 1598:com.google.android.apps.plus/u0a77} (pid=1598, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
-02-05 00:13:17.967   895 25693 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6fb3799 1598:com.google.android.apps.plus/u0a77} (pid=1598, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
-02-05 00:13:17.979   895 25688 W ActivityManager: Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6fb3799 1598:com.google.android.apps.plus/u0a77} (pid=1598, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-05 00:13:17.601   895 23723 I ActivityManager: Start proc 1631:android.process.media/u0a8 for content providerName com.android.providers.media/.MediaProvider
+02-05 00:13:17.939   895 27717 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6fb3799 1598:com.google.android.apps.plus/u0a77} (pid=1598, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-05 00:13:17.967   895 25693 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6fb3799 1598:com.google.android.apps.plus/u0a77} (pid=1598, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+02-05 00:13:17.979   895 25688 W ActivityManager: Permission Denial: opening providerName com.android.providers.contacts.ContactsProvider2 from ProcessRecord{6fb3799 1598:com.google.android.apps.plus/u0a77} (pid=1598, uid=10077) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
 02-05 00:13:18.259   895 25727 I ActivityManager: Killing 30108:com.android.printspooler/u0a69 (adj 906): empty #17
 02-05 00:13:18.289   895  4637 D ActivityManager: cleanUpApplicationRecord -- 30108
-02-05 00:13:25.483   895  3572 I ActivityManager: Start proc 1694:android.process.acore/u0a2 for content provider com.android.providers.contacts/.ContactsProvider2
+02-05 00:13:25.483   895  3572 I ActivityManager: Start proc 1694:android.process.acore/u0a2 for content providerName com.android.providers.contacts/.ContactsProvider2
 02-05 00:13:40.583   895 25692 I ActivityManager: Killing 28791:com.instagram.android/u0a90 (adj 906): empty #17
 02-05 00:13:40.645   895 25694 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ LISTEN id=350, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND] ], android.os.BinderProxy@f20f82)
 02-05 00:13:40.645   895 25687 D ActivityManager: cleanUpApplicationRecord -- 28791
@@ -4072,7 +4072,7 @@
 02-05 00:40:26.707   895   913 I ActivityManager: Start proc 5906:com.tencent.qqlive/u0a113 for service com.tencent.qqlive/com.xiaomi.mipush.sdk.PushMessageHandler
 02-05 00:40:27.324   895  4637 I ActivityManager: Start proc 5941:com.tinder/u0a129 for broadcast com.tinder/.receivers.BroadcastReceiverConnectionChange
 02-05 00:40:27.814   895 25693 I ActivityManager: Start proc 5966:com.tencent.qqlive:services/u0a113 for service com.tencent.qqlive/.services.config.ConfigService
-02-05 00:40:28.145  5966  5966 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-05 00:40:28.145  5966  5966 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-05 00:40:30.389   895   914 I ActivityManager: Setting hasTopUi=true for pid=3347
 02-05 00:40:32.401   895 25696 I ActivityManager: Start proc 6156:com.wacai365:droid/u0a101 for service com.wacai365/com.android.service.DroidService
 02-05 00:40:32.496   895 25693 I ActivityManager: Start proc 6171:com.yodo1.crossyroad/u0a116 for broadcast com.yodo1.crossyroad/com.inmobi.commons.analytics.androidsdk.IMAdTrackerReceiver
@@ -4143,7 +4143,7 @@
 02-05 00:40:47.434   895  3166 I ActivityManager: Start proc 6524:com.google.android.googlequicksearchbox:search/u0a29 for service com.google.android.googlequicksearchbox/com.google.android.apps.gsa.eventlogger.EventLoggerService
 02-05 00:40:47.701   895  4722 W SettingsProvider: You shouldn't keep your settings in the secure settings. This will soon become an error.
 02-05 00:40:47.711   895  4639 W SettingsProvider: You shouldn't keep your settings in the secure settings. This will soon become an error.
-02-05 00:40:48.546   895  3293 I ActivityManager: Start proc 6558:com.google.android.partnersetup/u0a18 for content provider com.google.android.partnersetup/.RlzAppProvider
+02-05 00:40:48.546   895  3293 I ActivityManager: Start proc 6558:com.google.android.partnersetup/u0a18 for content providerName com.google.android.partnersetup/.RlzAppProvider
 02-05 00:40:48.592   895  3197 D ConnectivityService: NetworkAgentInfo [WIFI () - 140] EVENT_NETWORK_INFO_CHANGED, going from CONNECTED to DISCONNECTED
 02-05 00:40:48.593   895  3197 D ConnectivityService: NetworkAgentInfo [WIFI () - 140] got DISCONNECTED, was satisfying 10
 02-05 00:40:48.618   895  3197 I Nat464Xlat: Stopping clatd
@@ -4190,7 +4190,7 @@
 02-05 00:40:59.758   895 25689 I ActivityManager: Killing 28151:com.google.android.apps.maps/u0a58 (adj 906): empty #17
 02-05 00:40:59.974   895   929 E libprocessgroup: failed to kill 1 processes for processgroup 28151
 02-05 00:41:00.080   895 25688 D ActivityManager: cleanUpApplicationRecord -- 28151
-02-05 00:41:02.177   895  3293 I ActivityManager: Start proc 7024:com.android.providers.calendar/u0a1 for content provider com.android.providers.calendar/.CalendarProvider2
+02-05 00:41:02.177   895  3293 I ActivityManager: Start proc 7024:com.android.providers.calendar/u0a1 for content providerName com.android.providers.calendar/.CalendarProvider2
 02-05 00:41:03.681   895   927 I ActivityManager: Start proc 7070:com.google.android.calendar/u0a36 for broadcast com.google.android.calendar/com.android.calendar.alerts.AlertReceiver
 02-05 00:41:04.232   895  4639 D CryptdConnector: SND -> {107 cryptfs getpwtype}
 02-05 00:41:04.233   377   384 D VoldCryptCmdListener: cryptfs getpwtype
@@ -4290,7 +4290,7 @@
 02-05 00:46:39.381   895   914 I ActivityManager: Start proc 7845:com.google.android.apps.photos/u0a62 for broadcast com.google.android.apps.photos/.analytics.alive.AliveLogReceiver
 02-05 00:46:39.423   895 25688 I ActivityManager: Start proc 7865:android.process.media/u0a8 for broadcast com.android.providers.media/.MtpReceiver
 02-05 00:46:40.414   895  4722 I ActivityManager: Start proc 7897:com.tencent.qqlive:services/u0a113 for broadcast com.tencent.qqlive/.services.push.PushAlarmReceiver
-02-05 00:46:40.558  7897  7897 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-05 00:46:40.558  7897  7897 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-05 00:46:40.594   895 25689 I ActivityManager: Start proc 7918:com.google.android.keep/u0a79 for service com.google.android.keep/.service.CleanupService
 02-05 00:46:41.120   895  4717 I ActivityManager: Start proc 7971:com.google.android.youtube/u0a75 for service com.google.android.youtube/com.google.android.libraries.youtube.common.gcore.gcoreclient.gcm.impl.GcmTaskServiceDelegator
 02-05 00:46:41.698   895 25687 D CryptdConnector: SND -> {108 cryptfs getpwtype}
@@ -4343,7 +4343,7 @@
 02-05 00:47:09.097  4733  4733 W ViewRootImpl[GEL]: Dropping event due to no window focus: KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x48, repeatCount=0, eventTime=82521289, downTime=82521289, deviceId=-1, source=0x101 }
 02-05 00:47:12.279   895 25688 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.google.android.contacts/com.android.contacts.activities.PeopleActivity (has extras)} from uid 10029 on display 0
 02-05 00:47:12.395   895  7044 I ActivityManager: Start proc 8561:com.google.android.contacts/u0a13 for activity com.google.android.contacts/com.android.contacts.activities.PeopleActivity
-02-05 00:47:12.512   895  4722 I ActivityManager: Start proc 8579:android.process.acore/u0a2 for content provider com.android.providers.contacts/.ContactsProvider2
+02-05 00:47:12.512   895  4722 I ActivityManager: Start proc 8579:android.process.acore/u0a2 for content providerName com.android.providers.contacts/.ContactsProvider2
 02-05 00:47:12.639   895  4722 I ActivityManager: Killing 6254:com.google.android.talk/u0a53 (adj 906): empty #17
 02-05 00:47:12.667   895  7041 D ActivityManager: cleanUpApplicationRecord -- 6254
 02-05 00:47:14.238   895 25690 I ActivityManager: Killing 7416:com.google.android.gms.feedback/u0a12 (adj 906): empty #17
@@ -4805,8 +4805,8 @@
 02-05 00:55:04.009  6524 14521 I MicroRecognitionRunner: Detection finished
 02-05 00:55:04.025   895   926 I ActivityManager: Start proc 14548:com.android.printspooler/u0a69 for service com.android.printspooler/.model.PrintSpoolerService
 02-05 00:55:04.370 14528 14528 I Finsky  : [1] com.google.android.finsky.dailyhygiene.DailyHygiene.a(316): No need to run daily hygiene.
-02-05 00:55:04.383 14528 14528 W Settings: Setting download_manager_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
-02-05 00:55:04.384 14528 14528 W Settings: Setting download_manager_recommended_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+02-05 00:55:04.383 14528 14528 W Settings: Setting download_manager_max_bytes_over_mobile has moved from android.providerName.Settings.Secure to android.providerName.Settings.Global.
+02-05 00:55:04.384 14528 14528 W Settings: Setting download_manager_recommended_max_bytes_over_mobile has moved from android.providerName.Settings.Secure to android.providerName.Settings.Global.
 02-05 00:55:04.418 14528 14528 I Finsky  : [1] com.google.android.finsky.w.a.a(188): Enabling bucket experiment: factor=1.000, zeroDelta=0ms, forceNetwork=true
 02-05 00:55:04.565 14412 14412 I ServiceManager: Waiting for service AtCmdFwd...
 02-05 00:55:04.565 14528 14528 I Finsky  : [1] com.google.android.finsky.wear.WearSupportService.a(310): Wear auto uninstall disabled for package org.jtb.alogcat
@@ -4906,7 +4906,7 @@
 02-05 00:55:07.568 14713 14713 I MultiDex: VM with version 2.1.0 has multidex support
 02-05 00:55:07.568 14713 14713 I MultiDex: install
 02-05 00:55:07.568 14713 14713 I MultiDex: VM has multidex support, MultiDex support library is disabled.
-02-05 00:55:07.571 14713 14713 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-05 00:55:07.571 14713 14713 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-05 00:55:07.573 14713 14713 D AppConfig: traverseSharedPreferencesKey: start
 02-05 00:55:07.578 14713 14713 D AppConfig: fs length is :272
 02-05 00:55:07.602  4655  4655 V GOOGLENOWINTERCEPT: Type: 2048;ClassName: com.android.launcher3.Workspace;Id: null;Text: null
@@ -4936,7 +4936,7 @@
 02-05 00:55:08.118 14713 14744 W odk     : can not get the permission of android.permission.WRITE_EXTERNAL_STORAGE
 02-05 00:55:08.130 14713 14744 I odk     : ReportStrategy:0
 02-05 00:55:08.163 14713 14744 I odk     : Network:
-02-05 00:55:08.173 14713 14744 W Settings: Setting android_id has moved from android.provider.Settings.System to android.provider.Settings.Secure, returning read-only value.
+02-05 00:55:08.173 14713 14744 W Settings: Setting android_id has moved from android.providerName.Settings.System to android.providerName.Settings.Secure, returning read-only value.
 02-05 00:55:08.173  4655  4655 V GOOGLENOWINTERCEPT: Type: 2048;ClassName: com.android.launcher3.Workspace;Id: null;Text: null
 02-05 00:55:08.174 14713 14744 E debug_tag: debug flag = false
 02-05 00:55:08.175 14713 14744 E TAG     : Task time, task = com.tencent.qqlive.ona.init.a.ag@3285a2f, time = 399
@@ -5008,7 +5008,7 @@
 02-05 00:55:09.876 14805 14805 W System  : ClassLoader referenced unknown path: /system/priv-app/DocumentsUI/lib/arm64
 02-05 00:55:10.076   895  7041 I ActivityManager: Killing 8148:com.google.android.apps.walletnfcrel/u0a73 (adj 906): empty #17
 02-05 00:55:10.156   895 25695 D ActivityManager: cleanUpApplicationRecord -- 8148
-02-05 00:55:10.250 14713 14713 W Settings: Setting android_id has moved from android.provider.Settings.System to android.provider.Settings.Secure, returning read-only value.
+02-05 00:55:10.250 14713 14713 W Settings: Setting android_id has moved from android.providerName.Settings.System to android.providerName.Settings.Secure, returning read-only value.
 02-05 00:55:10.411 16206 16206 I PushLogSC2815_weibo: [main-1]action is com.huawei.intent.action.PUSH(weibo/null:-1)
 02-05 00:55:10.415 16206 23147 I PushLogSC2815_weibo: [Thread-3-2171]votedPackage from file:com.sina.weibo(weibo/null:-1)
 02-05 00:55:10.419 16206 16206 I PushLogSC2815_weibo: [main-1]action is com.huawei.intent.action.PUSH(weibo/null:-1)
@@ -5093,7 +5093,7 @@
 02-05 00:55:16.444 14880 14880 D NetEasePushService_FileUtil: dataFileExists()...
 02-05 00:55:16.444 14880 14880 D NetEasePushService_FileUtil: getDataPath()...
 02-05 00:55:16.455 14880 14880 D NetEasePushService_NetEasePushMessageService_V1: generateClientId()...
-02-05 00:55:16.455 14880 14880 W Settings: Setting android_id has moved from android.provider.Settings.System to android.provider.Settings.Secure, returning read-only value.
+02-05 00:55:16.455 14880 14880 W Settings: Setting android_id has moved from android.providerName.Settings.System to android.providerName.Settings.Secure, returning read-only value.
 02-05 00:55:16.459 14880 14880 I NetEasePushService_NetEasePushMessageService_V1: client id is: 1486277716455270102c98
 02-05 00:55:16.459 14880 14880 D NetEasePushService_Utils: generateUUID()...
 02-05 00:55:16.471 14880 14880 D uuid is :: 65786566db8e7354d325f6b2e87caa2ebc4c204e_G7
@@ -5185,7 +5185,7 @@
 02-05 00:55:17.954 14586 14613 W linker  : /data/app/com.google.android.gms-2/lib/arm64/libconscrypt_gmscore_jni.so: unused DT entry: type 0x7ffffffd arg 0x169
 02-05 00:55:17.955 14586 14613 V JNIHelp : Registering com/google/android/gms/org/conscrypt/NativeCrypto's 235 native methods...
 02-05 00:55:17.984 14586 14613 D NetworkSecurityConfig: No Network Security Config specified, using platform default
-02-05 00:55:17.988 14586 14613 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+02-05 00:55:17.988 14586 14613 I ProviderInstaller: Installed default security providerName GmsCore_OpenSSL
 02-05 00:55:18.442 14880 14910 I System.out: WMQtt client:Lost connection...
 02-05 00:55:18.444 14880 14961 D NetEasePushService_NetEasePushMessageService_V1: connectionLost()...
 02-05 00:55:18.444 14880 14961 D NetEasePushService_NetEasePushMessageService_V1: isNetworkOpened()...
@@ -5241,7 +5241,7 @@
 02-05 00:55:24.192   895   936 I PowerManagerService: Dozing...
 02-05 00:55:24.195   895   932 I DreamController: Starting dream: name=ComponentInfo{com.android.systemui/com.android.systemui.doze.DozeService}, isTest=false, canDoze=true, userId=0
 02-05 00:55:24.242   895  7044 I ActivityManager: Setting hasTopUi=true for pid=3347
-02-05 00:55:24.247 14993 15010 E ActivityThread: Failed to find provider info for downloads.com.ximalaya.ting.android
+02-05 00:55:24.247 14993 15010 E ActivityThread: Failed to find providerName info for downloads.com.ximalaya.ting.android
 02-05 00:55:24.276   895   895 I chatty  : uid=1000 system_server expire 7 lines
 02-05 00:55:24.318  3347  3347 D PhoneStatusBar: disable: < expand ICONS* alerts SYSTEM_INFO* back home recent clock search quick_settings >
 02-05 00:55:24.376  3347  3347 W View    : requestLayout() improperly called by com.android.systemui.statusbar.ExpandableNotificationRow{8f1a785 VFE...C.. ......ID 0,0-1440,321} during layout: running second layout pass
@@ -5664,7 +5664,7 @@
 02-05 00:58:27.123   544   698 I SoundTriggerHwService::Module: void android::SoundTriggerHwService::Module::onCallbackEvent(const sp<android::SoundTriggerHwService::CallbackEvent> &) mClient == 0
 02-05 00:58:27.126  6524 15850 I MicroRecognitionRunner: Detection finished
 02-05 00:58:27.126 14528 14528 W Finsky  : [1] com.google.android.finsky.c.x.a(273): No LoggingContext in the bundle, which breaks event chain!. Creating a new logging context.
-02-05 00:58:27.148 14528 14528 E Finsky  : [1] com.google.android.finsky.u.a.a(81): No permission to get location. java.lang.SecurityException: "gps" location provider requires ACCESS_FINE_LOCATION permission.
+02-05 00:58:27.148 14528 14528 E Finsky  : [1] com.google.android.finsky.u.a.a(81): No permission to get location. java.lang.SecurityException: "gps" location providerName requires ACCESS_FINE_LOCATION permission.
 02-05 00:58:27.286 14528 14528 I Finsky  : [1] com.google.android.finsky.u.i.a(1046): Starting LocationRefresher
 02-05 00:58:27.304   895   939 I ActivityManager: Start proc 16012:com.android.defcontainer/u0a7 for service com.android.defcontainer/.DefaultContainerService
 02-05 00:58:27.322 14528 14528 I Finsky  : [1] com.google.android.finsky.selfupdate.c.a(130): Skipping DFE self-update. Local Version [80741200] >= Server Version [-1]
@@ -5949,7 +5949,7 @@
 02-05 00:59:19.761 14528 14528 I Finsky  : [1] com.google.android.finsky.installer.a.t.onPostExecute(12445): Successfully copied APK to update com.nolanlawson.logcat (com.nolanlawson.logcat)
 02-05 00:59:19.762 14528 14528 I Finsky  : [1] com.google.android.finsky.installer.a.o.d(48422): Begin install of com.nolanlawson.logcat
 02-05 00:59:19.779 17015 17103 I VideoCapabilities: Unsupported profile 4 for video/mp4v-es
-02-05 00:59:19.790  7865 17106 V DownloadManager: Deleting /data/data/com.android.providers.downloads/cache/downloadfile.bin via provider delete
+02-05 00:59:19.790  7865 17106 V DownloadManager: Deleting /data/data/com.android.providers.downloads/cache/downloadfile.bin via providerName delete
 02-05 00:59:19.865 14528 14528 I Finsky  : [1] com.google.android.vending.verifier.PackageVerificationReceiver.onReceive(1096): Skipping verification because own installation
 02-05 00:59:19.880   895   939 I chatty  : uid=1000(system) PackageManager expire 3 lines
 02-05 00:59:19.893 17015 17015 W cr_BindingManager: Cannot call determinedVisibility() - never saw a connection for the pid: 17015
@@ -5988,7 +5988,7 @@
 02-05 00:59:21.348   895  3572 D ActivityManager: cleanUpApplicationRecord -- 14657
 02-05 00:59:21.354 17164 17164 W System  : ClassLoader referenced unknown path: /system/app/Drive/lib/arm64
 02-05 00:59:21.402   895   914 W SettingsProvider: You shouldn't keep your settings in the secure settings. This will soon become an error.
-02-05 00:59:21.468 17673 17673 W Settings: Setting data_roaming has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+02-05 00:59:21.468 17673 17673 W Settings: Setting data_roaming has moved from android.providerName.Settings.Secure to android.providerName.Settings.Global.
 02-05 00:59:21.893 17164 17195 I GAv4    : Google Analytics 8.4.87 is starting up. To enable debug logging on a device run:
 02-05 00:59:21.893 17164 17195 I GAv4    :   adb shell setprop log.tag.GAv4 DEBUG
 02-05 00:59:21.893 17164 17195 I GAv4    :   adb logcat -s GAv4
@@ -6047,7 +6047,7 @@
 02-05 00:59:24.244 17339 17339 I MultiDex: VM with version 2.1.0 has multidex support
 02-05 00:59:24.244 17339 17339 I MultiDex: install
 02-05 00:59:24.244 17339 17339 I MultiDex: VM has multidex support, MultiDex support library is disabled.
-02-05 00:59:24.254 17339 17339 E ActivityThread: Failed to find provider info for oicq.wlogin_sdk.WloginProvider
+02-05 00:59:24.254 17339 17339 E ActivityThread: Failed to find providerName info for oicq.wlogin_sdk.WloginProvider
 02-05 00:59:24.259 17339 17339 D AppConfig: traverseSharedPreferencesKey: start
 02-05 00:59:24.262 17339 17339 D AppConfig: fs length is :272
 02-05 00:59:24.335 17339 17339 E QQLivePMnt.Log: new:com.tencent.qqlive:services,services
@@ -6072,7 +6072,7 @@
 02-05 00:59:24.776 17339 17372 W odk     : can not get the permission of android.permission.WRITE_EXTERNAL_STORAGE
 02-05 00:59:24.793 17339 17372 I odk     : ReportStrategy:0
 02-05 00:59:24.799 17339 17372 I odk     : Network:
-02-05 00:59:24.810 17339 17372 W Settings: Setting android_id has moved from android.provider.Settings.System to android.provider.Settings.Secure, returning read-only value.
+02-05 00:59:24.810 17339 17372 W Settings: Setting android_id has moved from android.providerName.Settings.System to android.providerName.Settings.Secure, returning read-only value.
 02-05 00:59:24.811 17339 17372 E debug_tag: debug flag = false
 02-05 00:59:24.811 17339 17372 E TAG     : Task time, task = com.tencent.qqlive.ona.init.a.ag@3285a2f, time = 350
 02-05 00:59:24.869 17339 17382 I odk     : {"ky":"AES1V77ZTU79","ui":"867686022838484","idx":1749001,"ts":1486277964,"mc":"78:f2:9e:8e:65:58","cui":"","mid":"5bf0dcc92cee97e44d38af761e2d35b53c6efb8c","ut":1,"et":2,"si":2112980164,"ip":"10.0.0.12","id":"N4F26I","dts":0,"cfg":"a441a453c753e1ea0e28f2d4b88fbd0c","ev":{"tn":13,"os":1,"ov":"25","rom":"13727\/26854","op":"310410","sr":"1440*2392","cpu":"{\"n\":8,\"na\":\"AArch64 Processor rev 2 (aarch64) \",\"fx\":1555,\"fn\":384}","av":"5.1.0.10818","jb":0,"tz":"America\/Chicago","cn":"","ram":"855\/-1359","md":"Nexus 6P","lg":"en","sv":"3.0.5","sen":"1,4,2,6,65536,8,5,3,18,17,9,10,11,20,15,25,22,19,14,16,65537,65538,65539,27","mf":"Huawei","ch":"","apn":"com.tencent.qqlive","dpi":"515.154*516.063","pcn":"com.tencent.qqlive:services","osn":"7.1.1","osd":"N4F26I","prod":"angler","tags":"release-keys","id":"N4F26I","fng":"google\/angler\/angler:7.1.1\/N4F26I\/3532671:user\/release-keys","lch":"com.google.android.googlequicksearchbox","abi":"armeabi-v7a","abi2":"armeabi","im":"310410890814459","asg":"00:CC:2C:9D:60:CD:33:75:97:05:6B:47:33:20:99:1C:0E:F3:82:5A"},"sv":"3.0.5","os":1,"ov":"25","md":"Nexus 6P","jb":0,"mf":"Huawei","omgid":"","omgbizid":""}
@@ -6125,7 +6125,7 @@
 02-05 00:59:26.615 16206 16229 I PushLogSC2815_weibo: [ReceiverDispatcher-2157]TRS is invalid, so need to query TRS(weibo/null:-1)
 02-05 00:59:26.627 16206 16229 I PushLogSC2815_weibo: [ReceiverDispatcher-2157]lastnetWorkType:1 curNetWorkType:1(weibo/null:-1)
 02-05 00:59:26.996   895   914 D ActivityManager: cleanUpApplicationRecord -- 15170
-02-05 00:59:27.080 17339 17339 W Settings: Setting android_id has moved from android.provider.Settings.System to android.provider.Settings.Secure, returning read-only value.
+02-05 00:59:27.080 17339 17339 W Settings: Setting android_id has moved from android.providerName.Settings.System to android.providerName.Settings.Secure, returning read-only value.
 02-05 00:59:27.829 16206 17438 I PushLogSC2815_weibo: [PushTRSQuery-2245]verify hostname success(weibo/null:-1)
 02-05 00:59:27.881 17261 17282 I art     : Waiting for a blocking GC DisableMovingGc
 02-05 00:59:27.890 17261 17282 I art     : WaitForGcToComplete blocked for 9.104ms for cause DisableMovingGc
@@ -6295,7 +6295,7 @@
 02-05 00:59:34.209 17164 17198 W linker  : /data/app/com.google.android.gms-2/lib/arm64/libconscrypt_gmscore_jni.so: unused DT entry: type 0x7ffffffd arg 0x169
 02-05 00:59:34.210 17164 17198 V JNIHelp : Registering com/google/android/gms/org/conscrypt/NativeCrypto's 235 native methods...
 02-05 00:59:34.240 17164 17198 D NetworkSecurityConfig: No Network Security Config specified, using platform default
-02-05 00:59:34.245 17164 17198 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+02-05 00:59:34.245 17164 17198 I ProviderInstaller: Installed default security providerName GmsCore_OpenSSL
 02-05 00:59:35.893   895   895 W WindowManager: Attempted to remove non-existing token: android.os.Binder@3068322
 02-05 00:59:35.902  3347  3347 V PhoneStatusBar: setLightsOn(true)
 02-05 00:59:36.290 14528 14583 I Finsky  : [4397] com.google.android.finsky.d.e.run(1151): Replicating app states via AMAS.
@@ -6351,7 +6351,7 @@
 02-05 00:59:55.479   895   927 I ActivityManager: Start proc 17742:com.android.vending/u0a22 for service com.android.vending/com.google.android.finsky.billing.iab.InAppBillingService
 02-05 00:59:55.540 17742 17742 I art     : Starting a blocking GC AddRemoveAppImageSpace
 02-05 00:59:55.545 17742 17742 W System  : ClassLoader referenced unknown path: /data/app/com.android.vending-2/lib/arm64
-02-05 00:59:55.593   895  7040 I ActivityManager: Start proc 17759:com.google.process.gapps/u0a12 for content provider com.google.android.gsf/.gservices.GservicesProvider
+02-05 00:59:55.593   895  7040 I ActivityManager: Start proc 17759:com.google.process.gapps/u0a12 for content providerName com.google.android.gsf/.gservices.GservicesProvider
 02-05 00:59:55.660 17759 17759 I art     : Starting a blocking GC AddRemoveAppImageSpace
 02-05 00:59:55.661 17759 17759 W System  : ClassLoader referenced unknown path: /system/priv-app/GoogleServicesFramework/lib/arm64
 02-05 00:59:55.689  4646  4646 V ACCESSIBILITY: CLICK - text: EXIT; viewId: null
@@ -6387,8 +6387,8 @@
 02-05 00:59:55.912   544 17777 D audio_hw_primary: enable_audio_route: usecase(8) apply and update mixer path: audio-record
 02-05 00:59:55.986  6524  6524 I MicroDetectionWorker: onReady
 02-05 00:59:56.083 17742 17742 I Finsky  : [1] com.google.android.finsky.dailyhygiene.DailyHygiene.a(316): No need to run daily hygiene.
-02-05 00:59:56.107 17742 17742 W Settings: Setting download_manager_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
-02-05 00:59:56.110 17742 17742 W Settings: Setting download_manager_recommended_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+02-05 00:59:56.107 17742 17742 W Settings: Setting download_manager_max_bytes_over_mobile has moved from android.providerName.Settings.Secure to android.providerName.Settings.Global.
+02-05 00:59:56.110 17742 17742 W Settings: Setting download_manager_recommended_max_bytes_over_mobile has moved from android.providerName.Settings.Secure to android.providerName.Settings.Global.
 02-05 00:59:56.134 17742 17742 I Finsky  : [1] com.google.android.finsky.w.a.a(188): Enabling bucket experiment: factor=1.000, zeroDelta=0ms, forceNetwork=true
 02-05 00:59:56.186 17742 17742 I Finsky  : [1] com.google.android.finsky.installer.a.a.a(50222): Installer kick - no action, not running yet
 02-05 00:59:56.227  4561  4561 I WearableService: Wear is not allowed to run on this device. Not starting Wear service.
@@ -6496,7 +6496,7 @@
 02-05 01:00:27.643 14412 14412 I ServiceManager: Waiting for service AtCmdFwd...
 02-05 01:00:28.643 14412 14412 W Atfwd_Sendcmd: AtCmdFwd service not published, waiting... retryCnt : 1
 02-05 01:00:28.714   895   930 E BatteryStatsService: no controller energy info supplied
-02-05 01:00:28.715 22660 22660 W Settings: Setting stay_on_while_plugged_in has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+02-05 01:00:28.715 22660 22660 W Settings: Setting stay_on_while_plugged_in has moved from android.providerName.Settings.System to android.providerName.Settings.Global, returning read-only value.
 02-05 01:00:33.644 14412 14412 I ServiceManager: Waiting for service AtCmdFwd...
 02-05 01:00:34.645 14412 14412 I ServiceManager: Waiting for service AtCmdFwd...
 02-05 01:00:35.648 14412 14412 I ServiceManager: Waiting for service AtCmdFwd...
@@ -6604,7 +6604,7 @@
 02-05 01:00:59.119  4561  4561 I Coffee-PhonePositionTracker: Register activity recognition API updates.
 02-05 01:00:59.119  4561  4561 W GmsClientEvents: unregisterConnectionCallbacks(): listener adsn@27ee5a4 not found
 02-05 01:00:59.151   895 25696 I chatty  : uid=1000(system) Binder:895_19 expire 1 line
-02-05 01:00:59.161   895 25693 I ActivityManager: Start proc 18826:com.netease.cloudmusic/u0a110 for content provider com.netease.cloudmusic/org.xjy.android.treasure.provider.TreasureProvider
+02-05 01:00:59.161   895 25693 I ActivityManager: Start proc 18826:com.netease.cloudmusic/u0a110 for content providerName com.netease.cloudmusic/org.xjy.android.treasure.providerName.TreasureProvider
 02-05 01:00:59.207 18826 18826 I art     : Starting a blocking GC AddRemoveAppImageSpace
 02-05 01:00:59.226 18826 18826 I MultiDex: VM with version 2.1.0 has multidex support
 02-05 01:00:59.226 18826 18826 I MultiDex: install
@@ -7094,9 +7094,9 @@
 02-05 01:04:20.233 22580 22580 I MultiDex: VM with version 2.1.0 has multidex support
 02-05 01:04:20.233 22580 22580 I MultiDex: install
 02-05 01:04:20.233 22580 22580 I MultiDex: VM has multidex support, MultiDex support library is disabled.
-02-05 01:04:20.255 22580 22580 D EmailContent: init for me.bluemail.mail.provider
+02-05 01:04:20.255 22580 22580 D EmailContent: init for me.bluemail.mail.providerName
 02-05 01:04:20.336 22580 22580 W Exchange: No preference migrator found, not migrating preferences
-02-05 01:04:20.340 22580 22601 D ActivityThread: Loading provider me.bluemail.mail.provider;me.bluemail.mail.notifier: com.android.emaileas.provider.EmailProvider
+02-05 01:04:20.340 22580 22601 D ActivityThread: Loading providerName me.bluemail.mail.providerName;me.bluemail.mail.notifier: com.android.emaileas.providerName.EmailProvider
 02-05 01:04:20.505 22580 22617 I blue    : Loading preferences from DB into SharedPreferencesDbStore
 02-05 01:04:20.528 22580 22580 E System  : Ignoring attempt to set property "java.net.preferIPv6Addresses" to value "false".
 02-05 01:04:20.672 22580 22617 I blue    : BluePreferences load took 167ms on thread preferences_loader
@@ -7269,7 +7269,7 @@
 02-05 01:04:28.572 22299 22330 W linker  : /data/app/com.google.android.gms-2/lib/arm64/libconscrypt_gmscore_jni.so: unused DT entry: type 0x7ffffffd arg 0x169
 02-05 01:04:28.573 22299 22330 V JNIHelp : Registering com/google/android/gms/org/conscrypt/NativeCrypto's 235 native methods...
 02-05 01:04:28.599 22299 22330 D NetworkSecurityConfig: No Network Security Config specified, using platform default
-02-05 01:04:28.602 22299 22330 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+02-05 01:04:28.602 22299 22330 I ProviderInstaller: Installed default security providerName GmsCore_OpenSSL
 02-05 01:04:28.694 14412 14414 E QC-QMI  : qmi_client [14412] b0: failed to locate client data
 02-05 01:04:28.698   534   534 E QC-QMI  : qmuxd: RX on fd=14 returned error=0 errno[2:No such file or directory]
 02-05 01:04:28.698   534   534 E QC-QMI  : QMUX qmux_client_id=b0 not found in qmux client list, unable to remove
@@ -7998,7 +7998,7 @@
 02-05 01:07:59.385  4561  4561 W GmsClientEvents: unregisterConnectionCallbacks(): listener adsn@27ee5a4 not found
 02-05 01:07:59.404   895  4722 I nanohub : queueFlush: sensor=30, handle=14
 02-05 01:07:59.406 21581 31774 I a       : insert date=1486278479406 uid=1769581713 content={"act":"actlog","act_code":"1339","ext":"flag:0|uid:1769581713|toForegroundTime:1486277692.259|toBackgroundTime:1486278479.400|useTime:787.141"} type=actlog mode=M3
-02-05 01:07:59.437   895 25691 I ActivityManager: Start proc 26376:com.netease.cloudmusic/u0a110 for content provider com.netease.cloudmusic/org.xjy.android.treasure.provider.TreasureProvider
+02-05 01:07:59.437   895 25691 I ActivityManager: Start proc 26376:com.netease.cloudmusic/u0a110 for content providerName com.netease.cloudmusic/org.xjy.android.treasure.providerName.TreasureProvider
 02-05 01:07:59.484 26376 26376 I art     : Starting a blocking GC AddRemoveAppImageSpace
 02-05 01:07:59.524 26376 26376 I MultiDex: VM with version 2.1.0 has multidex support
 02-05 01:07:59.524 26376 26376 I MultiDex: install
@@ -8244,29 +8244,29 @@
 02-05 01:10:49.026   895  3453 W GnssLocationProvider: Invalid size of GpsSvStatus found: 0.
 02-05 01:10:49.107  4561  4570 E DataBuffer: Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: com.google.android.gms.common.data.DataHolder@e532e96)
 02-05 01:10:49.107  4561  4570 E DataBuffer: Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: com.google.android.gms.common.data.DataHolder@fa0ba17)
-02-05 01:10:49.483   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 0.
-02-05 01:10:49.485   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 2.
-02-05 01:10:49.736   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 0.
-02-05 01:10:49.738   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 2.
-02-05 01:10:49.989   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 0.
-02-05 01:10:49.990   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 2.
+02-05 01:10:49.483   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 0.
+02-05 01:10:49.485   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 2.
+02-05 01:10:49.736   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 0.
+02-05 01:10:49.738   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 2.
+02-05 01:10:49.989   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 0.
+02-05 01:10:49.990   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 2.
 02-05 01:10:50.025   895  3453 W GnssLocationProvider: Invalid size of GpsSvStatus found: 0.
 02-05 01:10:50.052   895  3195 I WifiHAL : Got channel list with 11 channels
 02-05 01:10:50.054   895  3195 I WifiHAL : Got channel list with 9 channels
 02-05 01:10:50.058   895  3195 I WifiHAL : Got channel list with 15 channels
-02-05 01:10:50.243   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 0.
-02-05 01:10:50.243   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 2.
-02-05 01:10:50.497   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 0.
-02-05 01:10:50.498   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 2.
+02-05 01:10:50.243   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 0.
+02-05 01:10:50.243   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 2.
+02-05 01:10:50.497   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 0.
+02-05 01:10:50.498   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 2.
 02-05 01:10:50.726   895  3193 W WifiMode: , Invalid SupportedRates!!!
 02-05 01:10:50.730   895  3195 W WifiMode: , Invalid SupportedRates!!!
-02-05 01:10:50.751   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 0.
-02-05 01:10:50.751   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 2.
+02-05 01:10:50.751   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 0.
+02-05 01:10:50.751   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 2.
 02-05 01:10:50.751   895  3195 I WifiHAL : Got channel list with 11 channels
 02-05 01:10:50.752   895  3195 I WifiHAL : Got channel list with 9 channels
 02-05 01:10:50.753   895  3195 I WifiHAL : Got channel list with 15 channels
-02-05 01:10:51.005   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 0.
-02-05 01:10:51.005   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with provider 1, unable to convert time for service 2.
+02-05 01:10:51.005   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 0.
+02-05 01:10:51.005   567   567 E slim_daemon: [SLIM] slim_ProviderConvertTimeMt: NULL pointer or invalid filter with providerName 1, unable to convert time for service 2.
 02-05 01:10:51.025   895  3453 W GnssLocationProvider: Invalid size of GpsSvStatus found: 0.
 02-05 01:10:51.040   895   913 I GnssLocationProvider: WakeLock acquired by sendMessage(3, 0, com.android.server.location.GnssLocationProvider$GpsRequest@7ccf901)
 02-05 01:10:51.043   895   926 I GnssLocationProvider: WakeLock released by handleMessage(3, 0, com.android.server.location.GnssLocationProvider$GpsRequest@7ccf901)
@@ -8330,7 +8330,7 @@
 02-05 01:12:12.873 22888 22888 I ServiceManager: Waiting for service AtCmdFwd...
 02-05 01:12:13.873 22888 22888 W Atfwd_Sendcmd: AtCmdFwd service not published, waiting... retryCnt : 2
 02-05 01:12:14.383   895   930 E BatteryStatsService: no controller energy info supplied
-02-05 01:12:14.389 22660 22660 W Settings: Setting stay_on_while_plugged_in has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+02-05 01:12:14.389 22660 22660 W Settings: Setting stay_on_while_plugged_in has moved from android.providerName.Settings.System to android.providerName.Settings.Global, returning read-only value.
 02-05 01:12:14.396   895   895 V BackupManagerService: Scheduling immediate backup pass
 02-05 01:12:14.439   895   895 V BackupManagerService: Running a backup pass
 02-05 01:12:14.440   895  4516 V BackupManagerService: clearing pending backups

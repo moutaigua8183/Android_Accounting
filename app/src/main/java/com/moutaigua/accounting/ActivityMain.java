@@ -42,6 +42,8 @@ import pub.devrel.easypermissions.AfterPermissionGranted;
 
 public class ActivityMain extends FragmentActivity {
 
+    public static final String INTENT_KEY_OPEN_METHOD = "open_method";
+    public static final String INTENT_VALUE_OPEN_METHOD_NOTIFI = "notification";
     public static final String SHAREPREF_NAME = "accounting";
     public static final String SHAREPREF_GMAIL_ACCOUNT_SELECTED = "gmail_account_selected";
     public static final int REQUEST_PERMISSIONS = 1;
@@ -201,7 +203,6 @@ public class ActivityMain extends FragmentActivity {
         return false;
     }
 
-
     // Google Play Service and Google Account
     private void checkGooglePlayServices(){
         if (! isGooglePlayServicesAvailable()) {
@@ -289,17 +290,26 @@ public class ActivityMain extends FragmentActivity {
     }
 
     private void setupCurrentPager(){
-        FirebaseHandler handler = new FirebaseHandler();
-        handler.getTransactions(new FirebaseHandler.TransactionCallback() {
-            @Override
-            public void onResult(@NonNull ArrayList<Transaction> transList) {
-                if( transList.size()>0 ){
-                    viewPager.setCurrentItem(0);
-                } else {
-                    viewPager.setCurrentItem(1);
-                }
-            }
-        });
+        getIntent().getExtras();
+        Bundle extras = getIntent().getExtras();
+        if(extras != null
+                && extras.getString(INTENT_KEY_OPEN_METHOD) != null
+                && extras.getString(INTENT_KEY_OPEN_METHOD).equalsIgnoreCase(INTENT_VALUE_OPEN_METHOD_NOTIFI)) {
+            viewPager.setCurrentItem(0);
+        } else {
+            viewPager.setCurrentItem(1);
+        }
+//        FirebaseHandler handler = new FirebaseHandler();
+//        handler.getTransactions(new FirebaseHandler.TransactionCallback() {
+//            @Override
+//            public void onResult(@NonNull ArrayList<Transaction> transList) {
+//                if( transList.size()>0 ){
+//                    viewPager.setCurrentItem(0);
+//                } else {
+//                    viewPager.setCurrentItem(1);
+//                }
+//            }
+//        });
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

@@ -15,8 +15,10 @@ public class Transaction {
     private String textTime;
     private TransactionCategory category;
     private String money;
-    private String provider;
+    private String providerName;
     private String city;
+    private double gpsLongitude;
+    private double gpsLatitude;
     private String note;
     private String type;
     private int seperate;
@@ -28,14 +30,31 @@ public class Transaction {
         textTime = "";
         category = new TransactionCategory();
         money = "0.00";
-        provider = "";
+        providerName = "";
         city = "";
+        gpsLatitude = 0;
+        gpsLongitude = 0;
         type = TYPE_ME;
         seperate = 1;
         reportSource = "";
         reportId = "";
     }
 
+
+    public void clear(){
+        longTime = 0;
+        textTime = "";
+        category.clear();
+        money = "0.00";
+        providerName = "";
+        city = "";
+        gpsLatitude = 0;
+        gpsLongitude = 0;
+        type = TYPE_ME;
+        seperate = 1;
+        reportSource = "";
+        reportId = "";
+    }
 
     public long getLongTime() {
         return longTime;
@@ -69,12 +88,12 @@ public class Transaction {
         this.money = money;
     }
 
-    public String getProvider() {
-        return provider;
+    public String getProviderName() {
+        return providerName;
     }
 
-    public void setProvider(String provider) {
-        this.provider = provider;
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
     }
 
     public String getCity() {
@@ -83,6 +102,22 @@ public class Transaction {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public double getGpsLongitude() {
+        return gpsLongitude;
+    }
+
+    public void setGpsLongitude(double gpsLongitude) {
+        this.gpsLongitude = gpsLongitude;
+    }
+
+    public double getGpsLatitude() {
+        return gpsLatitude;
+    }
+
+    public void setGpsLatitude(double gpsLatitude) {
+        this.gpsLatitude = gpsLatitude;
     }
 
     public String getNote() {
@@ -131,10 +166,16 @@ public class Transaction {
         private int index;
 
         public TransactionCategory(){
+            name = "";
             code = "";
             index = 0;
         }
 
+        public void clear(){
+            name = "";
+            code = "";
+            index = 0;
+        }
 
         public String getCode() {
             return code;

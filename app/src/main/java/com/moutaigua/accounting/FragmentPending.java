@@ -2,6 +2,8 @@ package com.moutaigua.accounting;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.LayoutRes;
@@ -9,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +19,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Spinner;
@@ -25,7 +30,6 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by mou on 5/6/17.
@@ -39,6 +43,7 @@ public class FragmentPending extends Fragment {
     private final int DELAY_TIME_IN_SECOND = 3;
 
     private FirebaseHandler firebaseHandler;
+    private LocationManager mLocationManager;
     private Spinner pendingTransactionSpinner;
     private ArrayList<Transaction> pendingTransactionsList; // all the transactions on Firebase
     private ArrayList<String> transactionSpinnerMenu;      // corresponding spinner item for each transaction
@@ -50,6 +55,7 @@ public class FragmentPending extends Fragment {
     private EditText editMoney;
     private EditText editSeperate;
     private AutoCompleteTextView editProvider;
+    private CheckBox checkboxGPS;
     private Spinner spinnerCategory;
     private Spinner spinnerType;
     private EditText editCity;
@@ -121,6 +127,17 @@ public class FragmentPending extends Fragment {
         editProvider.setAdapter(providerAdapter);
 
 
+        checkboxGPS = (CheckBox) getActivity().findViewById(R.id.fragment_pending_checkbox_gps);
+        checkboxGPS.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if( editProvider.getText().toString().isEmpty() ){
+                    checkboxGPS.setChecked(false);
+                }
+            }
+        });
+
+
         spinnerCategory = (Spinner) getActivity().findViewById(R.id.fragment_pending_spinner_category);
         final ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(getActivity(),
                 R.layout.spinner_textview,
@@ -186,19 +203,41 @@ public class FragmentPending extends Fragment {
                 txtStatus.setText( "-- start\n" );
                 // Service Provider Update
                 if( !editProvider.getText().toString().isEmpty() ){
-                    FirebaseHandler.ServiceProvider provider = new FirebaseHandler.ServiceProvider();
-                    provider.setName( editProvider.getText().toString() );
-                    firebaseHandler.addServiceProvider(provider, new FirebaseHandler.ResultCallback() {
+                    FirebaseHandler.ServiceProvider provider = getProviderService(editProvider.getText().toString());
+                    boolean isUnique = true;
+                    if( checkboxGPS.isChecked() ){
+                        Pair<Double, Double> gpsPair = new Pair<>(currTransaction.getGpsLongitude(), currTransaction.getGpsLatitude());
+                        if( isFirstTimeLocUpdate(provider.getLocationList()) ) {
+                            provider.getLocationList().set(0, gpsPair);
+                        } else {
+                            Location loc1 = new Location("");
+                            loc1.setLongitude(gpsPair.first);
+                            loc1.setLatitude(gpsPair.second);
+                            for(Pair<Double, Double> eachGPSPair : provider.getLocationList()){
+                                Location loc2 = new Location("");
+                                loc2.setLongitude(eachGPSPair.first);
+                                loc2.setLatitude(eachGPSPair.second);
+                                float distanceInMeters = loc1.distanceTo(loc2);
+                                if( distanceInMeters<1 ){
+                                    isUnique =false;
+                                    break;
+                                }
+                            }
+                            if( isUnique ){
+                                provider.getLocationList().add(gpsPair);
+                            }
+                        }
+                    }
+                    firebaseHandler.addServiceProvider(provider, checkboxGPS.isChecked() && isUnique, new FirebaseHandler.ResultCallback() {
                         @Override
-                        public void onSuccess() { // if a new provider is uploaded
+                        public void onSuccess() { // if a new provider or a new location is added
                             isFirebaseUpdated = true;
-                            Log.i(LOG_TAG, "New provider is added!");
-                            txtStatus.setText( "-- " + currTransaction.getProvider() + " is a new provider and added to database\n" );
+                            txtStatus.append( "-- " + currTransaction.getProviderName() + " is updated\n" );
                             delayedExecute();
                         }
 
                         @Override
-                        public void onFail() { // if no provider or no new provider is given
+                        public void onFail() { // if no provider, no new provider or no new location is given
                             isFirebaseUpdated = true;
                             delayedExecute();
                         }
@@ -263,7 +302,7 @@ public class FragmentPending extends Fragment {
             public void onTransactionAdded(Transaction transaction) {
                 pendingTransactionsList.add(transaction);
                 String transTime = new SimpleDateFormat("EEE HH:mm").format(new Date(transaction.getLongTime()));
-                String spinnerMenuItem = transaction.getProvider() + " (" + transTime + ")"; // walmart (Sat HH:mm)
+                String spinnerMenuItem = transaction.getProviderName() + " (" + transTime + ")"; // walmart (Sat HH:mm)
                 if( pendingTransactionSpinner.isEnabled() ){
                     transactionSpinnerMenu.add(spinnerMenuItem);
                 } else { // if there was no valid rawData
@@ -338,6 +377,7 @@ public class FragmentPending extends Fragment {
         editMoney.setText(trans.getMoney());
         editSeperate.setText(String.valueOf(trans.getSeperate()));
         editProvider.setText("");
+        checkboxGPS.setChecked(false);
         spinnerCategory.setSelection(0);
         spinnerType.setSelection(0);
         editCity.setText(trans.getCity());
@@ -348,6 +388,7 @@ public class FragmentPending extends Fragment {
         editMoney.setText("");
         editSeperate.setText("");
         editProvider.setText("");
+        checkboxGPS.setChecked(false);
         spinnerCategory.setSelection(0);
         spinnerType.setSelection(0);
         editCity.setText("");
@@ -371,7 +412,6 @@ public class FragmentPending extends Fragment {
         }
     }
 
-
     // when submitting
 
     private boolean isReadyToSubmit() {
@@ -388,7 +428,7 @@ public class FragmentPending extends Fragment {
         int seperate = Integer.valueOf(editSeperate.getText().toString());
         currTransaction.setSeperate(seperate);
         String providerName = editProvider.getText().toString();
-        currTransaction.setProvider(providerName);
+        currTransaction.setProviderName(providerName);
         for(Transaction.TransactionCategory eachCate : firebaseHandler.getCategoryList()){
             String selected = spinnerCategory.getSelectedItem().toString();
             if( eachCate.getName().equalsIgnoreCase(selected)){
@@ -407,14 +447,14 @@ public class FragmentPending extends Fragment {
         WaCaiHandler.Item newItem = new WaCaiHandler.Item();
         float moneyFloat = Float.parseFloat(trans.getMoney()) / trans.getSeperate();
         newItem.money = String.valueOf(moneyFloat);
-        newItem.serviceProvider = trans.getProvider();
+        newItem.serviceProvider = trans.getProviderName();
         newItem.datetime = trans.getTextTime();
         newItem.categoryCode = trans.getCategory().getCode();
         newItem.note = trans.getNote();
         return newItem;
     }
 
-    // Customer AutoCompleteText Adapter
+    // AutoCompleteText
 
     private class ServiceProviderAdapter extends ArrayAdapter<String> {
         private final Context ctxt;
@@ -509,6 +549,24 @@ public class FragmentPending extends Fragment {
 
 
     }
+
+    private FirebaseHandler.ServiceProvider getProviderService(String providerName){
+        for(FirebaseHandler.ServiceProvider eachProvider : firebaseHandler.getProviderList()){
+            if( eachProvider.getName().equalsIgnoreCase(providerName) ){
+                return eachProvider;
+            }
+        }
+        return null;
+    }
+
+    private boolean isFirstTimeLocUpdate(ArrayList<Pair<Double,Double>> locations){
+        double eps = 0.0000001;
+        return locations.size()==1
+                && (locations.get(0).first < eps && locations.get(0).first > -eps)
+                && (locations.get(0).second < eps && locations.get(0).second > -eps);
+    }
+
+
 
 
 
