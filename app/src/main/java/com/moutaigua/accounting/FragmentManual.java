@@ -253,6 +253,10 @@ public class FragmentManual extends Fragment {
                 // Service Provider Update
                 if( !editProvider.getText().toString().isEmpty() ){
                     FirebaseHandler.ServiceProvider provider = getProviderService(editProvider.getText().toString());
+                    if( provider==null ){
+                        provider = new FirebaseHandler.ServiceProvider();
+                        provider.setName(editProvider.getText().toString());
+                    }
                     boolean isUnique = true;
                     if( checkboxGPS.isChecked() ){
                         Pair<Double, Double> gpsPair = new Pair<>(currTransaction.getGpsLongitude(), currTransaction.getGpsLatitude());
