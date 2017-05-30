@@ -12,7 +12,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -64,7 +63,7 @@ public class ActivityMain extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initNotificationListenerService();
+//        initNotificationListenerService();
         localPermissionRequest();
         checkGooglePlayServices();
 
@@ -284,7 +283,7 @@ public class ActivityMain extends FragmentActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new FragmentPending(), "Pending");
         adapter.addFragment(new FragmentManual(), "Manual");
-        adapter.addFragment(new Fragment(), "Records");
+        adapter.addFragment(new FragmentShare(), "Share");
         adapter.addFragment(new FragmentSetting(), "Setting");
         viewPager.setAdapter(adapter);
     }

@@ -201,7 +201,7 @@ public class GmailReportService extends IntentService {
         if (addresses!=null && addresses.size() > 0) {
             return addresses.get(0).getLocality();
         } else {
-            return null;
+            return "";
         }
     }
 
@@ -237,7 +237,6 @@ public class GmailReportService extends IntentService {
                 try {
                     date = new SimpleDateFormat("d MMM yyyy hh:mm:ss z", Locale.US).parse(rawDate);
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                    sdf.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
                     textDate = sdf.format(date);
                 } catch (ParseException e) {
                     e.printStackTrace();

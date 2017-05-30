@@ -30,6 +30,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * Created by mou on 5/6/17.
@@ -63,7 +64,7 @@ public class FragmentPending extends Fragment {
     private TextView txtStatus;
 
     private boolean isWacaiUpdated;
-    private boolean isFirebaseUpdated;
+    private boolean isProviderUpdated;
 
 
     public FragmentPending() {
@@ -72,7 +73,7 @@ public class FragmentPending extends Fragment {
         pendingTransactionsList = new ArrayList<>();
         transactionSpinnerMenu = new ArrayList<>();
         isWacaiUpdated = false;
-        isFirebaseUpdated = false;
+        isProviderUpdated = false;
     }
 
     @Override
@@ -155,6 +156,8 @@ public class FragmentPending extends Fragment {
                 if(adapterView.getSelectedItem().toString()
                         .equalsIgnoreCase("Gas")){
                     editNote.append("Miles: 1\nPrice: 2.");
+                } else {
+                    editNote.setText("");
                 }
             }
 
@@ -235,20 +238,20 @@ public class FragmentPending extends Fragment {
                     firebaseHandler.addServiceProvider(provider, checkboxGPS.isChecked() && isUnique, new FirebaseHandler.ResultCallback() {
                         @Override
                         public void onSuccess() { // if a new provider or a new location is added
-                            isFirebaseUpdated = true;
+                            isProviderUpdated = true;
                             txtStatus.append( "-- " + currTransaction.getProviderName() + " is updated\n" );
-                            delayedExecute();
+                            executeIfAllUpdated();
                         }
 
                         @Override
                         public void onFail() { // if no provider, no new provider or no new location is given
-                            isFirebaseUpdated = true;
-                            delayedExecute();
+                            isProviderUpdated = true;
+                            executeIfAllUpdated();
                         }
 
                     });
                 } else {
-                    isFirebaseUpdated = true;
+                    isProviderUpdated = true;
                 }
                 // WaCai Update
                 completeTransaction();
@@ -261,15 +264,18 @@ public class FragmentPending extends Fragment {
                             isWacaiUpdated = true;
                             Log.i(LOG_TAG, "Wacai is updated!");
                             txtStatus.append( "-- The transaction is added to Wacai\n" );
-                            delayedExecute();
+                            executeIfAllUpdated();
                         }
                     };
                     waCaiHandler.addItem(transDataPackage, asyncCallBack);
                 } else {
                     isWacaiUpdated = true;
                 }
-                // Local record
-
+                // Share Update
+                if( !currTransaction.getType().equalsIgnoreCase(getString(R.string.transaction_type_private)) ){
+                    firebaseHandler.addShare(currTransaction);
+                    txtStatus.append( "-- new Share card is added\n" );
+                }
             }
         });
 
@@ -399,9 +405,9 @@ public class FragmentPending extends Fragment {
         editNote.setText("");
     }
 
-    private void delayedExecute() {
-        if( isFirebaseUpdated && isWacaiUpdated ) {
-            isFirebaseUpdated = false;
+    private void executeIfAllUpdated() {
+        if( isProviderUpdated && isWacaiUpdated ) {
+            isProviderUpdated = false;
             isWacaiUpdated = false;
             txtStatus.append("-- end (This transaction is deleting)\n");
             Handler handler = new Handler();
@@ -437,6 +443,7 @@ public class FragmentPending extends Fragment {
             String selected = spinnerCategory.getSelectedItem().toString();
             if( eachCate.getName().equalsIgnoreCase(selected)){
                 currTransaction.setCategory(eachCate);
+                break;
             }
         }
         String type = spinnerType.getSelectedItem().toString();
@@ -452,9 +459,12 @@ public class FragmentPending extends Fragment {
         float moneyFloat = Float.parseFloat(trans.getMoney()) / trans.getSeperate();
         newItem.money = String.valueOf(moneyFloat);
         newItem.serviceProvider = trans.getProviderName();
-        newItem.datetime = trans.getTextTime();
         newItem.categoryCode = trans.getCategory().getCode();
         newItem.note = trans.getNote();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        sdf.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));      // beijing time for wacai
+        String txtTime = sdf.format(new Date(trans.getLongTime()));
+        newItem.datetime = txtTime;
         return newItem;
     }
 

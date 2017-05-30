@@ -8,4 +8,6 @@
     <color name="accountingBackground">#f2f2f2</color>
     <color name="textCheckButton_unckecked">#d9d9d9</color>
     <color name="textCheckButton_ckecked">#29a329</color>
+    <color name="shareCardBackground">#ccf5ff</color>
+    
 </resources>

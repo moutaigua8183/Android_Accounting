@@ -19,4 +19,6 @@
 
     <string name="fragment_pending_transaction_menu_no_entry">No Pending Transactions</string>
 
+    <string name="fragment_share_delete_alert">Do you want to delete the card?</string>
+
 </resources>

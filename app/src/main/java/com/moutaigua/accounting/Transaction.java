@@ -6,10 +6,6 @@ package com.moutaigua.accounting;
 
 public class Transaction {
 
-    public static String TYPE_ME = "Me";
-    public static String TYPE_ME_AND_OTHER = "Me & Other";
-    public static String TYPE_OTHER = "Other";
-
 
     private long longTime;
     private String textTime;
@@ -34,7 +30,7 @@ public class Transaction {
         city = "";
         gpsLatitude = 0;
         gpsLongitude = 0;
-        type = TYPE_ME;
+        type = "";
         seperate = 1;
         reportSource = "";
         reportId = "";
@@ -50,7 +46,7 @@ public class Transaction {
         city = "";
         gpsLatitude = 0;
         gpsLongitude = 0;
-        type = TYPE_ME;
+        type = "";
         seperate = 1;
         reportSource = "";
         reportId = "";

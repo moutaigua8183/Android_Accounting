@@ -27,9 +27,6 @@ public class FirebaseHandler {
     private final String LOG_TAG = "FirebaseDatabase";
     public static final String SERVICE_PROVIDER_TABLE = "ServiceProviders";
     public static final String SERVICE_PROVIDER_CHILD_LOCATION = "locations";
-    public static final String SERVICE_PROVIDER_CHILD_LOCATION_LONGITUDE = "longitude";
-    public static final String SERVICE_PROVIDER_CHILD_LOCATION_LATITUDE = "latitude";
-    public static final String SERVICE_LOCATION_TABLE = "Locations";
     public static final String TRANSACTION_TABLE = "Transactions";
     public static final String TRANSACTION_CHILD_TIME_IN_MS = "time_in_millseconds";
     public static final String TRANSACTION_CHILD_TIME_IN_TEXT = "time_in_text";
@@ -39,13 +36,20 @@ public class FirebaseHandler {
     public static final String TRANSACTION_CHILD_CITY = "city";
     public static final String TRANSACTION_CHILD_GPS_LONGITUDE = "gps_longitude";
     public static final String TRANSACTION_CHILD_GPS_LATITUDE = "gps_latitude";
-    public static final String TRANSACTION_CHILD_NOTE = "note";
-    public static final String TRANSACTION_CHILD_TYPE = "type";
-    public static final String TRANSACTION_CHILD_SEPERATE = "seperate";
     public static final String TRANSACTION_CHILD_REPORT_SOURCE = "report_source";
     public static final String CATEGORY_TABLE = "Category";
     public static final String CATEGORY_CHILD_INDEX = "index";
     public static final String CATEGORY_CHILD_CODE = "code";
+    public static final String SHARE_TABLE = "Share";
+    public static final String SHARE_CHILD_TIME_IN_MS = "time_in_millseconds";
+    public static final String SHARE_CHILD_TIME_IN_TEXT = "time_in_text";
+    public static final String SHARE_CHILD_CATEGORY_NAME = "category_name";
+    public static final String SHARE_CHILD_MONEY = "money";
+    public static final String SHARE_CHILD_PROVIDER_NAME = "provider_name";
+    public static final String SHARE_CHILD_CITY = "city";
+    public static final String SHARE_CHILD_NOTE = "note";
+    public static final String SHARE_CHILD_TYPE = "type";
+    public static final String SHARE_CHILD_SEPERATE = "seperate";
 
 
     private DatabaseReference databaseRef;
@@ -54,12 +58,15 @@ public class FirebaseHandler {
     private ArrayList<Transaction.TransactionCategory> categoryList; // complete list
     private ArrayList<String> categoryNameList;                      // used for spinner
     private ChildEventListener transactionListener;
+    private ChildEventListener shareListener;
+    private ArrayList<Transaction> shareList;
 
     public FirebaseHandler() {
         databaseRef = FirebaseDatabase.getInstance().getReference();
         providerList = new ArrayList<>();
         categoryList = new ArrayList<>();
         categoryNameList = new ArrayList<>();
+        shareList = new ArrayList<>();
     }
 
 
@@ -82,6 +89,7 @@ public class FirebaseHandler {
     public interface SingleCallback {
         void onResult();
     }
+
 
 
     /**** Service Provider ****/
@@ -150,6 +158,7 @@ public class FirebaseHandler {
 
     public void stopSyncServiceProviders(){
         databaseRef.removeEventListener(serviceProviderListener);
+        this.providerList.clear();
     }
 
     public void addServiceProvider(final ServiceProvider provider, final boolean isAddLastLocation, @Nullable final ResultCallback callback ) {
@@ -209,7 +218,6 @@ public class FirebaseHandler {
     public ArrayList<ServiceProvider> getProviderList(){
         return providerList;
     }
-
 
 
     /**** Category ****/
@@ -277,8 +285,6 @@ public class FirebaseHandler {
 
 
     }
-
-
 
 
     /**** Transaction ****/
@@ -391,6 +397,102 @@ public class FirebaseHandler {
 
     public void stopListenNewTransactions(){
         databaseRef.removeEventListener(transactionListener);
+    }
+
+
+    /**** Share ****/
+
+    public void syncShare(final SingleCallback callback){
+        shareListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if( dataSnapshot.getValue()!=null ) {
+                    Transaction trans = new Transaction();
+                    trans.setLongTime( Long.valueOf(dataSnapshot.child(SHARE_CHILD_TIME_IN_MS).getValue().toString()) );
+                    trans.setTextTime( dataSnapshot.child(SHARE_CHILD_TIME_IN_TEXT).getValue().toString() );
+                    trans.setMoney( dataSnapshot.child(SHARE_CHILD_MONEY).getValue().toString() );
+                    trans.setProviderName( dataSnapshot.child(SHARE_CHILD_PROVIDER_NAME).getValue().toString() );
+                    trans.setCity( dataSnapshot.child(SHARE_CHILD_CITY).getValue().toString() );
+                    Transaction.TransactionCategory cate = new Transaction.TransactionCategory();
+                    cate.setName( dataSnapshot.child(SHARE_CHILD_CATEGORY_NAME).getValue().toString() );
+                    trans.setCategory( cate );
+                    trans.setNote( dataSnapshot.child(SHARE_CHILD_NOTE).getValue().toString() );
+                    trans.setType( dataSnapshot.child(SHARE_CHILD_TYPE).getValue().toString() );
+                    trans.setSeperate( Integer.valueOf(dataSnapshot.child(SHARE_CHILD_SEPERATE).getValue().toString()) );
+                    // ascendingly ordered by time_in_ms
+                    int index = 0;
+                    for (; index < shareList.size(); ++index) {
+                        if (shareList.get(index).getLongTime() >= trans.getLongTime()) {
+                            shareList.add(index, trans);
+                            break;
+                        }
+                    }
+                    if( index==shareList.size() ){
+                        shareList.add(trans);
+                    }
+                    callback.onResult();
+                }
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                if( dataSnapshot.getValue()!=null ){
+                    long transTime = Long.valueOf( dataSnapshot.child(SHARE_CHILD_TIME_IN_MS).getValue().toString() );
+                    for( int i = 0; i < shareList.size(); ++i ){
+                        if( shareList.get(i).getLongTime()==transTime ){
+                            shareList.remove(i);
+                            break;
+                        }
+                    }
+                    callback.onResult();
+                }
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+        databaseRef.child(SHARE_TABLE).addChildEventListener(shareListener);
+    }
+
+    public void stopShare(){
+        databaseRef.removeEventListener(shareListener);
+        this.shareList.clear();
+    }
+
+    public ArrayList<Transaction> getShareList() {
+        return shareList;
+    }
+
+    public void addShare(Transaction trans){
+        HashMap<String, Object> newProvider = new HashMap<>();
+        String prefix = "/"+SHARE_TABLE+"/"+trans.getLongTime()+"/";
+        newProvider.put(prefix+SHARE_CHILD_TIME_IN_MS, trans.getLongTime());
+        newProvider.put(prefix+SHARE_CHILD_TIME_IN_TEXT, trans.getTextTime());
+        newProvider.put(prefix+SHARE_CHILD_MONEY, trans.getMoney());
+        newProvider.put(prefix+ SHARE_CHILD_PROVIDER_NAME, trans.getProviderName());
+        newProvider.put(prefix+SHARE_CHILD_CITY, trans.getCity());
+        newProvider.put(prefix+ SHARE_CHILD_CATEGORY_NAME, trans.getCategory().getName());
+        newProvider.put(prefix+SHARE_CHILD_NOTE, trans.getNote());
+        newProvider.put(prefix+SHARE_CHILD_TYPE, trans.getType());
+        newProvider.put(prefix+SHARE_CHILD_SEPERATE, trans.getSeperate());
+        databaseRef.updateChildren(newProvider);
+        Log.i(LOG_TAG, "A new transaction has been added.");
+    }
+
+    public void deleteShare(Transaction trans) {
+        String shareId = String.valueOf(trans.getLongTime());
+        databaseRef.child(SHARE_TABLE).child(shareId).removeValue();
     }
 
 

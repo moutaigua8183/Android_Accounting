@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/shareCardBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RelativeLayout style="@style/Share_EachLine">
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_time"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                tools:text="2017-05-18 23:45"
+                />
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_city"
+                android:layout_alignParentRight="true"
+                tools:text="Mount Prospect"
+                />
+        </RelativeLayout>
+
+        <LinearLayout style="@style/Share_EachLine"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_money"
+                android:textSize="25sp"
+                tools:text="$14.43"
+                />
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_at"
+                android:text="\@"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_provider"
+                android:textSize="25sp"
+                tools:text="Popeyes"
+                />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Share_EachLine"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_note"
+                tools:text="for Yang\'s birthday"
+                />
+        </LinearLayout>
+
+        <RelativeLayout style="@style/Share_EachLine">
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_type"
+                android:layout_alignParentLeft="true"
+                tools:text="Private"
+                />
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_seperate"
+                android:layout_centerHorizontal="true"
+                tools:text="3 People"
+                />
+            <TextView style="@style/Share_EachLine_text"
+                android:id="@+id/share_listview_each_item_category"
+                android:layout_alignParentRight="true"
+                tools:text="Dinner"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="2dp"
+        android:background="@android:color/white"/>
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="fill_parent"
+        android:id="@+id/share_listview_each_item_delete"
+        android:src="@drawable/fragment_share_delete"
+        android:background="@android:color/transparent"/>
+
+
+
+
+</LinearLayout>

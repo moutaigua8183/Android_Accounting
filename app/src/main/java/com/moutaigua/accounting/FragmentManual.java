@@ -204,6 +204,8 @@ public class FragmentManual extends Fragment {
                 if(adapterView.getSelectedItem().toString()
                         .equalsIgnoreCase("Gas")){
                     editNote.append("Miles: 1\nPrice: 2.");
+                } else {
+                    editNote.setText("");
                 }
             }
 
@@ -317,8 +319,11 @@ public class FragmentManual extends Fragment {
                 } else {
                     isWacaiUpdated = true;
                 }
-                // Local record
-
+                // Share Update
+                if( !currTransaction.getType().equalsIgnoreCase(getString(R.string.transaction_type_private)) ){
+                    firebaseHandler.addShare(currTransaction);
+                    txtStatus.append( "-- new Share card is added\n" );
+                }
             }
         });
 
@@ -413,6 +418,7 @@ public class FragmentManual extends Fragment {
             String selected = spinnerCategory.getSelectedItem().toString();
             if( eachCate.getName().equalsIgnoreCase(selected)){
                 currTransaction.setCategory(eachCate);
+                break;
             }
         }
         String type = spinnerType.getSelectedItem().toString();
@@ -428,9 +434,12 @@ public class FragmentManual extends Fragment {
         float moneyFloat = Float.parseFloat(trans.getMoney()) / trans.getSeperate();
         newItem.money = String.valueOf(moneyFloat);
         newItem.serviceProvider = trans.getProviderName();
-        newItem.datetime = trans.getTextTime();
         newItem.categoryCode = trans.getCategory().getCode();
         newItem.note = trans.getNote();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        sdf.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));      // beijing time for wacai
+        String txtTime = sdf.format(new Date(trans.getLongTime()));
+        newItem.datetime = txtTime;
         return newItem;
     }
 
@@ -556,10 +565,7 @@ public class FragmentManual extends Fragment {
         mLocationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         Location location = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (location != null && location.getTime() > Calendar.getInstance().getTimeInMillis() - 1 * 60 * 60 * 1000) { // every hour
-            String cityName = getCityName(location);
-            if( cityName!=null ) {
-                editCity.setText(cityName);
-            }
+            editCity.setText(getCityName(location));
             currTransaction.setGpsLongitude(location.getLongitude());
             currTransaction.setGpsLatitude(location.getLatitude());
         } else {
@@ -568,10 +574,7 @@ public class FragmentManual extends Fragment {
                         @Override
                         public void onLocationChanged(Location location) {
                             if (location != null) {
-                                String cityName = getCityName(location);
-                                if( cityName!=null ) {
-                                    editCity.setText(cityName);
-                                }
+                                editCity.setText(getCityName(location));
                                 currTransaction.setGpsLongitude(location.getLongitude());
                                 currTransaction.setGpsLatitude(location.getLatitude());
                                 mLocationManager.removeUpdates(this);
@@ -617,9 +620,8 @@ public class FragmentManual extends Fragment {
     public void setTime(long timeInMs){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String txtTime = sdf.format(new Date(timeInMs));
-        editTime.setText(txtTime);  // local time
+        editTime.setText(txtTime);
         currTransaction.setLongTime(timeInMs);
-        sdf.setTimeZone(TimeZone.getTimeZone("GMT+8:00")); //beijing time for wacai
         currTransaction.setTextTime(sdf.format(new Date(timeInMs)));
     }
 
