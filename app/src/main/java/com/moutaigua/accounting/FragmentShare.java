@@ -60,11 +60,6 @@ public class FragmentShare extends Fragment {
         listView.setAdapter(adapter);
 
 
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
         FirebaseHandler.SingleCallback callback = new FirebaseHandler.SingleCallback() {
             @Override
             public void onResult() {
@@ -72,11 +67,13 @@ public class FragmentShare extends Fragment {
             }
         };
         firebaseHandler.syncShare(callback);
+
+
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
+    public void onDestroy() {
+        super.onDestroy();
         firebaseHandler.stopShare();
     }
 

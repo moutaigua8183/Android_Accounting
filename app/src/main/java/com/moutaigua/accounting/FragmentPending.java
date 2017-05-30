@@ -299,10 +299,14 @@ public class FragmentPending extends Fragment {
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-        txtStatus.setText("");
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if( isVisibleToUser && txtStatus!=null && editNote!=null ){
+            txtStatus.setText("");
+            editNote.setText("");
+        }
     }
+
 
     /***** Firebase Listen and download *****/
 

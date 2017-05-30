@@ -100,7 +100,7 @@ public class FragmentManual extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        setupFirebaseListener();
+        firebaseHandler.syncServiceProviders();
 
 
         editTime = (EditText) getActivity().findViewById(R.id.fragment_manual_editxt_time);
@@ -346,23 +346,17 @@ public class FragmentManual extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        closeFirebaseListener();
+        firebaseHandler.stopSyncServiceProviders();
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-        txtStatus.setText("");
-    }
-
-    /***** Firebase Listen and download *****/
-
-    private void setupFirebaseListener(){
-        firebaseHandler.syncServiceProviders();
-    }
-
-    private void closeFirebaseListener(){
-        firebaseHandler.stopSyncServiceProviders();
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if( isVisibleToUser && txtStatus!=null && editNote!=null){
+            setTime(Calendar.getInstance().getTimeInMillis());
+            txtStatus.setText("");
+            editNote.setText("");
+        }
     }
 
 

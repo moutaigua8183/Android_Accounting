@@ -63,23 +63,19 @@ public class ActivityMain extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        initNotificationListenerService();
         localPermissionRequest();
         checkGooglePlayServices();
 
         initEmailAccounts();
         startEmailReportListener();
 
-        //uploadServiceProvider();
-
 
         viewPager = (ViewPager) findViewById(R.id.main_viewpager);
+        viewPager.setOffscreenPageLimit(3);
         initViewPager(viewPager);
         tabs = (PagerSlidingTabStrip) findViewById(R.id.main_tabs);
         tabs.setViewPager(viewPager);
         setupCurrentPager();
-
-
 
 
     }
