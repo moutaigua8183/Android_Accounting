@@ -2,6 +2,7 @@ package com.moutaigua.accounting;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.view.ContextThemeWrapper;
 import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -44,7 +47,6 @@ public class FragmentPending extends Fragment {
     private final int DELAY_TIME_IN_SECOND = 3;
 
     private FirebaseHandler firebaseHandler;
-    private LocationManager mLocationManager;
     private Spinner pendingTransactionSpinner;
     private ArrayList<Transaction> pendingTransactionsList; // all the transactions on Firebase
     private ArrayList<String> transactionSpinnerMenu;      // corresponding spinner item for each transaction
@@ -279,6 +281,29 @@ public class FragmentPending extends Fragment {
             }
         });
 
+        Button btn_delete = (Button) getActivity().findViewById(R.id.fragment_pending_btn_delete);
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), R.style.myDialogStyle));
+                mBuilder.setMessage(R.string.fragment_pending_delete_alert)
+                        .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                                firebaseHandler.deleteTransaction(currTransaction.getReportId());
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .show();
+            }
+        });
+
         Button btn_exit = (Button) getActivity().findViewById(R.id.fragment_pending_btn_exit);
         btn_exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -348,7 +373,7 @@ public class FragmentPending extends Fragment {
                     currTransaction = null;
                 }
                 transactionAdapter.notifyDataSetChanged();
-                pendingTransactionSpinner.setSelection(0);
+                pendingTransactionSpinner.setSelection(0, true);
             }
         });
         firebaseHandler.syncServiceProviders();

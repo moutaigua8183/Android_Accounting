@@ -129,7 +129,15 @@
                     android:id="@+id/fragment_pending_btn_submit"
                     android:text="Submit"
                     android:textSize="@dimen/app_text_size_default" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05"/>
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.04"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.14"
+                    android:id="@+id/fragment_pending_btn_delete"
+                    android:text="Delete"
+                    android:textSize="@dimen/app_text_size_default" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.04"/>
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -137,7 +145,7 @@
                     android:id="@+id/fragment_pending_btn_exit"
                     android:text="Exit"
                     android:textSize="@dimen/app_text_size_default" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05"/>
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.04"/>
             </LinearLayout>
 
 

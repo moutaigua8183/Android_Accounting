@@ -18,6 +18,7 @@
     <string name="new_provider_file_headline">#this is a simple list of new providers. Do not delete this line</string>
 
     <string name="fragment_pending_transaction_menu_no_entry">No Pending Transactions</string>
+    <string name="fragment_pending_delete_alert">Do you want to delete the transaction?</string>
 
     <string name="fragment_share_delete_alert">Do you want to delete the card?</string>
 
